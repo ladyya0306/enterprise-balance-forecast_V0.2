@@ -1,0 +1,147 @@
+[
+  {
+    "path": "tools/round2_v4_s5_orchestrator.py",
+    "sha256": "b6d8a26e1b80c7778aa705839e2cc1979e83fda8a10de60d388109bba61ddef8",
+    "bytes": 56578
+  },
+  {
+    "path": "tools/shape_contract_search.py",
+    "sha256": "84df3da197e829bdd62b7100238bfae93fba556bb54b44ff5a0ca62636e5720d",
+    "bytes": 92383
+  },
+  {
+    "path": "tools/deliver_coverage102_pilot_p3a_p3b_20260910.py",
+    "sha256": "ca972e046a47db11caeb73d35a5dfa73f08e3a5c5e40d8e9d3a55d4be9949b2b",
+    "bytes": 37418
+  },
+  {
+    "path": "tools/render_finite_summary_20260909.py",
+    "sha256": "ee35b425e20aa2e1ade596748e598d5d3f27e7f71d92e2ec812ba986529bda64",
+    "bytes": 8230
+  },
+  {
+    "path": "tools/freeze_coverage102_pilot_budget_20260910.py",
+    "sha256": "7fd86cd0cc1b0d19e3b2d6696233b09e2aabf424e64d284d1130939312025db5",
+    "bytes": 18146
+  },
+  {
+    "path": "tools/run_shape_guided_budget_search_20260913.py",
+    "sha256": "ff90f0075634925bfaf4834d4b6f2312a1c0463d8a0bd79c088b6fa1f64920c2",
+    "bytes": 232704
+  },
+  {
+    "path": "tools/audit_old_balance_shapes_20260908.py",
+    "sha256": "a739d3daa240d4851bad03b1d5a038d83c0f3c23f9b172f4b00c4067d1d66e2f",
+    "bytes": 22106
+  },
+  {
+    "path": "src/runtime_bank_calendar.py",
+    "sha256": "8fa393caf849615beda50a5163eb479e6201d2528ee7ab3f2b13c98195fc41bc",
+    "bytes": 10669
+  },
+  {
+    "path": "src/runtime_daily_aggregation.py",
+    "sha256": "213dbf6ffd8e93065693246a08a5c7870c9bff57cee9bf39570fb4b0eedd0a7d",
+    "bytes": 6810
+  },
+  {
+    "path": "src/runtime_transaction_normalizer.py",
+    "sha256": "76a69fd4b9cf4114be6facc3a697d1e98d4dbaab5a59343f5c1631a661877792",
+    "bytes": 17967
+  },
+  {
+    "path": "src/runtime_field_mapping.py",
+    "sha256": "f1cc44642b937e158f60552dd4aa4113543c3f1aa11e9fb259cdf6a9754137e6",
+    "bytes": 14271
+  },
+  {
+    "path": "configs/first_abundant_budget_batch12_contract_calendar_20260912_v2.yaml",
+    "sha256": "e964862f30cd0ce9cba55822d47cf9fb88753e181ad8ca812efd5baa4027c318",
+    "bytes": 164447
+  },
+  {
+    "path": "configs/iaf6_generator_parameter_translation_standard.yaml",
+    "sha256": "d9b4592a65cf55277672199f548b640503d1493c7544b3572b6fcdd23aa44024",
+    "bytes": 21454
+  },
+  {
+    "path": "configs/manufacturing_microstructure_parameter_standard_1_1_frozen.yaml",
+    "sha256": "ee52c6e8ea830cee460087ef53210413fffaac4bb86792bb19a89951f2c93170",
+    "bytes": 2560
+  },
+  {
+    "path": "configs/syn_b1_post_t6_c1_probability_interval_contract_1_0_frozen.yaml",
+    "sha256": "12e5d7e7c1308a25d500544dbccfed9e12a847846d118d1e19113b0d49cf8abe",
+    "bytes": 11004
+  },
+  {
+    "path": "configs/synthetic_generation_standard.yaml",
+    "sha256": "68e3936295f691ff086651e88b5e875af605253179b7a5782ab14382a82a847f",
+    "bytes": 6223
+  },
+  {
+    "path": "assets/first_round_published_model/c2f_final_fit_report.json",
+    "sha256": "5bc1f8504b7ca2594dcaccdb61dff6b79978629a63a2d8de12746d0283625dee",
+    "bytes": 3751
+  },
+  {
+    "path": "assets/first_round_published_model/final_fit_conformal_adjustments.csv",
+    "sha256": "246721cd42b06334e77c61a21b0e9732c29c5668a4962e2ef23fad84238e7f4f",
+    "bytes": 384
+  },
+  {
+    "path": "assets/first_round_published_model/final_quantile_lstm_model_manifest.json",
+    "sha256": "3f20accd7979f7b5e62a6b5c5c2f5af63fe788c549b00acc717541b5118f71f7",
+    "bytes": 4538
+  },
+  {
+    "path": "assets/first_round_published_model/models/seed_2026083102/quantile_lstm_final_checkpoint.pt",
+    "sha256": "cb236f23161e98a0558bc6015fe46a30d9e7d2d9948456877875c35850398b51",
+    "bytes": 12501
+  },
+  {
+    "path": "assets/first_round_published_model/models/seed_2026083102/training_loss_history.csv",
+    "sha256": "88d56614083e3f4544cf3bd400c78e54b8787ea2d5bf457fdfcf66c67258c334",
+    "bytes": 2609
+  },
+  {
+    "path": "assets/first_round_published_model/models/seed_2026083103/quantile_lstm_final_checkpoint.pt",
+    "sha256": "c596f88f5e2440c08e924510cff4cb21e95e60bc4488546114b29dda6886128c",
+    "bytes": 12501
+  },
+  {
+    "path": "assets/first_round_published_model/models/seed_2026083103/training_loss_history.csv",
+    "sha256": "b97648fa7d9f938ed1d68b00a195b71289aee5e819eb0b7c739d9faa3f2e61fb",
+    "bytes": 2788
+  },
+  {
+    "path": "assets/first_round_published_model/models/seed_2026083104/quantile_lstm_final_checkpoint.pt",
+    "sha256": "05dc72a8ad6bf73dc8572a58ea37bf137d1a9d8a87f12bf53c90a724889a5705",
+    "bytes": 12501
+  },
+  {
+    "path": "assets/first_round_published_model/models/seed_2026083104/training_loss_history.csv",
+    "sha256": "d4caeec84ed2c34b97ad8d23c33aafb8e9b41e2e3a399814c4f52bcd77f3e3b5",
+    "bytes": 2608
+  },
+  {
+    "path": "assets/first_round_published_model/output_sha256.json",
+    "sha256": "503abc0df900e6199c70942a3fc626dabb6489e7514269934631e50e69e6495d",
+    "bytes": 1203
+  },
+  {
+    "path": "assets/templates/company_product_template.csv",
+    "sha256": "9c33c5c0e6dc6dc087a28cab4128bce9037b0fc7a05d5b1ac46a57bb545a4318",
+    "bytes": 260
+  },
+  {
+    "path": "assets/templates/entity_expansion_template.json",
+    "sha256": "0bc50807465ebe173e85182efcb3a390a0b320300ec66e278fbb9b910177894a",
+    "bytes": 203
+  },
+  {
+    "path": "assets/templates/sample_registration_template.yaml",
+    "sha256": "b974ed9989fd592c18cb787eb046b10952476920af389532e6a527495e6865a6",
+    "bytes": 1704
+  }
+]

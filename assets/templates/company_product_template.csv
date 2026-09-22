@@ -1,0 +1,3 @@
+company_id,asset_total,liability_total,revenue,net_profit,accounts_receivable,inventory,cash,main_product
+# C001,12000,6800,21000,820,3600,1800,950,流动资金贷款
+# 所有金额请使用同一单位，例如万元；删除开头 # 后填入真实数据。

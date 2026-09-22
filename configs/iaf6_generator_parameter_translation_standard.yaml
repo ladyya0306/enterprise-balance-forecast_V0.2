@@ -1,0 +1,467 @@
+metadata:
+  standard_id: "iaf6_generator_parameter_translation"
+  standard_version: "1.0-frozen"
+  status: "frozen"
+  frozen_at: "2026-08-26"
+  feature_contract: "config/individual_account_feature_dictionary_1_1_frozen.yaml"
+  classification_contract: "iaf5_multidimensional_classification_v2"
+  applies_after: "IAF5带限制通过且项目发起人确认分类边界"
+
+purpose_and_scope:
+  purpose_cn: "把匿名账户行为画像转成可解释、可组合、可复现的未来合成流水参数。"
+  rule_freeze_only: true
+  reads_raw_workbook: false
+  creates_synthetic_transactions: false
+  creates_database: false
+  trains_model: false
+  activates_generator: false
+  generator_activation_requires: ["IAF7通过", "生成器实现任务卡另行批准", "生成器质量验收通过"]
+
+classification_interpretation:
+  structural_label_meaning: "仅表示该账户在当前20户、当前特征版本中的相对低/中/高位置。"
+  permanent_enterprise_identity_forbidden: true
+  label_as_numeric_parameter_forbidden: true
+  label_role: "只用于选择单户锚点或多标签来源池；具体参数仍从连续指标或人工配置取得。"
+  trend_and_regime_handling: "保留连续趋势率、一致度、波动和阶段变化，不用上涨/稳定/下跌硬阈值限制生成。"
+  low_stability_axis_handling:
+    temporal_persistence: "只能作为可变化的场景参数，不得作为永久画像身份。"
+  auxiliary_cluster_policy:
+    allowed_use: "诊断多标签规则是否遗漏组合"
+    parameter_source_forbidden: true
+    fixed_generator_class_forbidden: true
+  forbidden_inputs: ["declared_role", "pri_sec", "auxiliary_cluster_id", "enterprise_name", "account_number"]
+
+source_basis_contract:
+  allowed:
+    single_account_anchor:
+      name_cn: "单户匿名锚点"
+      minimum_account_count: 1
+      exact_private_feature_anchor_allowed: true
+      required_metadata: ["anonymous_source_id", "feature_version", "source_basis", "source_fingerprint"]
+      fixed_mode_allowed: true
+      random_or_mixed_requires: "用户另给上下界，或明确选择受约束扩展；不得由一个数值暗中虚构区间。"
+      public_or_git_output_forbidden: true
+    multi_account_class_range:
+      name_cn: "多户多标签范围"
+      minimum_account_count: 2
+      membership_rule: "由用户选择的一项或多项结构性标签筛选；不要求12项标签完全相同。"
+      auxiliary_cluster_membership_forbidden: true
+      default_interval: "成员连续指标P10至P90"
+      observed_min_max_private_audit_only: true
+      empty_or_single_member_action: "阻断并改用单户锚点或人工配置，不静默扩大来源池。"
+    manual_configuration:
+      name_cn: "完全人工设置"
+      minimum_account_count: 0
+      real_account_reference_required: false
+      required_metadata: ["source_basis", "author", "reason"]
+  source_basis_must_be_saved_per_parameter: true
+  mixing_different_source_bases_allowed: true
+  mixed_source_precedence_must_be_explicit: true
+
+parameter_mode_contract:
+  allowed_modes: ["fixed", "random", "mixed"]
+  fixed:
+    meaning_cn: "参数值固定；流水实现仍可按该参数发生随机交易。"
+    required_fields: ["value"]
+  random:
+    meaning_cn: "在已声明分布和边界内为参数取值。"
+    required_fields: ["distribution", "lower_bound", "upper_bound", "seed"]
+  mixed:
+    meaning_cn: "基础水平固定，时间内扰动或阶段变化随机。"
+    required_fields: ["base_value", "distribution", "lower_bound", "upper_bound", "seed"]
+  allowed_distributions: ["uniform", "triangular", "truncated_normal", "empirical_quantile"]
+  reproducibility_required: true
+  same_manifest_and_seed_same_parameters_required: true
+  missing_seed_for_random_or_mixed: "block"
+  invalid_or_reversed_bounds: "block"
+
+feature_disposition_contract:
+  every_accepted_feature_must_receive_one_disposition: true
+  dispositions:
+    direct_control: "直接成为生成器可设置参数。"
+    derived_validation: "不单独设置；生成后重新计算并用来验收画像是否实现。"
+    audit_only: "只说明数据覆盖、输入状态或计算资格，不驱动生成。"
+  audit_only_patterns:
+    - "^trusted_"
+    - "^reconciliation_failure_rate$"
+    - "^missing_balance_day_ratio$"
+    - "^natural_day_count$"
+    - "^transaction_row_count$"
+    - "^active_day_count$"
+    - "^value\\.(observation_date|trusted_deposit_day_count|complete_month_count|excluded_complete_month_untrusted_balance_count|internal_month_gap_count)$"
+    - "^value\\..*_status$"
+    - "^value\\.(runoff_event_count|recovered_within_30d_count|not_recovered_within_30d_count|right_censored_count)$"
+    - "^trend\\..*\\.(input_status|point_count|best_change_point)$"
+  trend_direct_control_pattern: "^trend\\..*\\.(level|normalized_trend_rate|trend_consistency_score|normalized_volatility|regime_shift_gain|pre_change_trend_rate|post_change_trend_rate)$"
+  exact_direct_control_features_are_declared_in_parameter_catalog: true
+  otherwise_disposition: "derived_validation"
+  default_disposition_must_appear_in_private_coverage_report: true
+  silent_feature_drop_forbidden: true
+
+menu_groups:
+  - {id: "balance", name_cn: "余额与日均存款"}
+  - {id: "flow_trend", name_cn: "汇入、汇出和收支差趋势"}
+  - {id: "activity", name_cn: "交易频率与时间集中"}
+  - {id: "volatility", name_cn: "波动、冲击与恢复"}
+  - {id: "retention", name_cn: "快进快出与资金留存"}
+  - {id: "regime", name_cn: "周期、阶段变化与随机性"}
+
+accepted_behavior_dimensions:
+  - "balance_scale"
+  - "balance_volatility"
+  - "deposit_stickiness_and_stability"
+  - "cash_turnover"
+  - "transaction_activity"
+  - "inflow_outflow_structure"
+  - "quick_in_quick_out"
+  - "calendar_rhythm"
+  - "amount_tail"
+  - "count_tail"
+  - "temporal_persistence"
+  - "liquidity_pressure"
+  - "trend_and_regime_shift"
+
+parameter_catalog:
+  - id: "balance.initial_amount"
+    name_cn: "期初余额"
+    group: "balance"
+    source_dimensions: ["balance_scale"]
+    source_features: ["balance_abs_median", "value.average_deposit_balance_30cd"]
+    data_type: "currency_cny"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random"]
+    domain: {minimum: 0, maximum: null}
+  - id: "balance.average_level"
+    name_cn: "目标日均余额水平"
+    group: "balance"
+    source_dimensions: ["balance_scale", "trend_and_regime_shift"]
+    source_features: ["value.average_deposit_balance_30cd", "value.average_deposit_balance_90cd", "trend.average_deposit_balance.level"]
+    data_type: "currency_cny"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: null}
+  - id: "balance.stable_floor_ratio"
+    name_cn: "稳定余额底座比例"
+    group: "balance"
+    source_dimensions: ["deposit_stickiness_and_stability"]
+    source_features: ["value.rolling_30cd_stable_floor_ratio_p50", "value.deposit_balance_p10_to_median"]
+    data_type: "ratio_0_1"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: 1}
+  - id: "balance.zero_day_probability"
+    name_cn: "零余额日概率"
+    group: "balance"
+    source_dimensions: ["deposit_stickiness_and_stability", "liquidity_pressure"]
+    source_features: ["value.zero_deposit_balance_day_ratio", "near_zero_balance_day_ratio"]
+    data_type: "probability"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: 1}
+  - id: "balance.month_end_deviation_ratio"
+    name_cn: "月末余额偏离日均程度"
+    group: "balance"
+    source_dimensions: ["deposit_stickiness_and_stability", "calendar_rhythm"]
+    source_features: ["value.month_end_deposit_deviation_ratio_p50", "value.month_end_deposit_deviation_ratio_p90"]
+    data_type: "nonnegative_ratio"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: null}
+  - id: "flow.gross_to_balance"
+    name_cn: "总收付相对余额强度"
+    group: "flow_trend"
+    source_dimensions: ["cash_turnover"]
+    source_features: ["monthly_gross_flow_to_scale"]
+    data_type: "nonnegative_ratio"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: null}
+  - id: "flow.inflow_share"
+    name_cn: "汇入占总收付比例"
+    group: "flow_trend"
+    source_dimensions: ["inflow_outflow_structure"]
+    source_features: ["inflow_amount_share"]
+    data_type: "ratio_0_1"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: 1}
+  - id: "flow.bidirectional_day_probability"
+    name_cn: "同日双向收付概率"
+    group: "flow_trend"
+    source_dimensions: ["inflow_outflow_structure"]
+    source_features: ["bidirectional_active_day_ratio"]
+    data_type: "probability"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: 1}
+  - id: "flow.active_day_gross_p50"
+    name_cn: "普通活跃日收付强度"
+    group: "flow_trend"
+    source_dimensions: ["cash_turnover"]
+    source_features: ["active_day_gross_flow_to_scale_p50"]
+    data_type: "nonnegative_ratio"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: null}
+  - id: "flow.active_day_gross_p90"
+    name_cn: "高流量活跃日收付强度"
+    group: "flow_trend"
+    source_dimensions: ["cash_turnover", "amount_tail"]
+    source_features: ["active_day_gross_flow_to_scale_p90"]
+    data_type: "nonnegative_ratio"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: null}
+  - id: "activity.active_day_probability"
+    name_cn: "自然日发生交易概率"
+    group: "activity"
+    source_dimensions: ["transaction_activity"]
+    source_features: ["active_natural_day_ratio", "active_bank_workday_ratio"]
+    data_type: "probability"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: 1}
+  - id: "activity.transaction_count_p50"
+    name_cn: "普通活跃日交易笔数"
+    group: "activity"
+    source_dimensions: ["transaction_activity", "count_tail"]
+    source_features: ["transaction_count_active_p50"]
+    data_type: "nonnegative_count"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: null}
+  - id: "activity.transaction_count_p90"
+    name_cn: "较繁忙活跃日交易笔数"
+    group: "activity"
+    source_dimensions: ["transaction_activity", "count_tail"]
+    source_features: ["transaction_count_active_p90"]
+    data_type: "nonnegative_count"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: null}
+  - id: "activity.transaction_count_p99"
+    name_cn: "极繁忙活跃日交易笔数"
+    group: "activity"
+    source_dimensions: ["count_tail"]
+    source_features: ["transaction_count_active_p99", "transaction_count_p99_to_p50"]
+    data_type: "nonnegative_count"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: null}
+  - id: "activity.maximum_inactive_run_days"
+    name_cn: "最长连续无交易天数"
+    group: "activity"
+    source_dimensions: ["transaction_activity"]
+    source_features: ["maximum_inactive_run_days"]
+    data_type: "nonnegative_integer_days"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: null}
+  - id: "activity.weekday_weights"
+    name_cn: "星期交易权重"
+    group: "activity"
+    source_dimensions: ["calendar_rhythm"]
+    source_features: ["weekday_activity_hhi", "weekday_max_activity_share"]
+    data_type: "probability_vector_7"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {sum_equals: 1}
+  - id: "activity.month_phase_weights"
+    name_cn: "月初月中月末交易权重"
+    group: "activity"
+    source_dimensions: ["calendar_rhythm"]
+    source_features: ["month_phase_activity_hhi", "month_phase_max_activity_share", "month_end_active_day_ratio"]
+    data_type: "probability_vector_3"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {sum_equals: 1}
+  - id: "activity.amount_scale_quantiles"
+    name_cn: "单笔金额相对余额分位"
+    group: "activity"
+    source_dimensions: ["amount_tail"]
+    source_features: ["transaction_amount_to_scale_p50", "transaction_amount_to_scale_p90", "transaction_amount_to_scale_p99"]
+    data_type: "ordered_nonnegative_ratio_vector"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {ordering: "p50 <= p90 <= p99"}
+  - id: "volatility.balance_mad_to_scale"
+    name_cn: "余额日常波动强度"
+    group: "volatility"
+    source_dimensions: ["balance_volatility"]
+    source_features: ["balance_mad_to_scale", "trend.balance_volatility.normalized_volatility"]
+    data_type: "nonnegative_ratio"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: null}
+  - id: "volatility.maximum_drawdown_to_scale"
+    name_cn: "最大余额回撤强度"
+    group: "volatility"
+    source_dimensions: ["balance_volatility", "liquidity_pressure"]
+    source_features: ["maximum_drawdown_to_scale"]
+    data_type: "nonnegative_ratio"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: null}
+  - id: "volatility.runoff_horizon_curve"
+    name_cn: "1/3/5/10日余额流失曲线"
+    group: "volatility"
+    source_dimensions: ["deposit_stickiness_and_stability", "liquidity_pressure"]
+    source_features: ["value.worst_runoff_1cd_to_scale", "value.worst_runoff_3cd_to_scale", "value.worst_runoff_5cd_to_scale", "value.worst_runoff_10cd_to_scale"]
+    data_type: "ordered_nonnegative_ratio_vector"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {ordering: "runoff_1d <= runoff_3d <= runoff_5d <= runoff_10d"}
+  - id: "volatility.recovery_duration_days"
+    name_cn: "余额冲击后恢复天数"
+    group: "volatility"
+    source_dimensions: ["deposit_stickiness_and_stability", "liquidity_pressure"]
+    source_features: ["value.runoff_recovery_days_p50"]
+    data_type: "nonnegative_integer_days_or_missing"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: 30}
+  - id: "retention.same_day_offset_ratio"
+    name_cn: "同日收付抵消程度"
+    group: "retention"
+    source_dimensions: ["quick_in_quick_out"]
+    source_features: ["same_day_offset_ratio"]
+    data_type: "ratio_0_1"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: 0, maximum: 1}
+  - id: "retention.reverse_flow_ratio_3bd"
+    name_cn: "三工作日反向流量比例"
+    group: "retention"
+    source_dimensions: ["quick_in_quick_out", "temporal_persistence"]
+    source_features: ["reverse_flow_ratio_3bd"]
+    data_type: "ratio_0_1"
+    value_role: "direct_control"
+    allowed_modes: ["random", "mixed"]
+    dynamic_only: true
+    domain: {minimum: 0, maximum: 1}
+  - id: "retention.three_day_net_retention"
+    name_cn: "三工作日资金净留存"
+    group: "retention"
+    source_dimensions: ["quick_in_quick_out"]
+    source_features: ["three_business_day_net_retention_p50"]
+    data_type: "signed_ratio"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    domain: {minimum: null, maximum: null}
+  - id: "retention.liquidity_coverage_days_p10"
+    name_cn: "偏紧情形流出覆盖天数"
+    group: "retention"
+    source_dimensions: ["liquidity_pressure"]
+    source_features: ["liquidity_coverage_days_p10"]
+    data_type: "nonnegative_days_or_missing"
+    value_role: "derived_validation"
+    allowed_modes: []
+    domain: {minimum: 0, maximum: null}
+  - id: "regime.active_state_persistence"
+    name_cn: "交易活跃状态延续程度"
+    group: "regime"
+    source_dimensions: ["temporal_persistence"]
+    source_features: ["active_to_active_probability", "inactive_to_active_probability"]
+    data_type: "probability_pair"
+    value_role: "direct_control"
+    allowed_modes: ["random", "mixed"]
+    dynamic_only: true
+    domain: {minimum: 0, maximum: 1}
+  - id: "regime.net_flow_memory"
+    name_cn: "净流量短期延续程度"
+    group: "regime"
+    source_dimensions: ["temporal_persistence"]
+    source_features: ["net_flow_lag1_autocorrelation", "net_flow_lag5_autocorrelation"]
+    data_type: "correlation_pair"
+    value_role: "direct_control"
+    allowed_modes: ["random", "mixed"]
+    dynamic_only: true
+    domain: {minimum: -1, maximum: 1}
+  - id: "regime.series_pattern_bundle"
+    name_cn: "各序列连续趋势与阶段变化"
+    group: "regime"
+    source_dimensions: ["trend_and_regime_shift"]
+    source_features: ["trend.*.level", "trend.*.normalized_trend_rate", "trend.*.trend_consistency_score", "trend.*.normalized_volatility", "trend.*.regime_shift_gain", "trend.*.pre_change_trend_rate", "trend.*.post_change_trend_rate"]
+    data_type: "series_pattern_map"
+    value_role: "direct_control"
+    allowed_modes: ["fixed", "random", "mixed"]
+    allowed_patterns: ["continuous_custom", "smooth", "noisy", "cyclical", "no_direction_fluctuation", "random_walk", "regime_switching", "shock_recovery"]
+    hard_direction_label_as_input_forbidden: true
+    domain: {trend_consistency_minimum: 0, trend_consistency_maximum: 1, volatility_minimum: 0}
+
+dependency_and_constraint_contract:
+  build_order:
+    - "resolve_source_basis_and_parameter_modes"
+    - "sample_or_accept_parameter_values"
+    - "derive_calendar_activity_and_flow_targets"
+    - "create_transactions_and_order_them"
+    - "apply_ledger_identity_and_balance_constraints"
+    - "recalculate_all_accepted_features"
+    - "compare_realized_features_with_parameter_targets"
+    - "run_privacy_and_copy_checks"
+    - "publish_only_after_all_checks_pass"
+  hard_constraints:
+    - id: "ledger_identity"
+      rule_cn: "每笔交易后余额=上一笔余额+汇入-汇出；不得为满足日均目标直接改写余额。"
+    - id: "flow_identity"
+      rule_cn: "总收付和汇入占比共同决定汇入、汇出；收支净差是派生量，不允许三者独立随机后互相矛盾。"
+    - id: "activity_count_consistency"
+      rule_cn: "无交易日笔数必须为0；活跃日笔数必须为正整数。"
+    - id: "quantile_order"
+      rule_cn: "金额和笔数的P50不得大于P90，P90不得大于P99。"
+    - id: "calendar_weight_sum"
+      rule_cn: "星期和月段概率非负且各自合计为1。"
+    - id: "runoff_horizon_order"
+      rule_cn: "1/3/5/10日最差流失强度不得随观察窗口变长而减小。"
+    - id: "balance_joint_validation"
+      rule_cn: "目标日均余额、稳定底座、零余额概率、余额流失和流动性压力必须联合验收。"
+    - id: "overdraft_policy"
+      rule_cn: "是否允许负余额必须在画像中显式选择forbid或allow_with_floor；不得由随机误差产生。"
+  soft_target_tolerance:
+    initial_status: "draft_pending_generator_fixture_calibration"
+    terra_must_not_invent_numeric_tolerance: true
+    freeze_before_first_generator_quality_acceptance: true
+
+privacy_and_generalization_contract:
+  raw_transaction_copy_forbidden: true
+  exact_real_date_amount_trajectory_copy_forbidden: true
+  exact_real_contiguous_14_day_behavior_window_copy_forbidden: true
+  exact_real_account_full_parameter_vector_copy_forbidden_except_declared_single_anchor: true
+  near_single_account_profile_check_required: true
+  near_profile_action:
+    single_account_anchor: "允许但必须保留单户来源标记和警示；仍须通过连续窗口零复制检查。"
+    multi_account_class_range: "阻断；除非用户明确改登记为单户锚点并重新生成。"
+    manual_configuration: "阻断；除非证明来源无真实账户锚定或重新选择参数。"
+  source_anonymous_id_private_only: true
+  exact_source_values_private_only: true
+  chat_log_git_and_normal_report_exact_values_forbidden: true
+
+future_private_outputs:
+  required_per_profile:
+    - "generator_profile_id"
+    - "profile_version"
+    - "source_basis_by_parameter"
+    - "selected_multilabel_predicate_if_any"
+    - "parameter_modes_values_bounds_and_distributions"
+    - "random_seed"
+    - "feature_contract_version"
+    - "translation_standard_version"
+    - "constraint_check_results"
+    - "feature_disposition_coverage_report"
+    - "near_profile_and_window_copy_check_results"
+  git_forbidden: true
+  overwrite_forbidden: true
+  historical_parameter_change_requires_new_profile_version_or_branch: true
+
+iaf6_acceptance_gates:
+  all_six_menu_groups_present: true
+  all_13_dimensions_mapped: true
+  every_parameter_has_chinese_name_source_dimension_and_value_role: true
+  all_direct_controls_have_domain_and_allowed_mode: true
+  low_stability_temporal_persistence_dynamic_only: true
+  cluster_as_source_forbidden: true
+  role_as_source_forbidden: true
+  trend_hard_threshold_forbidden: true
+  exact_copy_protection_required: true
+  implementation_or_generation_in_this_stage_forbidden: true
+

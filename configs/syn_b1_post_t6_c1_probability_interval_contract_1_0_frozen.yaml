@@ -1,0 +1,208 @@
+# POST-T6-C1 日均余额概率区间实验冻结合同。
+# 本文件只冻结下一阶段怎样生成和验收区间；本阶段不训练模型、不打开最终测试。
+schema_version: syn_b1_post_t6_c1_probability_interval_contract_1_0
+stage_id: POST-T6-C1
+stage_name_cn: 10日与30日日均余额概率区间实验合同冻结
+status: frozen
+frozen_date: 2026-09-01
+
+# 合同绑定已经完成的B2点预测和C0日均余额只读复算，禁止以后换输入再沿用本合同名义。
+input_evidence:
+  source_dataset_id: SYN-B1-PRETRAIN-FORMAL-260X24M-V1
+  development_enterprise_count: 208
+  sealed_final_test_enterprise_count: 52
+  b2_selected_configuration_id: lstm_direct_selected_window_h16_scaled_l1
+  b2_report_sha256: 38404733778ca64115ee80ec94d6c2a32b53352c602c1faed2fa69b59fc568a7
+  c0_report_sha256: ad6b0f58d04db9964b7d13af5e6072059a1633fd198db1516c3e1f13f2c81528
+  c0_daily_average_summary_sha256: c9cb2826bf89a804feb7f666d8e7544eb233884092ecbcc43125624095a5adac
+  c0_diagnostic_facts:
+    ten_day_average_skill_score: 0.16463953
+    ten_day_positive_folds: 4
+    ten_day_positive_seed_folds: 12
+    ten_day_median_improved_enterprise_rate: 0.79807693
+    thirty_day_average_skill_score: 0.31685326
+    thirty_day_positive_folds: 4
+    thirty_day_positive_seed_folds: 12
+    thirty_day_median_improved_enterprise_rate: 0.80769231
+  facts_are_development_pool_diagnostics_not_final_test_claims: true
+
+# C1只建立新研究问题，不改写A0和B2关于下一日与五日路径的历史结论。
+research_question:
+  product_target_cn: 预测未来10个和30个银行工作日的日均余额，并给出经过校准的80%预测区间
+  primary_target: future_10_business_day_average_closing_balance_cny
+  secondary_target: future_30_business_day_average_closing_balance_cny
+  daily_average_formula_cn: 同一预测起点未来前N个银行工作日的每日期末余额之和除以N
+  historical_t_plus_5_conclusion_remains_unchanged: true
+  t_plus_5_path_is_not_the_selection_target_of_this_new_product_question: true
+  endpoint_daily_path_and_average_balance_must_not_be_confused: true
+
+# 本合同冻结当下工作边界；概率区间实现必须另建任务卡。
+current_stage_scope:
+  contract_freeze_only: true
+  forbidden_now:
+    - 训练、微调或重选任何模型
+    - 生成、修改或删除任何企业流水
+    - 读取最终52户目录、日度表、特征或标签
+    - 从企业画像结果反向删样本、改模型或挑期限
+    - 启动最终测试或60银行工作日前向模拟
+
+# 数据与角色继续沿用A0的企业、日期双隔离。
+data_split:
+  development_pool_enterprises: 208
+  rolling_folds: [A, B, C, D]
+  training_seeds: [2026083102, 2026083103, 2026083104]
+  fit_role_cn: 只拟合模型参数和训练期标准化器
+  calibration_role_cn: 只校准区间宽度、概率和早停；不得参与最终效果评价
+  validation_role_cn: 只评价点预测与区间，不得反向调整区间
+  same_enterprise_forbidden_across_fit_and_validation_in_same_fold: true
+  final_test_enterprises_remain_sealed: 52
+  final_test_may_open_once_only_after_unique_qualified_method_and_owner_authorization: true
+
+# 首期只冻结一个清晰概率：P10至P90构成名义80%区间，禁止扫描很多概率后挑最好看的。
+probability_output:
+  primary_nominal_coverage: 0.80
+  lower_quantile: 0.10
+  center_quantile: 0.50
+  upper_quantile: 0.90
+  required_user_fields:
+    - point_estimate_cny
+    - p10_lower_bound_cny
+    - p50_median_cny
+    - p90_upper_bound_cny
+    - nominal_coverage
+    - development_calibrated_empirical_coverage
+    - interval_width_cny
+    - method_version
+  required_user_sentence_cn: 经开发期同类样本校准，未来N个银行工作日日均余额的名义80%预测区间为下限至上限
+  exact_individual_probability_claim_forbidden: true
+  synthetic_coverage_may_not_be_claimed_as_real_enterprise_coverage: true
+  lower_bound_must_not_exceed_median_or_point_or_upper_bound: true
+
+# 日均余额必须直接形成自己的区间；把30个逐日P10简单平均并不等于30日日均余额P10。
+target_specific_interval_rule:
+  ten_day_average_interval_calibrated_from_ten_day_average_residuals: true
+  thirty_day_average_interval_calibrated_from_thirty_day_average_residuals: true
+  averaging_daily_quantiles_as_average_balance_quantiles_forbidden: true
+  future_daily_path_interval_is_diagnostic_only_in_this_contract: true
+  minimum_balance_and_threshold_breach_probability_are_deferred_until_average_intervals_pass: true
+
+# 三种方法使用同一预测起点、同一账户尺度和同一评价标签。
+finite_method_matrix:
+  maximum_methods_including_baseline: 3
+  methods:
+    - id: balance_hold_scaled_split_conformal
+      role: locked_interval_baseline
+      point_rule_cn: 未来每日余额及日均余额都等于预测起点余额
+      interval_rule_cn: 只用同折calibration企业的账户尺度归一化绝对残差形成对称80%区间
+      trains_new_neural_network: false
+    - id: locked_lstm_scaled_split_conformal
+      role: simple_candidate
+      point_rule_cn: 使用B2锁定LSTM的既有点预测计算10日和30日日均余额
+      interval_rule_cn: 只用同折calibration企业的账户尺度归一化绝对残差形成对称80%区间
+      trains_new_neural_network: false
+    - id: fixed_lstm_conformalized_quantiles
+      role: quantile_candidate
+      architecture_cn: 沿用28日观察窗口、单层、隐藏维度16和30日直接输出，不增加网络容量
+      raw_outputs: [p10, p50, p90]
+      training_loss: account_scaled_pinball_loss
+      calibration_rule_cn: 用同折calibration企业执行保形化分位数校准，validation不得参与校准
+      training_seeds: [2026083102, 2026083103, 2026083104]
+  extra_architectures_hyperparameter_search_or_extra_quantiles_forbidden: true
+  exact_tie_preference: locked_lstm_scaled_split_conformal
+
+# 区间评分同时惩罚“太宽”和“漏掉真实值”，不能靠给出0至无穷大获得高覆盖率。
+evaluation_metrics:
+  point_metric: enterprise_macro_account_normalized_mae
+  point_skill_formula: 1 - model_point_error / balance_hold_point_error
+  interval_primary_metric: enterprise_macro_account_normalized_interval_score_80
+  interval_score_formula_cn: 区间宽度 + 10乘下穿距离 + 10乘上穿距离；命中区间时只有宽度，漏得越远惩罚越大
+  interval_skill_formula: 1 - candidate_interval_score / locked_interval_baseline_interval_score
+  calibration_metric: empirical_coverage
+  sharpness_metric: enterprise_macro_account_normalized_interval_width
+  stability_reports:
+    - four_rolling_folds
+    - twelve_seed_fold_combinations
+    - enterprise_improvement_rate
+    - enterprise_block_bootstrap_95pct_interval
+
+# 点预测先过门，概率区间再过门；任何一层不合格都不能宣称可交付概率范围。
+qualification_gates:
+  point_forecast:
+    ten_day_average_minimum_skill: 0.10
+    thirty_day_average_minimum_skill: 0.10
+    positive_folds_required_each_horizon: 4
+    positive_seed_folds_required_each_horizon: 10
+    minimum_improved_enterprise_rate_each_horizon: 0.60
+    enterprise_block_bootstrap_95pct_skill_lower_must_be_positive: true
+  probability_interval:
+    overall_empirical_coverage_minimum: 0.75
+    overall_empirical_coverage_maximum: 0.85
+    each_fold_empirical_coverage_minimum: 0.70
+    each_fold_empirical_coverage_maximum: 0.90
+    minimum_interval_skill_each_horizon: 0.05
+    positive_folds_required_each_horizon: 4
+    positive_seed_folds_required_each_horizon: 10
+    minimum_enterprise_interval_score_improvement_rate_each_horizon: 0.60
+    enterprise_block_bootstrap_95pct_interval_skill_lower_must_be_positive: true
+    median_normalized_width_must_not_exceed_locked_baseline: true
+  engineering:
+    identical_validation_rows_for_all_methods: true
+    deterministic_same_input_same_seed: true
+    all_output_hashes_required: true
+    final_test_and_forbidden_input_audits_required: true
+
+# 若两候选都过门，只在开发池按10日区间评分选一次；30日必须同时合格。
+unique_method_selection:
+  qualified_methods_only: true
+  primary_order: lowest_ten_day_enterprise_macro_account_normalized_interval_score
+  thirty_day_must_pass_all_gates: true
+  practical_tie_threshold_interval_skill_points: 0.01
+  tie_rule_cn: 两方法10日区间Skill相差不足1个百分点时选择更简单、无需新训练的锁定LSTM加保形校准
+  post_selection_retraining_or_threshold_change_forbidden: true
+
+# 一轮运行后必须止盈或止损，不允许无限扩大模型动物园。
+exit_rules:
+  maximum_probability_experiment_rounds: 1
+  if_simple_conformal_passes_and_quantile_gain_below_one_percentage_point_cn: 保留简单保形方法并停止复杂化
+  if_no_candidate_passes_cn: 停止概率区间交付，不开启最终测试；只保留日均点预测开发池事实和“区间尚不可靠”结论
+  if_coverage_passes_only_by_wider_than_baseline_cn: 判定没有实用增益并停止
+  if_bootstrap_lower_not_positive_cn: 判定证据不稳定并停止
+  adding_models_samples_or_quantiles_after_result_requires_new_owner_approved_contract: true
+
+# 企业画像只在模型和区间方法稳定后解释适用边界，绝不进入模型。
+post_stability_auxiliary_analysis:
+  start_only_after_unique_method_locked_and_one_time_final_result_frozen: true
+  purpose_cn: 回答哪些企业类型预测相对较好、哪些较差，形成适用范围和风险提示
+  profile_seed_and_generator_truth_are_reporting_only: true
+  forbidden_as_tree_lstm_or_interval_inputs: true
+  preregistered_slices:
+    - transaction_frequency_band
+    - operating_trend
+    - receivable_and_payable_term_band
+    - liquidity_buffer_band
+    - annual_revenue_band
+    - large_transaction_window
+    - turning_point_window
+    - financing_window
+  ranking_rule_cn: 每个期限内按相对同期限基线的点预测Skill和区间Skill由高到低排列，同时展示企业数、预测起点数、覆盖率、区间宽度和企业整块95%区间
+  minimum_enterprises_per_slice: 10
+  minimum_forecast_origins_per_slice: 500
+  below_minimum_label: 证据不足
+  may_not_redefine_product_scope_or_retune_model_from_good_slices: true
+  conclusions_must_be_labeled_synthetic_sample_scope: true
+
+# 永久数据隔离规则。
+hard_boundaries:
+  cash_flow_review_notes_human_only: true
+  cash_flow_review_notes_database_feature_tree_lstm_and_interval_forbidden: true
+  enterprise_identity_random_seed_future_transactions_and_generator_truth_model_input_forbidden: true
+  fit_only_preprocessing_required: true
+  result_driven_sample_deletion_or_reassignment_forbidden: true
+  existing_260_enterprises_immutable: true
+
+# C1冻结后的唯一建议下一步；仍须项目发起人另行授权。
+next_stage:
+  stage_id: POST-T6-C2
+  stage_name_cn: 10日与30日日均余额概率区间实施与验证
+  may_start_only_after_owner_authorization: true
+  final_test_remains_sealed_during_c2: true

@@ -1,0 +1,4002 @@
+version: declared_enterprise_budgets_v1
+run_id: first_abundant_budget_batch12_20260912_v2
+period:
+  start_date: '2024-01-01'
+  end_date: '2025-12-31'
+  months: 24
+stage:
+  stage_start_month: 2024-07
+  stage_end_month: 2025-09
+  target_funds: 充裕
+amount_unit: 万元
+allocation_mode: existing_cell_new_slots
+selection_reason_cn: 保留十二户同一批次；A2中型四户按集中审定的全年合同日历规则修订收付款日期，身份、家族、种子、本金、销售、资产、成本、工资和库存不变。规则未按余额或相似度选择合同，仍须重新中央预演并通过全部门槛。
+stress_test:
+  largest_receipt_delay_workdays: 7
+receipt_dependent_supplier_payment_policy: null
+revision_source_manifest:
+  path: data/synthetic_production/coverage102_v1/现行409户历史清单_20260912_v1/现行历史manifest_409.json
+  sha256: 37f35a1238b3615bfdcfc3238937fc5e443e9899ecfbece39202abfd114d0f00
+enterprises:
+- sample_id: business_102_a1_m_abundant_t03
+  family_id: F-ABUND16-A1-M-T03
+  combination_id: A1-中-充裕
+  range_version: first-abundant-draft-v1
+  product_cn: 食品输送线检修侧板
+  background_cn: 食品输送线检修侧板由固定班组在租赁工位完成检验装配，服务两类常规客户；材料与外协按月采购并随验收当月结清，不安排设备扩产、重组或追加实缴。
+  expected_operation_state: 正常经营
+  expected_operation_cn: 预算意图为以初资260万元预留首月备料、班组工资、工位租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，合同无额外融资安排。
+  customers:
+  - 食品设备维保商
+  - 区域包装线维修商
+  required_mechanisms:
+  - 月度交付金额
+  - 确认后分期回款
+  - 已承诺采购分期付款
+  - 最低采购与库存耗用
+  - 租赁工位与外协金额
+  cash_cycle_mechanism_cn: 确认后当月分批收款、采购当月结清、无跨月应收应付合同
+  initial_capital: 260
+  sales:
+  - 72
+  - 76
+  - 74
+  - 79
+  - 73
+  - 77
+  - 75
+  - 80
+  - 74
+  - 78
+  - 76
+  - 73
+  - 77
+  - 75
+  - 81
+  - 74
+  - 78
+  - 76
+  - 82
+  - 75
+  - 79
+  - 74
+  - 78
+  - 77
+  phases:
+  - start: 2024-01
+    end: 2024-12
+    cost_percent: 73
+    inventory: 7.8
+    payroll: 8.8
+    rent: 2.6
+    other: 1.25
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 食品输送线检修侧板框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  - start: 2025-01
+    end: 2025-12
+    cost_percent: 73
+    inventory: 7.8
+    payroll: 9.15
+    rent: 2.6
+    other: 1.33
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 食品输送线检修侧板框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  assets: []
+  branch_observation_contract:
+    branch: A1
+    basis: 固定班组和连续框架订单
+    monthly_sales_min_wan: 72
+    monthly_sales_max_wan: 82
+    no_expansion_assets: true
+    observed_through: 2025-09
+- sample_id: business_102_a1_m_abundant_t06
+  family_id: F-ABUND16-A1-M-T06
+  combination_id: A1-中-充裕
+  range_version: first-abundant-draft-v1
+  product_cn: 商用烤箱门铰链座
+  background_cn: 商用烤箱门铰链座由固定班组在租赁工位完成检验装配，服务两类常规客户；材料与外协按月采购并随验收当月结清，不安排设备扩产、重组或追加实缴。
+  expected_operation_state: 正常经营
+  expected_operation_cn: 预算意图为以初资285万元预留首月备料、班组工资、工位租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，合同无额外融资安排。
+  customers:
+  - 烘焙设备装配厂
+  - 餐饮设备售后商
+  required_mechanisms:
+  - 月度交付金额
+  - 确认后分期回款
+  - 已承诺采购分期付款
+  - 最低采购与库存耗用
+  - 租赁工位与外协金额
+  cash_cycle_mechanism_cn: 确认后当月分批收款、采购当月结清、无跨月应收应付合同
+  initial_capital: 285
+  sales:
+  - 70
+  - 75
+  - 72
+  - 78
+  - 74
+  - 71
+  - 77
+  - 73
+  - 79
+  - 75
+  - 72
+  - 78
+  - 74
+  - 80
+  - 76
+  - 73
+  - 79
+  - 75
+  - 81
+  - 77
+  - 74
+  - 80
+  - 76
+  - 78
+  phases:
+  - start: 2024-01
+    end: 2024-12
+    cost_percent: 71
+    inventory: 8.55
+    payroll: 9.2
+    rent: 2.7
+    other: 1.35
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 商用烤箱门铰链座框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  - start: 2025-01
+    end: 2025-12
+    cost_percent: 71
+    inventory: 8.55
+    payroll: 9.57
+    rent: 2.7
+    other: 1.43
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 商用烤箱门铰链座框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  assets: []
+  branch_observation_contract:
+    branch: A1
+    basis: 固定班组和连续框架订单
+    monthly_sales_min_wan: 70
+    monthly_sales_max_wan: 81
+    no_expansion_assets: true
+    observed_through: 2025-09
+- sample_id: business_102_a1_m_abundant_t07
+  family_id: F-ABUND16-A1-M-T07
+  combination_id: A1-中-充裕
+  range_version: first-abundant-draft-v1
+  product_cn: 冷链周转箱金属插销
+  background_cn: 冷链周转箱金属插销由固定班组在租赁工位完成检验装配，服务两类常规客户；材料与外协按月采购并随验收当月结清，不安排设备扩产、重组或追加实缴。
+  expected_operation_state: 正常经营
+  expected_operation_cn: 预算意图为以初资300万元预留首月备料、班组工资、工位租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，合同无额外融资安排。
+  customers:
+  - 冷库设备集成商
+  - 生鲜仓储维保商
+  required_mechanisms:
+  - 月度交付金额
+  - 确认后分期回款
+  - 已承诺采购分期付款
+  - 最低采购与库存耗用
+  - 租赁工位与外协金额
+  cash_cycle_mechanism_cn: 确认后当月分批收款、采购当月结清、无跨月应收应付合同
+  initial_capital: 300
+  sales:
+  - 77
+  - 74
+  - 81
+  - 76
+  - 79
+  - 83
+  - 75
+  - 80
+  - 78
+  - 82
+  - 76
+  - 84
+  - 79
+  - 77
+  - 83
+  - 80
+  - 85
+  - 78
+  - 82
+  - 79
+  - 84
+  - 81
+  - 76
+  - 83
+  phases:
+  - start: 2024-01
+    end: 2024-12
+    cost_percent: 75
+    inventory: 9.0
+    payroll: 10.1
+    rent: 2.9
+    other: 1.45
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 冷链周转箱金属插销框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  - start: 2025-01
+    end: 2025-12
+    cost_percent: 75
+    inventory: 9.0
+    payroll: 10.5
+    rent: 2.9
+    other: 1.54
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 冷链周转箱金属插销框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  assets: []
+  branch_observation_contract:
+    branch: A1
+    basis: 固定班组和连续框架订单
+    monthly_sales_min_wan: 74
+    monthly_sales_max_wan: 85
+    no_expansion_assets: true
+    observed_through: 2025-09
+- sample_id: business_102_a1_m_abundant_t08
+  family_id: F-ABUND16-A1-M-T08
+  combination_id: A1-中-充裕
+  range_version: first-abundant-draft-v1
+  product_cn: 制药设备防护罩扣件
+  background_cn: 制药设备防护罩扣件由固定班组在租赁工位完成检验装配，服务两类常规客户；材料与外协按月采购并随验收当月结清，不安排设备扩产、重组或追加实缴。
+  expected_operation_state: 正常经营
+  expected_operation_cn: 预算意图为以初资270万元预留首月备料、班组工资、工位租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，合同无额外融资安排。
+  customers:
+  - 制药设备维修商
+  - 洁净室配件经销商
+  required_mechanisms:
+  - 月度交付金额
+  - 确认后分期回款
+  - 已承诺采购分期付款
+  - 最低采购与库存耗用
+  - 租赁工位与外协金额
+  cash_cycle_mechanism_cn: 确认后当月分批收款、采购当月结清、无跨月应收应付合同
+  initial_capital: 270
+  sales:
+  - 69
+  - 73
+  - 71
+  - 75
+  - 70
+  - 76
+  - 72
+  - 74
+  - 77
+  - 71
+  - 75
+  - 73
+  - 78
+  - 72
+  - 76
+  - 74
+  - 79
+  - 73
+  - 77
+  - 75
+  - 80
+  - 74
+  - 78
+  - 76
+  phases:
+  - start: 2024-01
+    end: 2024-12
+    cost_percent: 69
+    inventory: 8.1
+    payroll: 8.6
+    rent: 2.5
+    other: 1.15
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 制药设备防护罩扣件框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  - start: 2025-01
+    end: 2025-12
+    cost_percent: 69
+    inventory: 8.1
+    payroll: 8.94
+    rent: 2.5
+    other: 1.22
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 制药设备防护罩扣件框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  assets: []
+  branch_observation_contract:
+    branch: A1
+    basis: 固定班组和连续框架订单
+    monthly_sales_min_wan: 69
+    monthly_sales_max_wan: 80
+    no_expansion_assets: true
+    observed_through: 2025-09
+- sample_id: business_102_a1_m_abundant_t09
+  family_id: F-ABUND16-A1-M-T09
+  combination_id: A1-中-充裕
+  range_version: first-abundant-draft-v1
+  product_cn: 轨道检修柜门锁扣
+  background_cn: 轨道检修柜门锁扣由固定班组在租赁工位完成检验装配，服务两类常规客户；材料与外协按月采购并随验收当月结清，不安排设备扩产、重组或追加实缴。
+  expected_operation_state: 正常经营
+  expected_operation_cn: 预算意图为以初资310万元预留首月备料、班组工资、工位租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，合同无额外融资安排。
+  customers:
+  - 轨道机电维保商
+  - 站台设备服务商
+  required_mechanisms:
+  - 月度交付金额
+  - 确认后分期回款
+  - 已承诺采购分期付款
+  - 最低采购与库存耗用
+  - 租赁工位与外协金额
+  cash_cycle_mechanism_cn: 确认后当月分批收款、采购当月结清、无跨月应收应付合同
+  initial_capital: 310
+  sales:
+  - 80
+  - 76
+  - 83
+  - 79
+  - 85
+  - 78
+  - 82
+  - 86
+  - 80
+  - 84
+  - 77
+  - 83
+  - 81
+  - 87
+  - 79
+  - 85
+  - 82
+  - 88
+  - 80
+  - 86
+  - 83
+  - 78
+  - 84
+  - 81
+  phases:
+  - start: 2024-01
+    end: 2024-12
+    cost_percent: 76
+    inventory: 9.3
+    payroll: 10.4
+    rent: 3.0
+    other: 1.55
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 轨道检修柜门锁扣框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  - start: 2025-01
+    end: 2025-12
+    cost_percent: 76
+    inventory: 9.3
+    payroll: 10.82
+    rent: 3.0
+    other: 1.64
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 轨道检修柜门锁扣框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  assets: []
+  branch_observation_contract:
+    branch: A1
+    basis: 固定班组和连续框架订单
+    monthly_sales_min_wan: 76
+    monthly_sales_max_wan: 88
+    no_expansion_assets: true
+    observed_through: 2025-09
+- sample_id: business_102_a1_m_abundant_t10
+  family_id: F-ABUND16-A1-M-T10
+  combination_id: A1-中-充裕
+  range_version: first-abundant-draft-v1
+  product_cn: 实验室通风柜铰链片
+  background_cn: 实验室通风柜铰链片由固定班组在租赁工位完成检验装配，服务两类常规客户；材料与外协按月采购并随验收当月结清，不安排设备扩产、重组或追加实缴。
+  expected_operation_state: 正常经营
+  expected_operation_cn: 预算意图为以初资255万元预留首月备料、班组工资、工位租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，合同无额外融资安排。
+  customers:
+  - 实验室家具装配商
+  - 高校实验室维保商
+  required_mechanisms:
+  - 月度交付金额
+  - 确认后分期回款
+  - 已承诺采购分期付款
+  - 最低采购与库存耗用
+  - 租赁工位与外协金额
+  cash_cycle_mechanism_cn: 确认后当月分批收款、采购当月结清、无跨月应收应付合同
+  initial_capital: 255
+  sales:
+  - 71
+  - 68
+  - 74
+  - 70
+  - 76
+  - 72
+  - 69
+  - 75
+  - 71
+  - 77
+  - 73
+  - 70
+  - 76
+  - 72
+  - 78
+  - 74
+  - 71
+  - 77
+  - 73
+  - 79
+  - 75
+  - 72
+  - 78
+  - 74
+  phases:
+  - start: 2024-01
+    end: 2024-12
+    cost_percent: 70
+    inventory: 7.65
+    payroll: 8.4
+    rent: 2.45
+    other: 1.2
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 实验室通风柜铰链片框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  - start: 2025-01
+    end: 2025-12
+    cost_percent: 70
+    inventory: 7.65
+    payroll: 8.74
+    rent: 2.45
+    other: 1.27
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 实验室通风柜铰链片框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  assets: []
+  branch_observation_contract:
+    branch: A1
+    basis: 固定班组和连续框架订单
+    monthly_sales_min_wan: 68
+    monthly_sales_max_wan: 79
+    no_expansion_assets: true
+    observed_through: 2025-09
+- sample_id: business_102_a1_m_abundant_t11
+  family_id: F-ABUND16-A1-M-T11
+  combination_id: A1-中-充裕
+  range_version: first-abundant-draft-v1
+  product_cn: 物流输送机护板卡座
+  background_cn: 物流输送机护板卡座由固定班组在租赁工位完成检验装配，服务两类常规客户；材料与外协按月采购并随验收当月结清，不安排设备扩产、重组或追加实缴。
+  expected_operation_state: 正常经营
+  expected_operation_cn: 预算意图为以初资325万元预留首月备料、班组工资、工位租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，合同无额外融资安排。
+  customers:
+  - 物流装备集成商
+  - 分拣线售后配件商
+  required_mechanisms:
+  - 月度交付金额
+  - 确认后分期回款
+  - 已承诺采购分期付款
+  - 最低采购与库存耗用
+  - 租赁工位与外协金额
+  cash_cycle_mechanism_cn: 确认后当月分批收款、采购当月结清、无跨月应收应付合同
+  initial_capital: 325
+  sales:
+  - 83
+  - 79
+  - 86
+  - 82
+  - 88
+  - 84
+  - 80
+  - 87
+  - 83
+  - 89
+  - 85
+  - 81
+  - 88
+  - 84
+  - 90
+  - 86
+  - 82
+  - 89
+  - 85
+  - 91
+  - 87
+  - 83
+  - 90
+  - 86
+  phases:
+  - start: 2024-01
+    end: 2024-12
+    cost_percent: 74
+    inventory: 9.75
+    payroll: 10.8
+    rent: 3.1
+    other: 1.6
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 物流输送机护板卡座框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  - start: 2025-01
+    end: 2025-12
+    cost_percent: 74
+    inventory: 9.75
+    payroll: 11.23
+    rent: 3.1
+    other: 1.7
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 物流输送机护板卡座框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  assets: []
+  branch_observation_contract:
+    branch: A1
+    basis: 固定班组和连续框架订单
+    monthly_sales_min_wan: 79
+    monthly_sales_max_wan: 91
+    no_expansion_assets: true
+    observed_through: 2025-09
+- sample_id: business_102_a1_m_abundant_t12
+  family_id: F-ABUND16-A1-M-T12
+  combination_id: A1-中-充裕
+  range_version: first-abundant-draft-v1
+  product_cn: 商超冷柜层板支撑件
+  background_cn: 商超冷柜层板支撑件由固定班组在租赁工位完成检验装配，服务两类常规客户；材料与外协按月采购并随验收当月结清，不安排设备扩产、重组或追加实缴。
+  expected_operation_state: 正常经营
+  expected_operation_cn: 预算意图为以初资290万元预留首月备料、班组工资、工位租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，合同无额外融资安排。
+  customers:
+  - 连锁冷柜装配厂
+  - 商超设备维修商
+  required_mechanisms:
+  - 月度交付金额
+  - 确认后分期回款
+  - 已承诺采购分期付款
+  - 最低采购与库存耗用
+  - 租赁工位与外协金额
+  cash_cycle_mechanism_cn: 确认后当月分批收款、采购当月结清、无跨月应收应付合同
+  initial_capital: 290
+  sales:
+  - 74
+  - 78
+  - 76
+  - 81
+  - 75
+  - 79
+  - 77
+  - 82
+  - 76
+  - 80
+  - 78
+  - 75
+  - 81
+  - 77
+  - 83
+  - 79
+  - 76
+  - 82
+  - 78
+  - 84
+  - 80
+  - 77
+  - 83
+  - 79
+  phases:
+  - start: 2024-01
+    end: 2024-12
+    cost_percent: 72
+    inventory: 8.7
+    payroll: 9.5
+    rent: 2.75
+    other: 1.4
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 商超冷柜层板支撑件框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  - start: 2025-01
+    end: 2025-12
+    cost_percent: 72
+    inventory: 8.7
+    payroll: 9.88
+    rent: 2.75
+    other: 1.48
+    receipt_next_percent: 0
+    supplier_next_percent: 0
+    reason: 商超冷柜层板支撑件框架订单按月分批验收，当月客户款与外协采购款结清；固定班组、备料和工位费用与月度交付金额对应。
+  assets: []
+  branch_observation_contract:
+    branch: A1
+    basis: 固定班组和连续框架订单
+    monthly_sales_min_wan: 74
+    monthly_sales_max_wan: 84
+    no_expansion_assets: true
+    observed_through: 2025-09
+- sample_id: business_102_a2_m_abundant_t07
+  family_id: F-ABUND16-A2_M_ABUNDANT-T07
+  combination_id: A2-中-充裕
+  product_cn: 工业除湿机框架
+  background_cn: 工业除湿机框架面向工业空调装配厂和仓储设施维护商按已确认批次交付；沿用本格已完成的常规验收、采购及库存合同结构，不引入停止、重组、设备扩产或追加实缴。
+  expected_operation_cn: 预算意图为以初资360万元预留季节备料、固定工资租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，资金来源为开业实缴，未设置回款延期实验机制。
+  customers:
+  - 工业空调装配厂
+  - 仓储设施维护商
+  initial_capital: 360
+  sales:
+  - 94
+  - 88
+  - 101
+  - 96
+  - 92
+  - 105
+  - 98
+  - 90
+  - 103
+  - 95
+  - 108
+  - 99
+  - 93
+  - 106
+  - 100
+  - 110
+  - 97
+  - 104
+  - 96
+  - 112
+  - 102
+  - 94
+  - 108
+  - 100
+  phases:
+  - start: 2024-01
+    end: 2024-06
+    cost_percent: 68
+    inventory: 15.0
+    payroll: 8.7
+    rent: 1.8
+    other: 2.0
+    receipt_next_percent: 42
+    supplier_next_percent: 28
+    reason: 工业除湿机框架第1段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  - start: 2024-07
+    end: 2025-03
+    cost_percent: 70
+    inventory: 23.0
+    payroll: 9.0
+    rent: 1.8
+    other: 2.2
+    receipt_next_percent: 50
+    supplier_next_percent: 22
+    reason: 工业除湿机框架第2段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  - start: 2025-04
+    end: 2025-12
+    cost_percent: 67
+    inventory: 24.0
+    payroll: 9.1
+    rent: 1.8
+    other: 2.05
+    receipt_next_percent: 38
+    supplier_next_percent: 32
+    reason: 工业除湿机框架第3段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  assets:
+  - purpose: 工业除湿机框架专用定位工装与出厂检验台
+    signed: '2024-01-11'
+    ready: '2024-04-01'
+    payments:
+    - - '2024-02-16'
+      - 8.4
+    - - '2024-03-22'
+      - 6.6
+  expected_operation_state: 正常经营
+  contract_date_changes:
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-01-07'
+    amount_fen: 39551595
+    new_date: '2024-01-08'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-01-03'
+    amount_fen: 5676239
+    new_date: '2024-01-04'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-01-19'
+    amount_fen: 6555396
+    new_date: '2024-01-20'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-14'
+    amount_fen: 9628532
+    new_date: '2024-02-16'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-19'
+    amount_fen: 2448285
+    new_date: '2024-02-22'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-25'
+    amount_fen: 4405482
+    new_date: '2024-02-28'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-12'
+    amount_fen: 3764158
+    new_date: '2024-02-13'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-27'
+    amount_fen: 680183
+    new_date: '2024-03-30'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-10'
+    amount_fen: 4126945
+    new_date: '2024-03-13'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-22'
+    amount_fen: 43161234
+    new_date: '2024-03-25'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-27'
+    amount_fen: 121050
+    new_date: '2024-04-28'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-25'
+    amount_fen: 2067395
+    new_date: '2024-04-26'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-07'
+    amount_fen: 18662949
+    new_date: '2024-04-09'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-06'
+    amount_fen: 4404201
+    new_date: '2024-04-09'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-21'
+    amount_fen: 1363728
+    new_date: '2024-04-22'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-05
+    category: sales_collection
+    original_date: '2024-05-12'
+    amount_fen: 33971551
+    new_date: '2024-05-15'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-05
+    category: sales_collection
+    original_date: '2024-06-02'
+    amount_fen: 1018976
+    new_date: '2024-06-03'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-06
+    category: sales_collection
+    original_date: '2024-06-25'
+    amount_fen: 3408074
+    new_date: '2024-06-28'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-06
+    category: sales_collection
+    original_date: '2024-06-09'
+    amount_fen: 9141276
+    new_date: '2024-06-11'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-07
+    category: sales_collection
+    original_date: '2024-07-03'
+    amount_fen: 11648281
+    new_date: '2024-07-04'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-08
+    category: sales_collection
+    original_date: '2024-08-22'
+    amount_fen: 29626676
+    new_date: '2024-08-25'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-08
+    category: sales_collection
+    original_date: '2024-08-18'
+    amount_fen: 990713
+    new_date: '2024-08-21'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-08
+    category: sales_collection
+    original_date: '2024-08-03'
+    amount_fen: 726553
+    new_date: '2024-08-04'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-09
+    category: sales_collection
+    original_date: '2024-09-16'
+    amount_fen: 3646177
+    new_date: '2024-09-17'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-09
+    category: sales_collection
+    original_date: '2024-09-04'
+    amount_fen: 836763
+    new_date: '2024-09-06'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-11-18'
+    amount_fen: 13514435
+    new_date: '2024-11-19'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-11-10'
+    amount_fen: 6298562
+    new_date: '2024-11-12'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-11-11'
+    amount_fen: 1091396
+    new_date: '2024-11-13'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-12-02'
+    amount_fen: 4952708
+    new_date: '2024-12-03'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-04'
+    amount_fen: 422916
+    new_date: '2024-12-05'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-17'
+    amount_fen: 5042908
+    new_date: '2024-12-20'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-28'
+    amount_fen: 4730698
+    new_date: '2024-12-31'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-02'
+    amount_fen: 11721644
+    new_date: '2024-12-04'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-18'
+    amount_fen: 1849504
+    new_date: '2024-12-19'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-01
+    category: sales_collection
+    original_date: '2025-01-02'
+    amount_fen: 276927
+    new_date: '2025-01-04'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-01
+    category: sales_collection
+    original_date: '2025-01-03'
+    amount_fen: 6882915
+    new_date: '2025-01-04'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-02
+    category: sales_collection
+    original_date: '2025-02-14'
+    amount_fen: 1295347
+    new_date: '2025-02-17'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-03-13'
+    amount_fen: 5954842
+    new_date: '2025-03-15'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-03-17'
+    amount_fen: 928366
+    new_date: '2025-03-19'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-03-18'
+    amount_fen: 31792941
+    new_date: '2025-03-21'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-04-02'
+    amount_fen: 11135265
+    new_date: '2025-04-03'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-04-22'
+    amount_fen: 9880801
+    new_date: '2025-04-25'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-04-11'
+    amount_fen: 8110514
+    new_date: '2025-04-13'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-05
+    category: sales_collection
+    original_date: '2025-05-11'
+    amount_fen: 24862075
+    new_date: '2025-05-14'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-05
+    category: sales_collection
+    original_date: '2025-05-02'
+    amount_fen: 9984681
+    new_date: '2025-05-04'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-05
+    category: sales_collection
+    original_date: '2025-05-21'
+    amount_fen: 1204997
+    new_date: '2025-05-24'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-05
+    category: sales_collection
+    original_date: '2025-05-20'
+    amount_fen: 6906047
+    new_date: '2025-05-22'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-06-14'
+    amount_fen: 8802750
+    new_date: '2025-06-17'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-06-17'
+    amount_fen: 3201679
+    new_date: '2025-06-18'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-06-04'
+    amount_fen: 2428232
+    new_date: '2025-06-05'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-06-25'
+    amount_fen: 18297093
+    new_date: '2025-06-27'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-07-21'
+    amount_fen: 4825208
+    new_date: '2025-07-24'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-08-02'
+    amount_fen: 7689250
+    new_date: '2025-08-03'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-08-02'
+    amount_fen: 2521333
+    new_date: '2025-08-03'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-08-16'
+    amount_fen: 26913464
+    new_date: '2025-08-19'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-08-02'
+    amount_fen: 6399238
+    new_date: '2025-08-04'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-09-21'
+    amount_fen: 3695114
+    new_date: '2025-09-23'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-09-05'
+    amount_fen: 5188102
+    new_date: '2025-09-08'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-09-12'
+    amount_fen: 13050099
+    new_date: '2025-09-15'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-28'
+    amount_fen: 11176233
+    new_date: '2025-10-30'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-06'
+    amount_fen: 16014692
+    new_date: '2025-10-08'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-27'
+    amount_fen: 520674
+    new_date: '2025-10-28'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-11-28'
+    amount_fen: 10001433
+    new_date: '2025-12-01'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-11-22'
+    amount_fen: 9876177
+    new_date: '2025-11-25'
+    reason_cn: 工业除湿机框架客户按验收后三个自然日付款
+- sample_id: business_102_a2_m_abundant_t08
+  family_id: F-ABUND16-A2_M_ABUNDANT-T08
+  combination_id: A2-中-充裕
+  product_cn: 商用洗碗机喷淋臂座
+  background_cn: 商用洗碗机喷淋臂座面向餐饮设备制造商和厨房设备售后商按已确认批次交付；沿用本格已完成的常规验收、采购及库存合同结构，不引入停止、重组、设备扩产或追加实缴。
+  expected_operation_cn: 预算意图为以初资335万元预留季节备料、固定工资租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，资金来源为开业实缴，未设置回款延期实验机制。
+  customers:
+  - 餐饮设备制造商
+  - 厨房设备售后商
+  initial_capital: 335
+  sales:
+  - 86
+  - 92
+  - 88
+  - 96
+  - 90
+  - 85
+  - 98
+  - 93
+  - 89
+  - 101
+  - 95
+  - 87
+  - 99
+  - 91
+  - 103
+  - 96
+  - 88
+  - 100
+  - 94
+  - 105
+  - 97
+  - 90
+  - 102
+  - 95
+  phases:
+  - start: 2024-01
+    end: 2024-06
+    cost_percent: 68
+    inventory: 15.0
+    payroll: 8.7
+    rent: 1.8
+    other: 2.0
+    receipt_next_percent: 42
+    supplier_next_percent: 28
+    reason: 商用洗碗机喷淋臂座第1段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  - start: 2024-07
+    end: 2025-03
+    cost_percent: 70
+    inventory: 23.0
+    payroll: 9.0
+    rent: 1.8
+    other: 2.2
+    receipt_next_percent: 50
+    supplier_next_percent: 22
+    reason: 商用洗碗机喷淋臂座第2段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  - start: 2025-04
+    end: 2025-12
+    cost_percent: 67
+    inventory: 24.0
+    payroll: 9.1
+    rent: 1.8
+    other: 2.05
+    receipt_next_percent: 38
+    supplier_next_percent: 32
+    reason: 商用洗碗机喷淋臂座第3段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  assets:
+  - purpose: 商用洗碗机喷淋臂座专用定位工装与出厂检验台
+    signed: '2024-01-11'
+    ready: '2024-04-01'
+    payments:
+    - - '2024-02-16'
+      - 8.4
+    - - '2024-03-22'
+      - 6.6
+  expected_operation_state: 正常经营
+  contract_date_changes:
+  - recognition_month: 2024-01
+    category: supplier_payment
+    original_date: '2024-01-21'
+    amount_fen: 4508287
+    new_date: '2024-01-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-01
+    category: supplier_payment
+    original_date: '2024-01-19'
+    amount_fen: 20576510
+    new_date: '2024-01-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-01
+    category: supplier_payment
+    original_date: '2024-01-09'
+    amount_fen: 23568723
+    new_date: '2024-01-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-01
+    category: supplier_payment
+    original_date: '2024-01-20'
+    amount_fen: 4252080
+    new_date: '2024-01-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-01
+    category: supplier_payment
+    original_date: '2024-02-22'
+    amount_fen: 2777264
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-01
+    category: supplier_payment
+    original_date: '2024-02-04'
+    amount_fen: 3188910
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-01
+    category: supplier_payment
+    original_date: '2024-02-02'
+    amount_fen: 725308
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-01
+    category: supplier_payment
+    original_date: '2024-02-02'
+    amount_fen: 8872413
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-01
+    category: supplier_payment
+    original_date: '2024-02-06'
+    amount_fen: 5010505
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-02
+    category: supplier_payment
+    original_date: '2024-02-14'
+    amount_fen: 6183524
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-02
+    category: supplier_payment
+    original_date: '2024-02-15'
+    amount_fen: 1741732
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-02
+    category: supplier_payment
+    original_date: '2024-02-06'
+    amount_fen: 6037048
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-02
+    category: supplier_payment
+    original_date: '2024-02-10'
+    amount_fen: 19451467
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-02
+    category: supplier_payment
+    original_date: '2024-02-21'
+    amount_fen: 500092
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-02
+    category: supplier_payment
+    original_date: '2024-02-06'
+    amount_fen: 5843826
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-02
+    category: supplier_payment
+    original_date: '2024-02-25'
+    amount_fen: 5285511
+    new_date: '2024-02-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-02
+    category: supplier_payment
+    original_date: '2024-03-24'
+    amount_fen: 17011299
+    new_date: '2024-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-02
+    category: supplier_payment
+    original_date: '2024-03-07'
+    amount_fen: 505501
+    new_date: '2024-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-03
+    category: supplier_payment
+    original_date: '2024-03-20'
+    amount_fen: 2026898
+    new_date: '2024-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-03
+    category: supplier_payment
+    original_date: '2024-03-25'
+    amount_fen: 1985245
+    new_date: '2024-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-03
+    category: supplier_payment
+    original_date: '2024-03-25'
+    amount_fen: 17551409
+    new_date: '2024-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-03
+    category: supplier_payment
+    original_date: '2024-03-23'
+    amount_fen: 81794
+    new_date: '2024-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-03
+    category: supplier_payment
+    original_date: '2024-03-21'
+    amount_fen: 15020687
+    new_date: '2024-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-03
+    category: supplier_payment
+    original_date: '2024-04-21'
+    amount_fen: 4425649
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-03
+    category: supplier_payment
+    original_date: '2024-04-05'
+    amount_fen: 3789482
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-03
+    category: supplier_payment
+    original_date: '2024-04-14'
+    amount_fen: 334504
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-03
+    category: supplier_payment
+    original_date: '2024-04-28'
+    amount_fen: 4121364
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-03
+    category: supplier_payment
+    original_date: '2024-04-03'
+    amount_fen: 170079
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-03
+    category: supplier_payment
+    original_date: '2024-04-12'
+    amount_fen: 3914122
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-04-09'
+    amount_fen: 31996065
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-04-25'
+    amount_fen: 342237
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-04-02'
+    amount_fen: 643081
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-04-13'
+    amount_fen: 1292629
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-04-24'
+    amount_fen: 18943
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-04-11'
+    amount_fen: 12708645
+    new_date: '2024-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-05-04'
+    amount_fen: 3217694
+    new_date: '2024-05-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-05-14'
+    amount_fen: 2943414
+    new_date: '2024-05-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-05-25'
+    amount_fen: 4420930
+    new_date: '2024-05-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-05-13'
+    amount_fen: 280274
+    new_date: '2024-05-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-05-20'
+    amount_fen: 7215910
+    new_date: '2024-05-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-05-25'
+    amount_fen: 161985
+    new_date: '2024-05-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-04
+    category: supplier_payment
+    original_date: '2024-05-17'
+    amount_fen: 38193
+    new_date: '2024-05-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-05
+    category: supplier_payment
+    original_date: '2024-05-08'
+    amount_fen: 2824647
+    new_date: '2024-05-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-05
+    category: supplier_payment
+    original_date: '2024-05-07'
+    amount_fen: 27558018
+    new_date: '2024-05-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-05
+    category: supplier_payment
+    original_date: '2024-05-25'
+    amount_fen: 13681335
+    new_date: '2024-05-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-05
+    category: supplier_payment
+    original_date: '2024-06-07'
+    amount_fen: 11900583
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-05
+    category: supplier_payment
+    original_date: '2024-06-25'
+    amount_fen: 288945
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-05
+    category: supplier_payment
+    original_date: '2024-06-07'
+    amount_fen: 510807
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-05
+    category: supplier_payment
+    original_date: '2024-06-02'
+    amount_fen: 2806539
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-05
+    category: supplier_payment
+    original_date: '2024-06-05'
+    amount_fen: 232784
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-05
+    category: supplier_payment
+    original_date: '2024-06-24'
+    amount_fen: 1396342
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-06
+    category: supplier_payment
+    original_date: '2024-06-12'
+    amount_fen: 71098
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-06
+    category: supplier_payment
+    original_date: '2024-06-05'
+    amount_fen: 8821732
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-06
+    category: supplier_payment
+    original_date: '2024-06-25'
+    amount_fen: 19687657
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-06
+    category: supplier_payment
+    original_date: '2024-06-26'
+    amount_fen: 3229071
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-06
+    category: supplier_payment
+    original_date: '2024-06-15'
+    amount_fen: 2475318
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-06
+    category: supplier_payment
+    original_date: '2024-06-16'
+    amount_fen: 7331124
+    new_date: '2024-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-06
+    category: supplier_payment
+    original_date: '2024-07-18'
+    amount_fen: 3677453
+    new_date: '2024-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-06
+    category: supplier_payment
+    original_date: '2024-07-28'
+    amount_fen: 11059
+    new_date: '2024-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-06
+    category: supplier_payment
+    original_date: '2024-07-18'
+    amount_fen: 12495488
+    new_date: '2024-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-07
+    category: supplier_payment
+    original_date: '2024-07-19'
+    amount_fen: 9664675
+    new_date: '2024-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-07
+    category: supplier_payment
+    original_date: '2024-07-14'
+    amount_fen: 9438552
+    new_date: '2024-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-07
+    category: supplier_payment
+    original_date: '2024-07-17'
+    amount_fen: 40644773
+    new_date: '2024-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-07
+    category: supplier_payment
+    original_date: '2024-08-07'
+    amount_fen: 8636370
+    new_date: '2024-08-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-07
+    category: supplier_payment
+    original_date: '2024-08-28'
+    amount_fen: 1738151
+    new_date: '2024-08-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-07
+    category: supplier_payment
+    original_date: '2024-08-09'
+    amount_fen: 3074024
+    new_date: '2024-08-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-07
+    category: supplier_payment
+    original_date: '2024-08-18'
+    amount_fen: 41712
+    new_date: '2024-08-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-07
+    category: supplier_payment
+    original_date: '2024-08-11'
+    amount_fen: 87770
+    new_date: '2024-08-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-07
+    category: supplier_payment
+    original_date: '2024-08-11'
+    amount_fen: 3273973
+    new_date: '2024-08-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-08-26'
+    amount_fen: 7549686
+    new_date: '2024-08-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-08-24'
+    amount_fen: 3388216
+    new_date: '2024-08-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-08-08'
+    amount_fen: 6799646
+    new_date: '2024-08-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-08-03'
+    amount_fen: 3109879
+    new_date: '2024-08-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-08-26'
+    amount_fen: 29930573
+    new_date: '2024-08-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-09-26'
+    amount_fen: 269158
+    new_date: '2024-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-09-21'
+    amount_fen: 3261024
+    new_date: '2024-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-09-20'
+    amount_fen: 9889534
+    new_date: '2024-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-09-19'
+    amount_fen: 518480
+    new_date: '2024-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-09-08'
+    amount_fen: 227710
+    new_date: '2024-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-09-16'
+    amount_fen: 16431
+    new_date: '2024-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-08
+    category: supplier_payment
+    original_date: '2024-09-27'
+    amount_fen: 139663
+    new_date: '2024-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-09
+    category: supplier_payment
+    original_date: '2024-09-16'
+    amount_fen: 16962549
+    new_date: '2024-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-09
+    category: supplier_payment
+    original_date: '2024-09-21'
+    amount_fen: 31631451
+    new_date: '2024-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-09
+    category: supplier_payment
+    original_date: '2024-10-26'
+    amount_fen: 4895216
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-09
+    category: supplier_payment
+    original_date: '2024-10-09'
+    amount_fen: 472603
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-09
+    category: supplier_payment
+    original_date: '2024-10-16'
+    amount_fen: 2471458
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-09
+    category: supplier_payment
+    original_date: '2024-10-10'
+    amount_fen: 3317926
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-09
+    category: supplier_payment
+    original_date: '2024-10-25'
+    amount_fen: 774454
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-09
+    category: supplier_payment
+    original_date: '2024-10-06'
+    amount_fen: 1469805
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-09
+    category: supplier_payment
+    original_date: '2024-10-15'
+    amount_fen: 304538
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-10
+    category: supplier_payment
+    original_date: '2024-10-17'
+    amount_fen: 6542164
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-10
+    category: supplier_payment
+    original_date: '2024-10-16'
+    amount_fen: 555192
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-10
+    category: supplier_payment
+    original_date: '2024-10-11'
+    amount_fen: 23204959
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-10
+    category: supplier_payment
+    original_date: '2024-10-21'
+    amount_fen: 16698362
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-10
+    category: supplier_payment
+    original_date: '2024-10-21'
+    amount_fen: 392786
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-10
+    category: supplier_payment
+    original_date: '2024-10-03'
+    amount_fen: 7752537
+    new_date: '2024-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-10
+    category: supplier_payment
+    original_date: '2024-11-20'
+    amount_fen: 897936
+    new_date: '2024-11-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-10
+    category: supplier_payment
+    original_date: '2024-11-27'
+    amount_fen: 13922288
+    new_date: '2024-11-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-10
+    category: supplier_payment
+    original_date: '2024-11-13'
+    amount_fen: 733776
+    new_date: '2024-11-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-11
+    category: supplier_payment
+    original_date: '2024-11-24'
+    amount_fen: 839208
+    new_date: '2024-11-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-11
+    category: supplier_payment
+    original_date: '2024-11-05'
+    amount_fen: 520032
+    new_date: '2024-11-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-11
+    category: supplier_payment
+    original_date: '2024-11-23'
+    amount_fen: 21559256
+    new_date: '2024-11-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-11
+    category: supplier_payment
+    original_date: '2024-11-09'
+    amount_fen: 6967295
+    new_date: '2024-11-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-11
+    category: supplier_payment
+    original_date: '2024-11-15'
+    amount_fen: 957717
+    new_date: '2024-11-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-11
+    category: supplier_payment
+    original_date: '2024-11-04'
+    amount_fen: 13834486
+    new_date: '2024-11-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-11
+    category: supplier_payment
+    original_date: '2024-11-09'
+    amount_fen: 7192006
+    new_date: '2024-11-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-11
+    category: supplier_payment
+    original_date: '2024-12-08'
+    amount_fen: 3471630
+    new_date: '2024-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-11
+    category: supplier_payment
+    original_date: '2024-12-22'
+    amount_fen: 11158370
+    new_date: '2024-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-12
+    category: supplier_payment
+    original_date: '2024-12-24'
+    amount_fen: 18214145
+    new_date: '2024-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-12
+    category: supplier_payment
+    original_date: '2024-12-03'
+    amount_fen: 3077203
+    new_date: '2024-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-12
+    category: supplier_payment
+    original_date: '2024-12-13'
+    amount_fen: 12923789
+    new_date: '2024-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-12
+    category: supplier_payment
+    original_date: '2024-12-12'
+    amount_fen: 6028986
+    new_date: '2024-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-12
+    category: supplier_payment
+    original_date: '2024-12-04'
+    amount_fen: 7257877
+    new_date: '2024-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-12
+    category: supplier_payment
+    original_date: '2025-01-08'
+    amount_fen: 1974289
+    new_date: '2025-01-26'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-12
+    category: supplier_payment
+    original_date: '2025-01-28'
+    amount_fen: 2674103
+    new_date: '2025-01-26'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2024-12
+    category: supplier_payment
+    original_date: '2025-01-18'
+    amount_fen: 8749608
+    new_date: '2025-01-26'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-01
+    category: supplier_payment
+    original_date: '2025-01-13'
+    amount_fen: 4376137
+    new_date: '2025-01-26'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-01
+    category: supplier_payment
+    original_date: '2025-01-02'
+    amount_fen: 59989
+    new_date: '2025-01-26'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-01
+    category: supplier_payment
+    original_date: '2025-01-23'
+    amount_fen: 14980889
+    new_date: '2025-01-26'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-01
+    category: supplier_payment
+    original_date: '2025-01-12'
+    amount_fen: 30951427
+    new_date: '2025-01-26'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-01
+    category: supplier_payment
+    original_date: '2025-01-18'
+    amount_fen: 1240654
+    new_date: '2025-01-26'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-01
+    category: supplier_payment
+    original_date: '2025-01-10'
+    amount_fen: 2444904
+    new_date: '2025-01-26'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-01
+    category: supplier_payment
+    original_date: '2025-02-28'
+    amount_fen: 7910840
+    new_date: '2025-02-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-01
+    category: supplier_payment
+    original_date: '2025-02-28'
+    amount_fen: 718501
+    new_date: '2025-02-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-01
+    category: supplier_payment
+    original_date: '2025-02-13'
+    amount_fen: 4364799
+    new_date: '2025-02-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-01
+    category: supplier_payment
+    original_date: '2025-02-10'
+    amount_fen: 2251860
+    new_date: '2025-02-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-02-11'
+    amount_fen: 24044998
+    new_date: '2025-02-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-02-21'
+    amount_fen: 3879035
+    new_date: '2025-02-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-02-08'
+    amount_fen: 110391
+    new_date: '2025-02-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-02-21'
+    amount_fen: 21022882
+    new_date: '2025-02-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-02-19'
+    amount_fen: 628694
+    new_date: '2025-02-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-03-06'
+    amount_fen: 1516730
+    new_date: '2025-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-03-14'
+    amount_fen: 1664989
+    new_date: '2025-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-03-14'
+    amount_fen: 839902
+    new_date: '2025-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-03-08'
+    amount_fen: 2180797
+    new_date: '2025-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-03-12'
+    amount_fen: 623959
+    new_date: '2025-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-03-04'
+    amount_fen: 5315237
+    new_date: '2025-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-02
+    category: supplier_payment
+    original_date: '2025-03-20'
+    amount_fen: 1872386
+    new_date: '2025-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-03
+    category: supplier_payment
+    original_date: '2025-03-07'
+    amount_fen: 8801448
+    new_date: '2025-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-03
+    category: supplier_payment
+    original_date: '2025-03-20'
+    amount_fen: 5691732
+    new_date: '2025-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-03
+    category: supplier_payment
+    original_date: '2025-03-08'
+    amount_fen: 22779006
+    new_date: '2025-03-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-03
+    category: supplier_payment
+    original_date: '2025-04-27'
+    amount_fen: 1510633
+    new_date: '2025-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-03
+    category: supplier_payment
+    original_date: '2025-04-10'
+    amount_fen: 422293
+    new_date: '2025-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-03
+    category: supplier_payment
+    original_date: '2025-04-04'
+    amount_fen: 4141645
+    new_date: '2025-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-03
+    category: supplier_payment
+    original_date: '2025-04-13'
+    amount_fen: 9787429
+    new_date: '2025-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-04-24'
+    amount_fen: 719376
+    new_date: '2025-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-04-03'
+    amount_fen: 738885
+    new_date: '2025-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-04-04'
+    amount_fen: 5136907
+    new_date: '2025-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-04-26'
+    amount_fen: 6835271
+    new_date: '2025-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-04-13'
+    amount_fen: 5232636
+    new_date: '2025-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-04-13'
+    amount_fen: 21565249
+    new_date: '2025-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-04-21'
+    amount_fen: 4189276
+    new_date: '2025-04-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-05-14'
+    amount_fen: 3794798
+    new_date: '2025-05-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-05-27'
+    amount_fen: 1169028
+    new_date: '2025-05-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-05-22'
+    amount_fen: 1426271
+    new_date: '2025-05-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-05-13'
+    amount_fen: 2476825
+    new_date: '2025-05-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-05-19'
+    amount_fen: 4487813
+    new_date: '2025-05-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-05-19'
+    amount_fen: 6306221
+    new_date: '2025-05-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-04
+    category: supplier_payment
+    original_date: '2025-05-10'
+    amount_fen: 1241444
+    new_date: '2025-05-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-05
+    category: supplier_payment
+    original_date: '2025-05-23'
+    amount_fen: 7775787
+    new_date: '2025-05-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-05
+    category: supplier_payment
+    original_date: '2025-05-17'
+    amount_fen: 18032279
+    new_date: '2025-05-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-05
+    category: supplier_payment
+    original_date: '2025-05-27'
+    amount_fen: 14284734
+    new_date: '2025-05-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-05
+    category: supplier_payment
+    original_date: '2025-06-20'
+    amount_fen: 97063
+    new_date: '2025-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-05
+    category: supplier_payment
+    original_date: '2025-06-23'
+    amount_fen: 3365017
+    new_date: '2025-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-05
+    category: supplier_payment
+    original_date: '2025-06-14'
+    amount_fen: 15405120
+    new_date: '2025-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-06
+    category: supplier_payment
+    original_date: '2025-06-07'
+    amount_fen: 229806
+    new_date: '2025-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-06
+    category: supplier_payment
+    original_date: '2025-06-21'
+    amount_fen: 35531187
+    new_date: '2025-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-06
+    category: supplier_payment
+    original_date: '2025-06-12'
+    amount_fen: 597452
+    new_date: '2025-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-06
+    category: supplier_payment
+    original_date: '2025-06-05'
+    amount_fen: 5179575
+    new_date: '2025-06-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-06
+    category: supplier_payment
+    original_date: '2025-07-05'
+    amount_fen: 11894358
+    new_date: '2025-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-06
+    category: supplier_payment
+    original_date: '2025-07-13'
+    amount_fen: 445202
+    new_date: '2025-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-06
+    category: supplier_payment
+    original_date: '2025-07-08'
+    amount_fen: 9100440
+    new_date: '2025-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-07
+    category: supplier_payment
+    original_date: '2025-07-05'
+    amount_fen: 23628640
+    new_date: '2025-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-07
+    category: supplier_payment
+    original_date: '2025-07-05'
+    amount_fen: 3779093
+    new_date: '2025-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-07
+    category: supplier_payment
+    original_date: '2025-07-11'
+    amount_fen: 12566873
+    new_date: '2025-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-07
+    category: supplier_payment
+    original_date: '2025-07-05'
+    amount_fen: 2217495
+    new_date: '2025-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-07
+    category: supplier_payment
+    original_date: '2025-07-07'
+    amount_fen: 634299
+    new_date: '2025-07-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-07
+    category: supplier_payment
+    original_date: '2025-08-09'
+    amount_fen: 2314567
+    new_date: '2025-08-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-07
+    category: supplier_payment
+    original_date: '2025-08-21'
+    amount_fen: 2519089
+    new_date: '2025-08-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-07
+    category: supplier_payment
+    original_date: '2025-08-20'
+    amount_fen: 14609798
+    new_date: '2025-08-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-07
+    category: supplier_payment
+    original_date: '2025-08-25'
+    amount_fen: 710146
+    new_date: '2025-08-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-08
+    category: supplier_payment
+    original_date: '2025-08-07'
+    amount_fen: 34427397
+    new_date: '2025-08-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-08
+    category: supplier_payment
+    original_date: '2025-08-07'
+    amount_fen: 2076654
+    new_date: '2025-08-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-08
+    category: supplier_payment
+    original_date: '2025-08-22'
+    amount_fen: 4525647
+    new_date: '2025-08-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-08
+    category: supplier_payment
+    original_date: '2025-08-27'
+    amount_fen: 6808302
+    new_date: '2025-08-28'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-08
+    category: supplier_payment
+    original_date: '2025-09-06'
+    amount_fen: 9778032
+    new_date: '2025-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-08
+    category: supplier_payment
+    original_date: '2025-09-16'
+    amount_fen: 188419
+    new_date: '2025-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-08
+    category: supplier_payment
+    original_date: '2025-09-17'
+    amount_fen: 11194122
+    new_date: '2025-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-08
+    category: supplier_payment
+    original_date: '2025-09-11'
+    amount_fen: 1351427
+    new_date: '2025-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-09
+    category: supplier_payment
+    original_date: '2025-09-24'
+    amount_fen: 6120553
+    new_date: '2025-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-09
+    category: supplier_payment
+    original_date: '2025-09-13'
+    amount_fen: 22014351
+    new_date: '2025-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-09
+    category: supplier_payment
+    original_date: '2025-09-10'
+    amount_fen: 2262737
+    new_date: '2025-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-09
+    category: supplier_payment
+    original_date: '2025-09-22'
+    amount_fen: 13795559
+    new_date: '2025-09-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-09
+    category: supplier_payment
+    original_date: '2025-10-09'
+    amount_fen: 7748227
+    new_date: '2025-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-09
+    category: supplier_payment
+    original_date: '2025-10-10'
+    amount_fen: 1509910
+    new_date: '2025-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-09
+    category: supplier_payment
+    original_date: '2025-10-10'
+    amount_fen: 11538663
+    new_date: '2025-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-10
+    category: supplier_payment
+    original_date: '2025-10-17'
+    amount_fen: 3495444
+    new_date: '2025-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-10
+    category: supplier_payment
+    original_date: '2025-10-09'
+    amount_fen: 32508474
+    new_date: '2025-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-10
+    category: supplier_payment
+    original_date: '2025-10-13'
+    amount_fen: 5000082
+    new_date: '2025-10-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-10
+    category: supplier_payment
+    original_date: '2025-11-08'
+    amount_fen: 3626375
+    new_date: '2025-11-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-10
+    category: supplier_payment
+    original_date: '2025-11-04'
+    amount_fen: 288253
+    new_date: '2025-11-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-10
+    category: supplier_payment
+    original_date: '2025-11-14'
+    amount_fen: 3138593
+    new_date: '2025-11-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-10
+    category: supplier_payment
+    original_date: '2025-11-19'
+    amount_fen: 9297504
+    new_date: '2025-11-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-10
+    category: supplier_payment
+    original_date: '2025-11-14'
+    amount_fen: 2945275
+    new_date: '2025-11-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-11
+    category: supplier_payment
+    original_date: '2025-11-16'
+    amount_fen: 1723025
+    new_date: '2025-11-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-11
+    category: supplier_payment
+    original_date: '2025-11-14'
+    amount_fen: 10199643
+    new_date: '2025-11-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-11
+    category: supplier_payment
+    original_date: '2025-11-09'
+    amount_fen: 34548532
+    new_date: '2025-11-27'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-11
+    category: supplier_payment
+    original_date: '2025-12-28'
+    amount_fen: 13803436
+    new_date: '2025-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-11
+    category: supplier_payment
+    original_date: '2025-12-18'
+    amount_fen: 8065364
+    new_date: '2025-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-12
+    category: supplier_payment
+    original_date: '2025-12-18'
+    amount_fen: 20333046
+    new_date: '2025-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-12
+    category: supplier_payment
+    original_date: '2025-12-24'
+    amount_fen: 758574
+    new_date: '2025-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-12
+    category: supplier_payment
+    original_date: '2025-12-12'
+    amount_fen: 22190380
+    new_date: '2025-12-30'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-12
+    category: supplier_payment
+    original_date: '2026-01-27'
+    amount_fen: 6025701
+    new_date: '2026-01-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-12
+    category: supplier_payment
+    original_date: '2026-01-09'
+    amount_fen: 4416512
+    new_date: '2026-01-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-12
+    category: supplier_payment
+    original_date: '2026-01-05'
+    amount_fen: 1645335
+    new_date: '2026-01-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-12
+    category: supplier_payment
+    original_date: '2026-01-06'
+    amount_fen: 2434511
+    new_date: '2026-01-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-12
+    category: supplier_payment
+    original_date: '2026-01-28'
+    amount_fen: 3903219
+    new_date: '2026-01-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-12
+    category: supplier_payment
+    original_date: '2026-01-18'
+    amount_fen: 333790
+    new_date: '2026-01-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+  - recognition_month: 2025-12
+    category: supplier_payment
+    original_date: '2026-01-02'
+    amount_fen: 1608932
+    new_date: '2026-01-29'
+    reason_cn: 商用洗碗机喷淋臂座供应商于本结算月倒数第二个公开工作日付款，到货验收较晚时于验收日付款
+- sample_id: business_102_a2_m_abundant_t09
+  family_id: F-ABUND16-A2_M_ABUNDANT-T09
+  combination_id: A2-中-充裕
+  product_cn: 仓储货架连接横梁
+  background_cn: 仓储货架连接横梁面向仓储货架集成商和厂房改造承包商按已确认批次交付；沿用本格已完成的常规验收、采购及库存合同结构，不引入停止、重组、设备扩产或追加实缴。
+  expected_operation_cn: 预算意图为以初资385万元预留季节备料、固定工资租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，资金来源为开业实缴，未设置回款延期实验机制。
+  customers:
+  - 仓储货架集成商
+  - 厂房改造承包商
+  initial_capital: 385
+  sales:
+  - 102
+  - 96
+  - 108
+  - 100
+  - 112
+  - 105
+  - 98
+  - 110
+  - 103
+  - 115
+  - 107
+  - 100
+  - 113
+  - 105
+  - 118
+  - 109
+  - 102
+  - 116
+  - 108
+  - 120
+  - 111
+  - 104
+  - 117
+  - 109
+  phases:
+  - start: 2024-01
+    end: 2024-06
+    cost_percent: 68
+    inventory: 15.0
+    payroll: 8.7
+    rent: 1.8
+    other: 2.0
+    receipt_next_percent: 42
+    supplier_next_percent: 28
+    reason: 仓储货架连接横梁第1段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  - start: 2024-07
+    end: 2025-03
+    cost_percent: 70
+    inventory: 23.0
+    payroll: 9.0
+    rent: 1.8
+    other: 2.2
+    receipt_next_percent: 50
+    supplier_next_percent: 22
+    reason: 仓储货架连接横梁第2段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  - start: 2025-04
+    end: 2025-12
+    cost_percent: 67
+    inventory: 24.0
+    payroll: 9.1
+    rent: 1.8
+    other: 2.05
+    receipt_next_percent: 38
+    supplier_next_percent: 32
+    reason: 仓储货架连接横梁第3段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  assets:
+  - purpose: 仓储货架连接横梁专用定位工装与出厂检验台
+    signed: '2024-01-11'
+    ready: '2024-04-01'
+    payments:
+    - - '2024-02-16'
+      - 8.4
+    - - '2024-03-22'
+      - 6.6
+  expected_operation_state: 正常经营
+  contract_date_changes:
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-01-17'
+    amount_fen: 14095623
+    new_date: '2024-01-27'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-01-27'
+    amount_fen: 6530350
+    new_date: '2024-02-08'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-01-02'
+    amount_fen: 12302268
+    new_date: '2024-01-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-01-14'
+    amount_fen: 5641811
+    new_date: '2024-01-24'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-01-18'
+    amount_fen: 1192913
+    new_date: '2024-01-28'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-01-05'
+    amount_fen: 346220
+    new_date: '2024-01-16'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-01-03'
+    amount_fen: 19050815
+    new_date: '2024-01-17'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-02-03'
+    amount_fen: 3703146
+    new_date: '2024-02-13'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-02-06'
+    amount_fen: 4176066
+    new_date: '2024-02-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-02-12'
+    amount_fen: 13184338
+    new_date: '2024-02-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-01
+    category: sales_collection
+    original_date: '2024-02-02'
+    amount_fen: 989613
+    new_date: '2024-02-12'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-10'
+    amount_fen: 2462032
+    new_date: '2024-02-22'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-03'
+    amount_fen: 11670191
+    new_date: '2024-02-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-02'
+    amount_fen: 17308
+    new_date: '2024-02-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-03'
+    amount_fen: 1719986
+    new_date: '2024-02-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-08'
+    amount_fen: 1869314
+    new_date: '2024-02-17'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-23'
+    amount_fen: 5283228
+    new_date: '2024-03-07'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-27'
+    amount_fen: 9649873
+    new_date: '2024-03-10'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-02-16'
+    amount_fen: 23008068
+    new_date: '2024-02-26'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-03-12'
+    amount_fen: 7539105
+    new_date: '2024-03-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-02
+    category: sales_collection
+    original_date: '2024-03-09'
+    amount_fen: 23242311
+    new_date: '2024-03-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-21'
+    amount_fen: 4847061
+    new_date: '2024-04-02'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-12'
+    amount_fen: 10455312
+    new_date: '2024-03-20'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-28'
+    amount_fen: 1693570
+    new_date: '2024-04-08'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-19'
+    amount_fen: 4031875
+    new_date: '2024-03-30'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-22'
+    amount_fen: 4921666
+    new_date: '2024-04-02'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-21'
+    amount_fen: 30976044
+    new_date: '2024-03-31'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-23'
+    amount_fen: 316713
+    new_date: '2024-03-30'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-26'
+    amount_fen: 1400108
+    new_date: '2024-04-04'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-03-07'
+    amount_fen: 3997651
+    new_date: '2024-03-16'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-04-06'
+    amount_fen: 1343485
+    new_date: '2024-04-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-04-13'
+    amount_fen: 4127170
+    new_date: '2024-04-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-04-03'
+    amount_fen: 4293646
+    new_date: '2024-04-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-03
+    category: sales_collection
+    original_date: '2024-04-13'
+    amount_fen: 5617258
+    new_date: '2024-04-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-23'
+    amount_fen: 521189
+    new_date: '2024-04-30'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-06'
+    amount_fen: 9876626
+    new_date: '2024-04-17'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-17'
+    amount_fen: 7423386
+    new_date: '2024-04-30'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-04'
+    amount_fen: 2497757
+    new_date: '2024-04-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-05'
+    amount_fen: 8729043
+    new_date: '2024-04-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-12'
+    amount_fen: 21349261
+    new_date: '2024-04-26'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-18'
+    amount_fen: 520919
+    new_date: '2024-05-02'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-04-18'
+    amount_fen: 7081819
+    new_date: '2024-04-29'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-05-09'
+    amount_fen: 6946822
+    new_date: '2024-05-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-05-07'
+    amount_fen: 344030
+    new_date: '2024-05-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-05-12'
+    amount_fen: 452316
+    new_date: '2024-05-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-05-04'
+    amount_fen: 7626695
+    new_date: '2024-05-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-05-03'
+    amount_fen: 13803309
+    new_date: '2024-05-13'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-04
+    category: sales_collection
+    original_date: '2024-05-08'
+    amount_fen: 259935
+    new_date: '2024-05-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-05
+    category: sales_collection
+    original_date: '2024-05-28'
+    amount_fen: 9355050
+    new_date: '2024-06-07'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-05
+    category: sales_collection
+    original_date: '2024-05-04'
+    amount_fen: 28284897
+    new_date: '2024-05-17'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-05
+    category: sales_collection
+    original_date: '2024-05-18'
+    amount_fen: 10932125
+    new_date: '2024-06-01'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-05
+    category: sales_collection
+    original_date: '2024-05-15'
+    amount_fen: 4143202
+    new_date: '2024-05-26'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-05
+    category: sales_collection
+    original_date: '2024-05-20'
+    amount_fen: 195104
+    new_date: '2024-06-01'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-05
+    category: sales_collection
+    original_date: '2024-05-08'
+    amount_fen: 12049622
+    new_date: '2024-05-20'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-05
+    category: sales_collection
+    original_date: '2024-06-07'
+    amount_fen: 20296951
+    new_date: '2024-06-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-06
+    category: sales_collection
+    original_date: '2024-06-04'
+    amount_fen: 999837
+    new_date: '2024-06-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-06
+    category: sales_collection
+    original_date: '2024-06-18'
+    amount_fen: 13639196
+    new_date: '2024-07-01'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-06
+    category: sales_collection
+    original_date: '2024-06-16'
+    amount_fen: 4971755
+    new_date: '2024-06-24'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-06
+    category: sales_collection
+    original_date: '2024-06-06'
+    amount_fen: 27753076
+    new_date: '2024-06-16'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-06
+    category: sales_collection
+    original_date: '2024-06-04'
+    amount_fen: 13536136
+    new_date: '2024-06-16'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-06
+    category: sales_collection
+    original_date: '2024-07-08'
+    amount_fen: 29421424
+    new_date: '2024-07-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-06
+    category: sales_collection
+    original_date: '2024-07-13'
+    amount_fen: 9936747
+    new_date: '2024-07-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-06
+    category: sales_collection
+    original_date: '2024-07-04'
+    amount_fen: 1230146
+    new_date: '2024-07-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-06
+    category: sales_collection
+    original_date: '2024-07-03'
+    amount_fen: 539577
+    new_date: '2024-07-10'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-07
+    category: sales_collection
+    original_date: '2024-07-06'
+    amount_fen: 9844253
+    new_date: '2024-07-19'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-07
+    category: sales_collection
+    original_date: '2024-07-15'
+    amount_fen: 16090028
+    new_date: '2024-07-24'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-07
+    category: sales_collection
+    original_date: '2024-07-20'
+    amount_fen: 2293310
+    new_date: '2024-07-29'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-07
+    category: sales_collection
+    original_date: '2024-07-20'
+    amount_fen: 11235883
+    new_date: '2024-08-03'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-07
+    category: sales_collection
+    original_date: '2024-07-23'
+    amount_fen: 2029119
+    new_date: '2024-08-05'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-07
+    category: sales_collection
+    original_date: '2024-07-24'
+    amount_fen: 7357290
+    new_date: '2024-08-03'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-07
+    category: sales_collection
+    original_date: '2024-07-18'
+    amount_fen: 150117
+    new_date: '2024-07-31'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-08
+    category: sales_collection
+    original_date: '2024-08-26'
+    amount_fen: 791442
+    new_date: '2024-09-08'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-08
+    category: sales_collection
+    original_date: '2024-08-26'
+    amount_fen: 7948166
+    new_date: '2024-09-03'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-08
+    category: sales_collection
+    original_date: '2024-08-13'
+    amount_fen: 26623978
+    new_date: '2024-08-25'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-08
+    category: sales_collection
+    original_date: '2024-08-10'
+    amount_fen: 3121904
+    new_date: '2024-08-21'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-08
+    category: sales_collection
+    original_date: '2024-08-02'
+    amount_fen: 3787978
+    new_date: '2024-08-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-08
+    category: sales_collection
+    original_date: '2024-08-13'
+    amount_fen: 12726532
+    new_date: '2024-08-21'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-08
+    category: sales_collection
+    original_date: '2024-09-10'
+    amount_fen: 4758762
+    new_date: '2024-09-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-08
+    category: sales_collection
+    original_date: '2024-09-04'
+    amount_fen: 942570
+    new_date: '2024-09-11'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-09
+    category: sales_collection
+    original_date: '2024-09-24'
+    amount_fen: 2129888
+    new_date: '2024-10-07'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-09
+    category: sales_collection
+    original_date: '2024-09-11'
+    amount_fen: 2828841
+    new_date: '2024-09-20'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-09
+    category: sales_collection
+    original_date: '2024-09-05'
+    amount_fen: 7454
+    new_date: '2024-09-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-09
+    category: sales_collection
+    original_date: '2024-09-20'
+    amount_fen: 5140263
+    new_date: '2024-10-04'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-09
+    category: sales_collection
+    original_date: '2024-09-11'
+    amount_fen: 19146060
+    new_date: '2024-09-19'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-09
+    category: sales_collection
+    original_date: '2024-09-11'
+    amount_fen: 22247494
+    new_date: '2024-09-19'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-09
+    category: sales_collection
+    original_date: '2024-10-04'
+    amount_fen: 13620071
+    new_date: '2024-10-11'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-10
+    category: sales_collection
+    original_date: '2024-10-04'
+    amount_fen: 22484803
+    new_date: '2024-10-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-10
+    category: sales_collection
+    original_date: '2024-10-09'
+    amount_fen: 21001619
+    new_date: '2024-10-17'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-10
+    category: sales_collection
+    original_date: '2024-10-12'
+    amount_fen: 10450806
+    new_date: '2024-10-20'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-10
+    category: sales_collection
+    original_date: '2024-10-19'
+    amount_fen: 3212121
+    new_date: '2024-10-26'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-10
+    category: sales_collection
+    original_date: '2024-10-12'
+    amount_fen: 71645
+    new_date: '2024-10-24'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-10
+    category: sales_collection
+    original_date: '2024-10-15'
+    amount_fen: 279006
+    new_date: '2024-10-26'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-10
+    category: sales_collection
+    original_date: '2024-11-10'
+    amount_fen: 1820057
+    new_date: '2024-11-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-11-27'
+    amount_fen: 28016394
+    new_date: '2024-12-10'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-11-02'
+    amount_fen: 16817365
+    new_date: '2024-11-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-11-02'
+    amount_fen: 3642963
+    new_date: '2024-11-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-11-09'
+    amount_fen: 252393
+    new_date: '2024-11-23'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-11-28'
+    amount_fen: 4770885
+    new_date: '2024-12-06'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-12-11'
+    amount_fen: 5787736
+    new_date: '2024-12-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-12-11'
+    amount_fen: 15401296
+    new_date: '2024-12-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-12-12'
+    amount_fen: 14193642
+    new_date: '2024-12-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-11
+    category: sales_collection
+    original_date: '2024-12-08'
+    amount_fen: 7326709
+    new_date: '2024-12-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-11'
+    amount_fen: 4534711
+    new_date: '2024-12-21'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-22'
+    amount_fen: 34056061
+    new_date: '2025-01-02'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-26'
+    amount_fen: 3224880
+    new_date: '2025-01-05'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-11'
+    amount_fen: 861902
+    new_date: '2024-12-22'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-08'
+    amount_fen: 2888451
+    new_date: '2024-12-19'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-05'
+    amount_fen: 3236678
+    new_date: '2024-12-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2024-12-02'
+    amount_fen: 1197317
+    new_date: '2024-12-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2025-01-12'
+    amount_fen: 12141375
+    new_date: '2025-01-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2025-01-06'
+    amount_fen: 383847
+    new_date: '2025-01-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2024-12
+    category: sales_collection
+    original_date: '2025-01-11'
+    amount_fen: 8002488
+    new_date: '2025-01-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-01
+    category: sales_collection
+    original_date: '2025-01-10'
+    amount_fen: 312884
+    new_date: '2025-01-22'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-01
+    category: sales_collection
+    original_date: '2025-01-08'
+    amount_fen: 13510073
+    new_date: '2025-01-19'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-01
+    category: sales_collection
+    original_date: '2025-01-26'
+    amount_fen: 7503899
+    new_date: '2025-02-03'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-01
+    category: sales_collection
+    original_date: '2025-01-11'
+    amount_fen: 11809854
+    new_date: '2025-01-19'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-01
+    category: sales_collection
+    original_date: '2025-01-19'
+    amount_fen: 9009
+    new_date: '2025-01-26'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-01
+    category: sales_collection
+    original_date: '2025-01-19'
+    amount_fen: 23354281
+    new_date: '2025-01-30'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-01
+    category: sales_collection
+    original_date: '2025-02-11'
+    amount_fen: 20405669
+    new_date: '2025-02-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-01
+    category: sales_collection
+    original_date: '2025-02-12'
+    amount_fen: 5832098
+    new_date: '2025-02-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-01
+    category: sales_collection
+    original_date: '2025-02-07'
+    amount_fen: 2747908
+    new_date: '2025-02-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-02
+    category: sales_collection
+    original_date: '2025-02-15'
+    amount_fen: 4098762
+    new_date: '2025-02-23'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-02
+    category: sales_collection
+    original_date: '2025-02-16'
+    amount_fen: 2725324
+    new_date: '2025-03-02'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-02
+    category: sales_collection
+    original_date: '2025-02-20'
+    amount_fen: 14850521
+    new_date: '2025-02-28'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-02
+    category: sales_collection
+    original_date: '2025-02-14'
+    amount_fen: 19265732
+    new_date: '2025-02-22'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-02
+    category: sales_collection
+    original_date: '2025-02-21'
+    amount_fen: 427535
+    new_date: '2025-03-01'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-02
+    category: sales_collection
+    original_date: '2025-02-09'
+    amount_fen: 11132126
+    new_date: '2025-02-17'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-02
+    category: sales_collection
+    original_date: '2025-03-12'
+    amount_fen: 337599
+    new_date: '2025-03-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-02
+    category: sales_collection
+    original_date: '2025-03-09'
+    amount_fen: 11417683
+    new_date: '2025-03-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-02
+    category: sales_collection
+    original_date: '2025-03-06'
+    amount_fen: 1929553
+    new_date: '2025-03-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-03-16'
+    amount_fen: 13386015
+    new_date: '2025-03-26'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-03-24'
+    amount_fen: 1094549
+    new_date: '2025-04-05'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-03-16'
+    amount_fen: 10162118
+    new_date: '2025-03-24'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-03-03'
+    amount_fen: 5723588
+    new_date: '2025-03-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-03-26'
+    amount_fen: 2654236
+    new_date: '2025-04-02'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-03-07'
+    amount_fen: 15357449
+    new_date: '2025-03-17'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-03-11'
+    amount_fen: 10334177
+    new_date: '2025-03-20'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-03-12'
+    amount_fen: 287868
+    new_date: '2025-03-25'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-04-04'
+    amount_fen: 19223137
+    new_date: '2025-04-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-03
+    category: sales_collection
+    original_date: '2025-04-09'
+    amount_fen: 5203509
+    new_date: '2025-04-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-04-11'
+    amount_fen: 8410120
+    new_date: '2025-04-18'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-04-12'
+    amount_fen: 8754428
+    new_date: '2025-04-26'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-04-22'
+    amount_fen: 18485019
+    new_date: '2025-05-03'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-04-26'
+    amount_fen: 1477612
+    new_date: '2025-05-09'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-04-11'
+    amount_fen: 768791
+    new_date: '2025-04-20'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-04-16'
+    amount_fen: 5483546
+    new_date: '2025-04-28'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-04-24'
+    amount_fen: 3361625
+    new_date: '2025-05-05'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-04-11'
+    amount_fen: 861021
+    new_date: '2025-04-24'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-04-02'
+    amount_fen: 19977838
+    new_date: '2025-04-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-05-03'
+    amount_fen: 69876
+    new_date: '2025-05-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-05-05'
+    amount_fen: 10104430
+    new_date: '2025-05-12'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-04
+    category: sales_collection
+    original_date: '2025-05-09'
+    amount_fen: 5153445
+    new_date: '2025-05-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-05
+    category: sales_collection
+    original_date: '2025-05-14'
+    amount_fen: 49593290
+    new_date: '2025-05-23'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-05
+    category: sales_collection
+    original_date: '2025-05-02'
+    amount_fen: 1111158
+    new_date: '2025-05-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-05
+    category: sales_collection
+    original_date: '2025-05-10'
+    amount_fen: 1943639
+    new_date: '2025-05-17'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-05
+    category: sales_collection
+    original_date: '2025-05-09'
+    amount_fen: 10591913
+    new_date: '2025-05-22'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-05
+    category: sales_collection
+    original_date: '2025-06-04'
+    amount_fen: 16736340
+    new_date: '2025-06-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-05
+    category: sales_collection
+    original_date: '2025-06-07'
+    amount_fen: 2065515
+    new_date: '2025-06-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-06-23'
+    amount_fen: 26934101
+    new_date: '2025-07-04'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-06-26'
+    amount_fen: 7031900
+    new_date: '2025-07-05'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-06-18'
+    amount_fen: 27347367
+    new_date: '2025-06-30'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-06-14'
+    amount_fen: 10606632
+    new_date: '2025-06-28'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-07-06'
+    amount_fen: 10741009
+    new_date: '2025-07-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-07-11'
+    amount_fen: 10501792
+    new_date: '2025-07-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-07-13'
+    amount_fen: 2687646
+    new_date: '2025-07-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-07-10'
+    amount_fen: 7280436
+    new_date: '2025-07-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-06
+    category: sales_collection
+    original_date: '2025-07-11'
+    amount_fen: 1749676
+    new_date: '2025-07-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-07-04'
+    amount_fen: 6795603
+    new_date: '2025-07-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-07-12'
+    amount_fen: 1626985
+    new_date: '2025-07-20'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-07-08'
+    amount_fen: 4593394
+    new_date: '2025-07-21'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-07-14'
+    amount_fen: 14711963
+    new_date: '2025-07-25'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-07-20'
+    amount_fen: 1638178
+    new_date: '2025-07-27'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-07-10'
+    amount_fen: 8767625
+    new_date: '2025-07-22'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-07-18'
+    amount_fen: 21553227
+    new_date: '2025-07-31'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-07-22'
+    amount_fen: 7029838
+    new_date: '2025-08-04'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-07-28'
+    amount_fen: 243187
+    new_date: '2025-08-11'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-08-05'
+    amount_fen: 940621
+    new_date: '2025-08-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-08-07'
+    amount_fen: 3509527
+    new_date: '2025-08-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-07
+    category: sales_collection
+    original_date: '2025-08-04'
+    amount_fen: 491351
+    new_date: '2025-08-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-08-19'
+    amount_fen: 5792979
+    new_date: '2025-08-31'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-08-23'
+    amount_fen: 6792275
+    new_date: '2025-09-06'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-08-26'
+    amount_fen: 1925615
+    new_date: '2025-09-07'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-08-10'
+    amount_fen: 240501
+    new_date: '2025-08-24'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-08-16'
+    amount_fen: 34909674
+    new_date: '2025-08-27'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-08-05'
+    amount_fen: 5907285
+    new_date: '2025-08-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-08-08'
+    amount_fen: 3081918
+    new_date: '2025-08-19'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-08-02'
+    amount_fen: 7488957
+    new_date: '2025-08-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-08-21'
+    amount_fen: 8260796
+    new_date: '2025-08-29'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-09-11'
+    amount_fen: 158049
+    new_date: '2025-09-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-09-09'
+    amount_fen: 2159053
+    new_date: '2025-09-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-09-03'
+    amount_fen: 317178
+    new_date: '2025-09-13'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-09-09'
+    amount_fen: 3222912
+    new_date: '2025-09-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-09-10'
+    amount_fen: 12297658
+    new_date: '2025-09-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-09-12'
+    amount_fen: 9693904
+    new_date: '2025-09-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-08
+    category: sales_collection
+    original_date: '2025-09-02'
+    amount_fen: 1633044
+    new_date: '2025-09-13'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-09-05'
+    amount_fen: 5850603
+    new_date: '2025-09-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-09-13'
+    amount_fen: 4135525
+    new_date: '2025-09-26'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-09-15'
+    amount_fen: 11824719
+    new_date: '2025-09-26'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-09-13'
+    amount_fen: 578188
+    new_date: '2025-09-21'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-09-03'
+    amount_fen: 2190931
+    new_date: '2025-09-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-09-16'
+    amount_fen: 11303918
+    new_date: '2025-09-27'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-09-12'
+    amount_fen: 23304749
+    new_date: '2025-09-22'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-09-28'
+    amount_fen: 9631367
+    new_date: '2025-10-07'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-10-08'
+    amount_fen: 1940781
+    new_date: '2025-10-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-10-10'
+    amount_fen: 2636500
+    new_date: '2025-10-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-09
+    category: sales_collection
+    original_date: '2025-10-09'
+    amount_fen: 3164032
+    new_date: '2025-10-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-04'
+    amount_fen: 24660285
+    new_date: '2025-10-15'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-09'
+    amount_fen: 5742816
+    new_date: '2025-10-20'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-04'
+    amount_fen: 3442728
+    new_date: '2025-10-17'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-23'
+    amount_fen: 4282695
+    new_date: '2025-11-01'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-24'
+    amount_fen: 8880290
+    new_date: '2025-11-02'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-14'
+    amount_fen: 1415330
+    new_date: '2025-10-28'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-28'
+    amount_fen: 1043430
+    new_date: '2025-11-05'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-20'
+    amount_fen: 3360349
+    new_date: '2025-10-30'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-10-24'
+    amount_fen: 11652077
+    new_date: '2025-11-01'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-11-09'
+    amount_fen: 5778803
+    new_date: '2025-11-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-10
+    category: sales_collection
+    original_date: '2025-11-02'
+    amount_fen: 3060492
+    new_date: '2025-11-10'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-11-15'
+    amount_fen: 20500436
+    new_date: '2025-11-25'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-11-16'
+    amount_fen: 2830983
+    new_date: '2025-11-23'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-11-27'
+    amount_fen: 23497431
+    new_date: '2025-12-08'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-11-06'
+    amount_fen: 3995441
+    new_date: '2025-11-17'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-11-11'
+    amount_fen: 473744
+    new_date: '2025-11-23'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-11-17'
+    amount_fen: 13073472
+    new_date: '2025-11-26'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-11-15'
+    amount_fen: 8168493
+    new_date: '2025-11-23'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-12-08'
+    amount_fen: 15347107
+    new_date: '2025-12-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-12-13'
+    amount_fen: 44109
+    new_date: '2025-12-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-11
+    category: sales_collection
+    original_date: '2025-12-05'
+    amount_fen: 5693971
+    new_date: '2025-12-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-12
+    category: sales_collection
+    original_date: '2025-12-28'
+    amount_fen: 20012851
+    new_date: '2026-01-10'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-12
+    category: sales_collection
+    original_date: '2025-12-21'
+    amount_fen: 2083800
+    new_date: '2025-12-30'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-12
+    category: sales_collection
+    original_date: '2025-12-22'
+    amount_fen: 24880130
+    new_date: '2026-01-02'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-12
+    category: sales_collection
+    original_date: '2025-12-23'
+    amount_fen: 20603219
+    new_date: '2026-01-04'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+  - recognition_month: 2025-12
+    category: sales_collection
+    original_date: '2026-01-12'
+    amount_fen: 9016871
+    new_date: '2026-01-14'
+    reason_cn: 仓储货架连接横梁项目客户按安装验收后十四个自然日付款
+- sample_id: business_102_a2_m_abundant_t10
+  family_id: F-ABUND16-A2_M_ABUNDANT-T10
+  combination_id: A2-中-充裕
+  product_cn: 食品包装机防护门框
+  background_cn: 食品包装机防护门框面向食品包装机械厂和饮料厂设备维保商按已确认批次交付；沿用本格已完成的常规验收、采购及库存合同结构，不引入停止、重组、设备扩产或追加实缴。
+  expected_operation_cn: 预算意图为以初资350万元预留季节备料、固定工资租金及最长七工作日验收延后缓冲；尚未经过中央预演验证，资金来源为开业实缴，未设置回款延期实验机制。
+  customers:
+  - 食品包装机械厂
+  - 饮料厂设备维保商
+  initial_capital: 350
+  sales:
+  - 90
+  - 96
+  - 92
+  - 99
+  - 94
+  - 101
+  - 97
+  - 89
+  - 103
+  - 95
+  - 100
+  - 93
+  - 104
+  - 98
+  - 107
+  - 96
+  - 102
+  - 94
+  - 106
+  - 99
+  - 110
+  - 101
+  - 95
+  - 108
+  phases:
+  - start: 2024-01
+    end: 2024-06
+    cost_percent: 68
+    inventory: 15.0
+    payroll: 8.7
+    rent: 1.8
+    other: 2.0
+    receipt_next_percent: 42
+    supplier_next_percent: 28
+    reason: 食品包装机防护门框第1段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  - start: 2024-07
+    end: 2025-03
+    cost_percent: 70
+    inventory: 23.0
+    payroll: 9.0
+    rent: 1.8
+    other: 2.2
+    receipt_next_percent: 50
+    supplier_next_percent: 22
+    reason: 食品包装机防护门框第2段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  - start: 2025-04
+    end: 2025-12
+    cost_percent: 67
+    inventory: 24.0
+    payroll: 9.1
+    rent: 1.8
+    other: 2.05
+    receipt_next_percent: 38
+    supplier_next_percent: 32
+    reason: 食品包装机防护门框第3段已签月度订单与供应商备料合同；客户比例、毛利、采购账期和固定费用按本企业预算冻结。
+  assets:
+  - purpose: 食品包装机防护门框专用定位工装与出厂检验台
+    signed: '2024-01-11'
+    ready: '2024-04-01'
+    payments:
+    - - '2024-02-16'
+      - 8.4
+    - - '2024-03-22'
+      - 6.6
+  expected_operation_state: 正常经营
+  contract_date_changes: []

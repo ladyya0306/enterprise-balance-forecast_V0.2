@@ -1,0 +1,71 @@
+{
+  "stage_id": "POST-T6-C2F",
+  "stage_name_cn": "全开发池最终模型定型训练",
+  "status": "passed",
+  "c2f_version": "syn_b1_post_t6_c2f_final_fit_1_0",
+  "selected_method_id": "fixed_lstm_conformalized_quantiles",
+  "model_count": 3,
+  "role_counts": {
+    "fit_sample_count": 56955,
+    "early_stopping_sample_count": 9020,
+    "calibration_sample_count": 9624,
+    "fit_enterprise_count": 208,
+    "early_stopping_enterprise_count": 208,
+    "calibration_enterprise_count": 208,
+    "excluded_outside_c2f_time_roles_sample_count": 27365
+  },
+  "time_roles": {
+    "fit_target_date_end": "2026-03-31",
+    "early_stopping_target_date_start": "2026-04-01",
+    "early_stopping_target_date_end": "2026-06-30",
+    "calibration_target_date_start": "2026-07-01",
+    "calibration_target_date_end": "2026-09-30"
+  },
+  "conformal_adjustments": {
+    "10": {
+      "finite_sample_rank": 7700,
+      "normalized_adjustment": "0.00000000"
+    },
+    "30": {
+      "finite_sample_rank": 7700,
+      "normalized_adjustment": "0.00000000"
+    }
+  },
+  "final_model_package_manifest": "final_quantile_lstm_model_manifest.json",
+  "models_trained_or_retrained": true,
+  "configuration_reselected": false,
+  "hyperparameter_search_or_architecture_change": false,
+  "new_synthetic_samples_generated": false,
+  "cash_flow_review_notes_read_or_loaded": false,
+  "cash_flow_review_notes_database_or_feature_or_model_input": false,
+  "profile_seed_or_generator_truth_loaded_as_model_input": false,
+  "database_created_or_written": false,
+  "final_test_run_directories_opened": false,
+  "final_test_daily_files_read": false,
+  "final_test_labels_read_or_assembled": false,
+  "final_test_features_created": false,
+  "final_test_opened": false,
+  "final_model_locked": true,
+  "c3a_required_before_final_test": true,
+  "input_sha256": {
+    "a0_contract": "eb330c8d5df084bf0d6d90c394f56349dcda166a43f6b291edafc799011b119b",
+    "c1_contract": "12e5d7e7c1308a25d500544dbccfed9e12a847846d118d1e19113b0d49cf8abe",
+    "c2f_contract": "eb5f57dbbeebf12047e762133697643f5bd2a7f76944fdc1ead8c968d4dadb6c",
+    "a1_report": "8b8d4b921560f7398c4a1d66223aa892094c4244b68377a4ff7aeb9c6138a51b",
+    "a1_label_file": "4f7d2a143e31d1be2df9d9591cb27de2e9290abda3a5ce37a13f3ba301ad5663",
+    "a1_sequence_28": "f463b1ff7d79406a22572a833f1b32632077e85cc401aa84609cf7aa8c3a3091",
+    "c2e_decision": "82ba8ff7703250370e386035997a564237066f22e297c8724bb93610eed16ab2",
+    "c2e_output_hash_manifest": "232e462c5f836a9a3e4e465523f4f2a51c607d9088481f845bfb4db8b536f051"
+  },
+  "output_sha256": {
+    "final_fit_calibration_predictions.csv": "1fa492450f7aad015a893eadfef6e2ab1271645acf6286ba19be909e70570e5a",
+    "final_fit_conformal_adjustments.csv": "246721cd42b06334e77c61a21b0e9732c29c5668a4962e2ef23fad84238e7f4f",
+    "final_quantile_lstm_model_manifest.json": "3f20accd7979f7b5e62a6b5c5c2f5af63fe788c549b00acc717541b5118f71f7",
+    "models/seed_2026083102/quantile_lstm_final_checkpoint.pt": "cb236f23161e98a0558bc6015fe46a30d9e7d2d9948456877875c35850398b51",
+    "models/seed_2026083102/training_loss_history.csv": "88d56614083e3f4544cf3bd400c78e54b8787ea2d5bf457fdfcf66c67258c334",
+    "models/seed_2026083103/quantile_lstm_final_checkpoint.pt": "c596f88f5e2440c08e924510cff4cb21e95e60bc4488546114b29dda6886128c",
+    "models/seed_2026083103/training_loss_history.csv": "b97648fa7d9f938ed1d68b00a195b71289aee5e819eb0b7c739d9faa3f2e61fb",
+    "models/seed_2026083104/quantile_lstm_final_checkpoint.pt": "05dc72a8ad6bf73dc8572a58ea37bf137d1a9d8a87f12bf53c90a724889a5705",
+    "models/seed_2026083104/training_loss_history.csv": "d4caeec84ed2c34b97ad8d23c33aafb8e9b41e2e3a399814c4f52bcd77f3e3b5"
+  }
+}

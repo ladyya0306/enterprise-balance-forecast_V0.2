@@ -1,0 +1,3 @@
+average_horizon_business_days,calibration_record_count,calibration_enterprise_count,finite_sample_conformal_rank,normalized_conformal_adjustment,calibration_target_date_start,calibration_target_date_end,c2f_version
+10,9624,208,7700,0.00000000,2026-07-01,2026-09-30,syn_b1_post_t6_c2f_final_fit_1_0
+30,9624,208,7700,0.00000000,2026-07-01,2026-09-30,syn_b1_post_t6_c2f_final_fit_1_0

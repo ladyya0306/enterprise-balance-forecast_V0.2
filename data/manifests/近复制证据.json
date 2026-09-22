@@ -1,0 +1,176 @@
+{
+  "method": "复用shape_contract_search.compare的余额/经营收支相关；每户末365自然日",
+  "cross_family_strong_pairs": [
+    {
+      "left": "business_102_e1_l_abundant_t01",
+      "right": "business_102_e1_l_tight_t01",
+      "left_family": "F-EMPTY3-E1-01",
+      "right_family": "F-REM57V3-E1L-01",
+      "balance_correlation": 0.9987899573605439,
+      "operating_correlation": 0.7917743338198865,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_l_abundant_t01",
+      "right": "business_102_e1_m_tight_t01",
+      "left_family": "F-EMPTY3-E1-01",
+      "right_family": "F-REM57V3-E1M-03",
+      "balance_correlation": 0.9990617697215537,
+      "operating_correlation": 0.7418453908992626,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_l_abundant_t01",
+      "right": "business_102_e1_s_abundant_t01",
+      "left_family": "F-EMPTY3-E1-01",
+      "right_family": "F-REM57V3-E1S-01",
+      "balance_correlation": 0.9992100397501527,
+      "operating_correlation": 0.7938885456311223,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_l_abundant_t01",
+      "right": "business_102_e1_s_tight_t01",
+      "left_family": "F-EMPTY3-E1-01",
+      "right_family": "F-E1-BUDGET2-1-专用展架生产",
+      "balance_correlation": 0.9986160507462121,
+      "operating_correlation": 0.6955122947846919,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_l_abundant_t01",
+      "right": "business_102_e1_s_tight_t02",
+      "left_family": "F-EMPTY3-E1-01",
+      "right_family": "F-E1-BUDGET2-2-旧型号仪表面板",
+      "balance_correlation": 0.998393564662374,
+      "operating_correlation": 0.7084925619169103,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_l_tight_t01",
+      "right": "business_102_e1_m_tight_t01",
+      "left_family": "F-REM57V3-E1L-01",
+      "right_family": "F-REM57V3-E1M-03",
+      "balance_correlation": 0.9992985852384603,
+      "operating_correlation": 0.7642078191513773,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_l_tight_t01",
+      "right": "business_102_e1_s_abundant_t01",
+      "left_family": "F-REM57V3-E1L-01",
+      "right_family": "F-REM57V3-E1S-01",
+      "balance_correlation": 0.9993484125186578,
+      "operating_correlation": 0.8170903044444847,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_l_tight_t01",
+      "right": "business_102_e1_s_abundant_t02",
+      "left_family": "F-REM57V3-E1L-01",
+      "right_family": "F-REM57V3-E1S-02",
+      "balance_correlation": 0.9796908760364528,
+      "operating_correlation": 0.6801292675143825,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_l_tight_t01",
+      "right": "business_102_e1_s_tight_t01",
+      "left_family": "F-REM57V3-E1L-01",
+      "right_family": "F-E1-BUDGET2-1-专用展架生产",
+      "balance_correlation": 0.9985312489514852,
+      "operating_correlation": 0.6508713426374779,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_l_tight_t01",
+      "right": "business_102_e1_s_tight_t02",
+      "left_family": "F-REM57V3-E1L-01",
+      "right_family": "F-E1-BUDGET2-2-旧型号仪表面板",
+      "balance_correlation": 0.9987267627623597,
+      "operating_correlation": 0.6795463334600601,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_m_abundant_t01",
+      "right": "business_102_e1_s_abundant_t01",
+      "left_family": "F-REM57V3-E1M-01",
+      "right_family": "F-REM57V3-E1S-01",
+      "balance_correlation": 0.9894612515169278,
+      "operating_correlation": 0.6503003995012879,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_m_abundant_t03",
+      "right": "business_102_e1_m_tight_t01",
+      "left_family": "F-GAP13-14",
+      "right_family": "F-REM57V3-E1M-03",
+      "balance_correlation": 0.9951338334436949,
+      "operating_correlation": 0.6545177308789357,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_m_abundant_t03",
+      "right": "business_102_e1_s_abundant_t01",
+      "left_family": "F-GAP13-14",
+      "right_family": "F-REM57V3-E1S-01",
+      "balance_correlation": 0.9955607765389113,
+      "operating_correlation": 0.7309946253073022,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_m_tight_t01",
+      "right": "business_102_e1_s_abundant_t01",
+      "left_family": "F-REM57V3-E1M-03",
+      "right_family": "F-REM57V3-E1S-01",
+      "balance_correlation": 0.9993936035296294,
+      "operating_correlation": 0.8227190592043941,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_s_abundant_t01",
+      "right": "business_102_e1_s_abundant_t02",
+      "left_family": "F-REM57V3-E1S-01",
+      "right_family": "F-REM57V3-E1S-02",
+      "balance_correlation": 0.9813419567796475,
+      "operating_correlation": 0.6700119269442415,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_s_abundant_t01",
+      "right": "business_102_e1_s_tight_t01",
+      "left_family": "F-REM57V3-E1S-01",
+      "right_family": "F-E1-BUDGET2-1-专用展架生产",
+      "balance_correlation": 0.9988099288558068,
+      "operating_correlation": 0.6677268556746707,
+      "cross_family": true,
+      "cross_group": false
+    },
+    {
+      "left": "business_102_e1_s_abundant_t01",
+      "right": "business_102_e1_s_tight_t02",
+      "left_family": "F-REM57V3-E1S-01",
+      "right_family": "F-E1-BUDGET2-2-旧型号仪表面板",
+      "balance_correlation": 0.9990209442879091,
+      "operating_correlation": 0.6947769655267332,
+      "cross_family": true,
+      "cross_group": false
+    }
+  ],
+  "same_family_hints": []
+}

@@ -1,0 +1,34 @@
+# 复制本模板后，由用户或可靠台账填写；未知时明确填写 unknown，不得从流水推断。
+registry_schema_version: "1.0"
+
+sample_registration:
+  raw_sample_directory: "data/sample_incoming/sample_<N>_<pri|sec>/"
+  account_tier: "pri"  # pri / sec；仅用户或可靠台账确认
+  source_scope: "unknown"  # same_bank / other_bank / unknown
+  refresh_capability: "unknown"  # daily_available / historical_only / unknown
+  declaration_basis: "user_confirmation_or_reliable_ledger_reference"
+  declared_at: "YYYY-MM-DD"
+
+  # 字段契约审计项；不明确时退回，不猜测。
+  one_directory_one_observed_rmb_account_confirmed: false
+  booking_date_field_confirmed: false
+  booking_date_source_column: ""
+  currency_scope_confirmed: "RMB_only"
+  notes: ""
+
+processing_guardrails:
+  infer_business_metadata_from_transactions_forbidden: true
+  merge_multiple_accounts_forbidden: true
+  metadata_in_four_layer_artifacts_forbidden: true
+  metadata_as_mvp_model_feature_forbidden: true
+  daily_prediction_and_forward_trial_eligible_only_if: "source_scope=same_bank AND refresh_capability=daily_available"
+  formal_abc_candidate_eligible_only_if: "source_scope=same_bank AND refresh_capability=daily_available AND currency_scope=RMB_only AND frozen_data_quality_gate_passed=true AND account_tier_confirmed=true"
+
+# 清洗和阶段验收完成后填写；这是登记册中的审计结论，不是清洗输入字段。
+post_cleaning_qualification:
+  date_range: ""
+  bank_workday_count: null
+  reconciliation_result: "not_assessed"
+  frozen_data_quality_gate_passed: false
+  formal_abc_candidate_eligible: false
+  usage_restriction: "not_assessed"

@@ -1,0 +1,54 @@
+metadata:
+  standard_id: "manufacturing_microstructure_parameter_standard"
+  version: "1.1-frozen"
+  status: "frozen_by_content_hash"
+  frozen_at: "2026-08-27"
+  frozen_by: "Sol_and_project_owner"
+  approval_basis:
+    - "项目发起人已逐项阅读30项通俗说明并明确复审通过。"
+    - "第2次草案中的16项新增参数、4种虚构预设结构和7条参数依赖已经通过Sol一致性复核。"
+    - "金额形式与重复处理先于余额不足响应和最终记录形成的顺序已经确认。"
+
+version_binding:
+  frozen_feature_contract:
+    path: "config/individual_account_feature_dictionary_1_2_frozen.yaml"
+    sha256: "2683d6bb7d7fd26f11f4d04d6b88dac6753d0bc0d139eeda583e6357383049ed"
+  extends_frozen_parameter_standard:
+    path: "config/iaf6_generator_parameter_translation_standard.yaml"
+    sha256: "d9b4592a65cf55277672199f548b640503d1493c7544b3572b6fcdd23aa44024"
+
+content_binding:
+  machine_contract:
+    path: "config/manufacturing_microstructure_parameter_standard_1_1_draft.yaml"
+    accepted_revision: 2
+    sha256: "1591fa99a92ad79cdbd15f4255ea9129f6a0b0517e85e90d2b3278d9631d1483"
+  technical_explanation:
+    path: "docs/manufacturing_microstructure_parameter_standard_1_1_draft.md"
+    sha256: "5096df71f9ba9f601c5b24de4d83d54921cc13fc1611d55809a33011a09a5f91"
+  owner_review_guide:
+    path: "docs/sg2rc_30_feature_business_review_guide.md"
+    sha256: "f68d50f2864b4d6a6cb13a057c21c20eec24acafcc2d7c6210007ec71683c8f4"
+  interpretation: "上述源文件以内容哈希整体纳入1.1-frozen；文件名保留draft只是为了保存草案形成路径，不表示标准仍未冻结。"
+  silent_edit_forbidden: true
+  hash_mismatch_requires_new_version: true
+
+freeze_scope:
+  new_parameter_entry_count: 16
+  fictional_preset_structure_count: 4
+  dependency_graph_edge_count: 7
+  standalone_without_codex_required: true
+  fixed_random_mixed_and_derived_modes_required: true
+  master_seed_reproducibility_required: true
+  recommendation_explanation_and_override_required: true
+  exact_private_ranges_in_public_contract_forbidden: true
+  temporal_proximity_is_not_real_business_causality: true
+  amount_style_and_repeat_before_final_balance_acceptance: true
+  numeric_recommendation_ranges_frozen: false
+  numeric_generation_tolerances_frozen: false
+  generator_implementation_authorized_by_this_file: false
+
+next_engineering_eligibility:
+  eligible_card: "SG2-RI"
+  separate_project_owner_authorization_required: true
+  terra_may_change_frozen_rules: false
+  terra_may_invent_numeric_ranges_or_tolerances: false

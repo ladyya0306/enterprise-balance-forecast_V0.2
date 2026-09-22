@@ -1,0 +1,147 @@
+{
+  "stage_id": "POST-T6-C2F",
+  "c2f_version": "syn_b1_post_t6_c2f_final_fit_1_0",
+  "selected_method_id": "fixed_lstm_conformalized_quantiles",
+  "source_c2e_decision": {
+    "decision": "unique_qualified_candidate",
+    "unique_candidate_selected": true,
+    "selected_candidate": "fixed_lstm_conformalized_quantiles",
+    "reason_cn": "C2C减C2D的双期限综合WIS80成对95%区间完全大于0"
+  },
+  "architecture_cn": "28日观察窗口、单层16维LSTM、直接输出10日与30日日均余额P10/P50/P90。",
+  "training_loss_cn": "账户尺度加权pinball损失。",
+  "seed_aggregation_cn": "三个固定种子的对应P10、P50、P90逐坐标取中位数。",
+  "conformal_calibration_cn": "仅用2026年第三季度、三种子中位数后的208户开发池记录按有限样本80%排名校准。",
+  "time_roles": {
+    "fit_target_date_end": "2026-03-31",
+    "early_stopping_target_date_start": "2026-04-01",
+    "early_stopping_target_date_end": "2026-06-30",
+    "calibration_target_date_start": "2026-07-01",
+    "calibration_target_date_end": "2026-09-30"
+  },
+  "role_counts": {
+    "fit_sample_count": 56955,
+    "early_stopping_sample_count": 9020,
+    "calibration_sample_count": 9624,
+    "fit_enterprise_count": 208,
+    "early_stopping_enterprise_count": 208,
+    "calibration_enterprise_count": 208,
+    "excluded_outside_c2f_time_roles_sample_count": 27365
+  },
+  "lookback_business_days": 28,
+  "sequence_feature_columns": [
+    "calendar_gap_days_from_prior_business_day",
+    "calendar_gap_days_to_next_business_day",
+    "closing_balance_cny",
+    "daily_inflow_cny",
+    "daily_outflow_cny",
+    "daily_net_flow_cny",
+    "transaction_count",
+    "day_has_transaction",
+    "weekday_monday_0",
+    "business_day_position_in_month",
+    "business_days_to_month_end",
+    "is_month_end_business_day"
+  ],
+  "training_config": {
+    "num_layers": 1,
+    "hidden_size": 16,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "maximum_epochs": 30,
+    "early_stopping_patience": 5,
+    "early_stopping_min_delta": 0.0001,
+    "gradient_clip_norm": 1.0,
+    "device": "cpu",
+    "torch_num_threads": 4
+  },
+  "input_standardizer": {
+    "feature_means": [
+      1.193915605545044,
+      1.2384363412857056,
+      13155951.0,
+      256898.6875,
+      282020.375,
+      -25139.7421875,
+      0.7055494785308838,
+      0.4960514008998871,
+      2.5056798458099365,
+      12.815092086791992,
+      11.916187286376953,
+      0.04046427458524704
+    ],
+    "feature_scales": [
+      0.6390805840492249,
+      0.6109862923622131,
+      29109888.0,
+      2060754.125,
+      1613166.625,
+      2592386.75,
+      0.8937724232673645,
+      0.5000531077384949,
+      1.8102024793624878,
+      7.227365970611572,
+      7.204737663269043,
+      0.1954706609249115
+    ],
+    "target_means": [
+      -187606.75,
+      -469354.96875
+    ],
+    "target_scales": [
+      4998619.5,
+      6657996.5
+    ]
+  },
+  "average_target_standardizer": {
+    "means": [
+      -187606.75,
+      -469354.96875
+    ],
+    "scales": [
+      4998619.5,
+      6657996.5
+    ]
+  },
+  "conformal_adjustments": {
+    "10": {
+      "finite_sample_rank": 7700,
+      "normalized_adjustment": "0.00000000"
+    },
+    "30": {
+      "finite_sample_rank": 7700,
+      "normalized_adjustment": "0.00000000"
+    }
+  },
+  "models": [
+    {
+      "training_seed": 2026083102,
+      "best_epoch": 23,
+      "fit_sample_count": 56955,
+      "early_stopping_sample_count": 9020,
+      "calibration_sample_count": 9624,
+      "same_input_same_checkpoint_prediction_identical": true,
+      "checkpoint_path": "models/seed_2026083102/quantile_lstm_final_checkpoint.pt"
+    },
+    {
+      "training_seed": 2026083103,
+      "best_epoch": 26,
+      "fit_sample_count": 56955,
+      "early_stopping_sample_count": 9020,
+      "calibration_sample_count": 9624,
+      "same_input_same_checkpoint_prediction_identical": true,
+      "checkpoint_path": "models/seed_2026083103/quantile_lstm_final_checkpoint.pt"
+    },
+    {
+      "training_seed": 2026083104,
+      "best_epoch": 23,
+      "fit_sample_count": 56955,
+      "early_stopping_sample_count": 9020,
+      "calibration_sample_count": 9624,
+      "same_input_same_checkpoint_prediction_identical": true,
+      "checkpoint_path": "models/seed_2026083104/quantile_lstm_final_checkpoint.pt"
+    }
+  ],
+  "final_test_opened": false
+}

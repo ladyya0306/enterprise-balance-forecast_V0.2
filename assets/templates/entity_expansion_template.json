@@ -1,0 +1,7 @@
+{
+  "version": "entity_expansion_v1",
+  "output": "data/synthetic_production/coverage102_v1/通用实体扩展_空模板_20260913_v1",
+  "max_budgets": 32,
+  "max_central_calls": 0,
+  "candidates": []
+}

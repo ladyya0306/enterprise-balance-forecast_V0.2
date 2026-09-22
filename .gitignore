@@ -4,3 +4,5 @@ __pycache__/
 .venv/
 *.log
 !runs/logs/*.md
+# 本地完整用途表超过GitHub单文件上限；同内容以两个已跟踪分片交付。
+data/manifests/历史用途输入.csv

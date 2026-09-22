@@ -1,0 +1,165 @@
+# 制造业合成现金流生成标准。
+# 本文件服务项目3.0合成主轨，不修改真实数据清洗标准1.0-frozen。
+
+metadata:
+  project: "企业账户短期资金头寸预测"
+  proposal_version: "3.0"
+  standard_version: "1.0-frozen"
+  status: "frozen"
+  approved_by: "project_owner_user_confirmation"
+  approved_at: "2026-08-26"
+  real_cleaning_standard_unchanged: "1.0-frozen"
+  real_acceptance_threshold_unchanged: "1.0-frozen"
+
+track_scope:
+  active_track: "synthetic_manufacturing_cashflow_forecast_testbed"
+  suspended_track: "real_same_bank_account_forecast_validation"
+  synthetic_results_cannot_substitute_real_validation: true
+  currency_scope: "RMB_only"
+  account_scope: "one_synthetic_enterprise_one_synthetic_bank_account"
+  physical_cash_outside_bank_account_deferred: true
+  multi_account_pool_deferred: true
+
+generator_families:
+  SYN-A:
+    name_cn: "统计风格合成版"
+    objective: "生成群体统计风格相近但不复制真实轨迹的虚构账户流水"
+    business_causality_claim_allowed: false
+  SYN-B1:
+    name_cn: "单制造企业完整现金循环版"
+    objective: "由经营事件、往来账和银行资金账推导一家制造企业现金循环"
+    supply_chain_network_included: false
+  SYN-B2:
+    name_cn: "多企业供应链网络版"
+    objective: "使多家虚构企业互为上下游并研究现金流冲击传播"
+    mvp_deferred: true
+
+real_reference_calibration:
+  reference_account_count: 20
+  local_offline_only: true
+  aggregate_cohort_statistics_only: true
+  first_version_pri_sec_separate_calibration_forbidden: true
+  gpt_raw_identifiable_transaction_access_forbidden: true
+  default_output_classification: "internal_not_public"
+  public_release_requires_separate_authorization_and_output_review: true
+  allowed_statistics:
+    - "normalized_quantiles"
+    - "transaction_activity_rate"
+    - "zero_transaction_day_ratio"
+    - "transaction_count_distribution"
+    - "weekday_and_month_end_effect"
+    - "limited_lag_correlation"
+  forbidden_derivations:
+    - "single_account_profile"
+    - "raw_transaction_copy"
+    - "real_contiguous_14bd_window_copy"
+    - "real_date_amount_combination"
+    - "counterparty_or_summary_reproduction"
+    - "parameters_that_enable_single_account_reidentification"
+  authorization_unclear_fallback: "use_manual_parameters_and_keep_real_references_sealed"
+
+common_ledger_contract:
+  unit: "single_synthetic_rmb_bank_account"
+  minimum_transaction_fields:
+    - "synthetic_transaction_id"
+    - "account_token"
+    - "booking_datetime"
+    - "debit_cny"
+    - "credit_cny"
+    - "post_transaction_balance_cny"
+    - "generator_run_id"
+    - "generator_version"
+    - "scenario_id"
+  balance_formula: "current_balance = previous_balance - debit_cny + credit_cny"
+  debit_credit_nonnegative_and_mutually_exclusive: true
+  stable_order_required: true
+  duplicate_transaction_id_forbidden: true
+  reconciliation_failure_rate_max: 0.0
+  transaction_retention_rate_required: 1.0
+  deterministic_reproduction_from_manifest_required: true
+  synthetic_provenance_required: true
+  synthetic_must_not_be_labeled_same_bank: true
+
+canonical_outputs:
+  required:
+    - "transactions_total.csv"
+    - "account_daily_total.csv"
+    - "tree_features_14bd.csv"
+    - "lstm_sequences_14bd.csv"
+    - "generator_manifest.json"
+    - "scenario_manifest.csv"
+    - "split_index.csv"
+    - "quality_report.json"
+  scenario_truth_location: "separate_restricted_directory"
+  scenario_truth_default_model_loader_access: false
+  old_accepted_real_directories_must_not_be_overwritten: true
+
+syn_a_engineering_trial:
+  dataset_id: "SYN-A-DEV"
+  synthetic_account_count: 30
+  duration_months: 18
+  formal_prediction_evidence_allowed: false
+  disposable_after_debugging: true
+
+syn_a_formal_benchmark:
+  dataset_id: "SYN-A-BENCH-v1"
+  synthetic_account_count: 200
+  start_date: "2025-01-01"
+  end_date: "2026-12-31"
+  duration_months: 24
+  lookback_business_days: 14
+  scenario_group_count: 10
+  accounts_per_scenario: 20
+  train_accounts_per_scenario: 12
+  validation_accounts_per_scenario: 4
+  final_test_accounts_per_scenario: 4
+  total_train_accounts: 120
+  total_validation_accounts: 40
+  total_final_test_accounts: 40
+  account_profile_seed_unique_required: true
+  scenario_parameter_seed_unique_required: true
+  scenario_groups:
+    - {id: "SA01", name_cn: "低频低波动"}
+    - {id: "SA02", name_cn: "高频低波动"}
+    - {id: "SA03", name_cn: "高频高波动"}
+    - {id: "SA04", name_cn: "高余额大流量"}
+    - {id: "SA05", name_cn: "低余额流动性偏紧"}
+    - {id: "SA06", name_cn: "资金规模逐渐增长"}
+    - {id: "SA07", name_cn: "资金规模逐渐收缩"}
+    - {id: "SA08", name_cn: "月末或季度末集中收付"}
+    - {id: "SA09", name_cn: "汇入延迟或集中到账"}
+    - {id: "SA10", name_cn: "大额汇出冲正和短期资金冲击"}
+
+calendar_contract:
+  benchmark_calendar_range: "2025-01-01/2026-12-31"
+  calendar_version_required: true
+  calendar_date_business_step_target_date_required: true
+  future_calendar_must_be_frozen_before_forward_period: true
+  simulated_calendar_must_be_labeled_simulated_not_official: true
+
+continuous_generation:
+  supported_for_syn_a_and_syn_b: true
+  fixed_benchmark_and_forward_run_must_be_separate: true
+  forward_run_id_required: true
+  initial_forward_business_days: 60
+  prediction_must_be_saved_before_truth_reveal: true
+  generator_state_and_rng_state_snapshot_required: true
+  revealed_forward_date_can_become_future_training_history: true
+  revealed_forward_date_can_remain_unseen_test: false
+
+generation_acceptance:
+  exact_balance_reconciliation_required: true
+  reproducibility_same_manifest_same_output_required: true
+  different_seed_diversity_required: true
+  scenario_coverage_required: true
+  no_exact_or_near_real_sequence_copy_test_required: true
+  future_truth_isolation_test_required: true
+  failure_cannot_be_repaired_by_silent_record_deletion: true
+  every_failure_must_have_anonymous_trace: true
+
+change_control:
+  generator_or_scenario_change_requires_new_version: true
+  formal_benchmark_regeneration_required_after_change: true
+  seen_final_test_becomes_validation_after_change: true
+  overwrite_old_dataset_forbidden: true
+
