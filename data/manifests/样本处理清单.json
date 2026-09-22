@@ -14785,7 +14785,7 @@
   },
   {
     "sample_id": "business_102_e1_l_abundant_t01",
-    "family_id": "F-EMPTY3-E1-01",
+    "family_id": "F-V3-E1-STRONG-NEAR-COPY-CLUSTER",
     "old_role": "calibration",
     "usage_history": "第二轮开发池",
     "v3_role": "学习",
@@ -14829,7 +14829,9 @@
     ],
     "same_source_count": 1,
     "family_role_isolated": true,
-    "status": "可用"
+    "status": "可用",
+    "original_family_id": "F-EMPTY3-E1-01",
+    "near_copy_disposition": "保留：17 对跨原族高相似证据构成同一 E1 同源机制簇；仅作为学习组中的一个已知样本族计数，原始记录不删除。"
   },
   {
     "sample_id": "business_102_e1_l_abundant_t02",
@@ -14881,7 +14883,7 @@
   },
   {
     "sample_id": "business_102_e1_l_tight_t01",
-    "family_id": "F-REM57V3-E1L-01",
+    "family_id": "F-V3-E1-STRONG-NEAR-COPY-CLUSTER",
     "old_role": "development",
     "usage_history": "第二轮开发池",
     "v3_role": "学习",
@@ -14926,7 +14928,9 @@
     ],
     "same_source_count": 1,
     "family_role_isolated": true,
-    "status": "可用"
+    "status": "可用",
+    "original_family_id": "F-REM57V3-E1L-01",
+    "near_copy_disposition": "保留：17 对跨原族高相似证据构成同一 E1 同源机制簇；仅作为学习组中的一个已知样本族计数，原始记录不删除。"
   },
   {
     "sample_id": "business_102_e1_l_tight_t02",
@@ -14979,7 +14983,7 @@
   },
   {
     "sample_id": "business_102_e1_m_abundant_t01",
-    "family_id": "F-REM57V3-E1M-01",
+    "family_id": "F-V3-E1-STRONG-NEAR-COPY-CLUSTER",
     "old_role": "fit",
     "usage_history": "第二轮开发池",
     "v3_role": "学习",
@@ -15024,7 +15028,9 @@
     ],
     "same_source_count": 1,
     "family_role_isolated": true,
-    "status": "可用"
+    "status": "可用",
+    "original_family_id": "F-REM57V3-E1M-01",
+    "near_copy_disposition": "保留：17 对跨原族高相似证据构成同一 E1 同源机制簇；仅作为学习组中的一个已知样本族计数，原始记录不删除。"
   },
   {
     "sample_id": "business_102_e1_m_abundant_t02",
@@ -15077,7 +15083,7 @@
   },
   {
     "sample_id": "business_102_e1_m_abundant_t03",
-    "family_id": "F-GAP13-14",
+    "family_id": "F-V3-E1-STRONG-NEAR-COPY-CLUSTER",
     "old_role": "calibration",
     "usage_history": "第二轮开发池",
     "v3_role": "学习",
@@ -15122,11 +15128,13 @@
     ],
     "same_source_count": 1,
     "family_role_isolated": true,
-    "status": "可用"
+    "status": "可用",
+    "original_family_id": "F-GAP13-14",
+    "near_copy_disposition": "保留：17 对跨原族高相似证据构成同一 E1 同源机制簇；仅作为学习组中的一个已知样本族计数，原始记录不删除。"
   },
   {
     "sample_id": "business_102_e1_m_tight_t01",
-    "family_id": "F-REM57V3-E1M-03",
+    "family_id": "F-V3-E1-STRONG-NEAR-COPY-CLUSTER",
     "old_role": "fit",
     "usage_history": "第二轮开发池",
     "v3_role": "学习",
@@ -15171,7 +15179,9 @@
     ],
     "same_source_count": 1,
     "family_role_isolated": true,
-    "status": "可用"
+    "status": "可用",
+    "original_family_id": "F-REM57V3-E1M-03",
+    "near_copy_disposition": "保留：17 对跨原族高相似证据构成同一 E1 同源机制簇；仅作为学习组中的一个已知样本族计数，原始记录不删除。"
   },
   {
     "sample_id": "business_102_e1_m_tight_t02",
@@ -15224,7 +15234,7 @@
   },
   {
     "sample_id": "business_102_e1_s_abundant_t01",
-    "family_id": "F-REM57V3-E1S-01",
+    "family_id": "F-V3-E1-STRONG-NEAR-COPY-CLUSTER",
     "old_role": "fit",
     "usage_history": "第二轮开发池",
     "v3_role": "学习",
@@ -15269,11 +15279,13 @@
     ],
     "same_source_count": 1,
     "family_role_isolated": true,
-    "status": "可用"
+    "status": "可用",
+    "original_family_id": "F-REM57V3-E1S-01",
+    "near_copy_disposition": "保留：17 对跨原族高相似证据构成同一 E1 同源机制簇；仅作为学习组中的一个已知样本族计数，原始记录不删除。"
   },
   {
     "sample_id": "business_102_e1_s_abundant_t02",
-    "family_id": "F-REM57V3-E1S-02",
+    "family_id": "F-V3-E1-STRONG-NEAR-COPY-CLUSTER",
     "old_role": "fit",
     "usage_history": "第二轮开发池",
     "v3_role": "学习",
@@ -15318,7 +15330,9 @@
     ],
     "same_source_count": 1,
     "family_role_isolated": true,
-    "status": "可用"
+    "status": "可用",
+    "original_family_id": "F-REM57V3-E1S-02",
+    "near_copy_disposition": "保留：17 对跨原族高相似证据构成同一 E1 同源机制簇；仅作为学习组中的一个已知样本族计数，原始记录不删除。"
   },
   {
     "sample_id": "business_102_e1_s_abundant_t03",
@@ -15812,7 +15826,7 @@
   },
   {
     "sample_id": "business_102_e1_s_tight_t01",
-    "family_id": "F-E1-BUDGET2-1-专用展架生产",
+    "family_id": "F-V3-E1-STRONG-NEAR-COPY-CLUSTER",
     "old_role": "fit",
     "usage_history": "第二轮开发池",
     "v3_role": "学习",
@@ -15857,11 +15871,13 @@
     ],
     "same_source_count": 1,
     "family_role_isolated": true,
-    "status": "可用"
+    "status": "可用",
+    "original_family_id": "F-E1-BUDGET2-1-专用展架生产",
+    "near_copy_disposition": "保留：17 对跨原族高相似证据构成同一 E1 同源机制簇；仅作为学习组中的一个已知样本族计数，原始记录不删除。"
   },
   {
     "sample_id": "business_102_e1_s_tight_t02",
-    "family_id": "F-E1-BUDGET2-2-旧型号仪表面板",
+    "family_id": "F-V3-E1-STRONG-NEAR-COPY-CLUSTER",
     "old_role": "fit",
     "usage_history": "第二轮开发池",
     "v3_role": "学习",
@@ -15906,7 +15922,9 @@
     ],
     "same_source_count": 1,
     "family_role_isolated": true,
-    "status": "可用"
+    "status": "可用",
+    "original_family_id": "F-E1-BUDGET2-2-旧型号仪表面板",
+    "near_copy_disposition": "保留：17 对跨原族高相似证据构成同一 E1 同源机制簇；仅作为学习组中的一个已知样本族计数，原始记录不删除。"
   },
   {
     "sample_id": "business_102_e2_l_abundant_t01",
@@ -18844,7 +18862,8 @@
     ],
     "same_source_count": 1,
     "family_role_isolated": true,
-    "status": "可用"
+    "status": "可用",
+    "curve_repeat_disposition": "保留：合同验收回款、备件采购、工资、租赁及服务费按月发生；交易日期、金额与事项不同，属正常经营周期而非机械复制。"
   },
   {
     "sample_id": "matrix_t08_f02_c01_calendar01_revision01_revision01",
@@ -28812,7 +28831,8 @@
     ],
     "same_source_count": 1,
     "family_role_isolated": true,
-    "status": "可用"
+    "status": "可用",
+    "curve_repeat_disposition": "保留：销售回款、采购付款、工资、水电及税费形成月度经营周期；交易时间、金额和事项并非静态重复序列。"
   },
   {
     "sample_id": "syn_b1_p0_234",

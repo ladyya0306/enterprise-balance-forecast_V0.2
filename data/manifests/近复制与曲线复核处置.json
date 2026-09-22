@@ -1,0 +1,118 @@
+{
+  "review_scope": "仅处置既有 17 对跨族高相似线索和 2 户曲线重复线索；不生成新样本、不训练模型。",
+  "near_copy_cluster": {
+    "pair_count": 17,
+    "sample_ids": [
+      "business_102_e1_l_abundant_t01",
+      "business_102_e1_l_tight_t01",
+      "business_102_e1_m_abundant_t01",
+      "business_102_e1_m_abundant_t03",
+      "business_102_e1_m_tight_t01",
+      "business_102_e1_s_abundant_t01",
+      "business_102_e1_s_abundant_t02",
+      "business_102_e1_s_tight_t01",
+      "business_102_e1_s_tight_t02"
+    ],
+    "original_family_ids": [
+      "F-E1-BUDGET2-1-专用展架生产",
+      "F-E1-BUDGET2-2-旧型号仪表面板",
+      "F-EMPTY3-E1-01",
+      "F-GAP13-14",
+      "F-REM57V3-E1L-01",
+      "F-REM57V3-E1M-01",
+      "F-REM57V3-E1M-03",
+      "F-REM57V3-E1S-01",
+      "F-REM57V3-E1S-02"
+    ],
+    "reviewed_family_id": "F-V3-E1-STRONG-NEAR-COPY-CLUSTER",
+    "v3_role": "学习",
+    "disposition": "同源近复制，保留为一个已知样本族；保留原因是用于学习组中的机制覆盖，原始交易和CSV均不删除。"
+  },
+  "curve_repetition": [
+    {
+      "sample_id": "matrix_t07_f04_c01_calendar01_revision01_revision01",
+      "family_id": "shared_contract_factory",
+      "evidence": {
+        "policy": {
+          "whole_curve_monthly_correlation": 0.9,
+          "whole_curve_min_component_months": 7,
+          "whole_curve_min_component_share": 0.3,
+          "whole_curve_min_component_pair_density": 0.25
+        },
+        "eligible_month_count": 25,
+        "similar_pair_count": 9,
+        "evidence": [
+          {
+            "months": [
+              "240",
+              "420",
+              "480",
+              "570",
+              "600",
+              "630",
+              "660",
+              "690"
+            ],
+            "month_count": 8,
+            "eligible_month_count": 25,
+            "eligible_month_share": 0.32,
+            "similar_pair_count": 7,
+            "pair_density": 0.25,
+            "minimum_correlation": 0.9066688045068257
+          }
+        ],
+        "passed": false
+      },
+      "disposition": "保留：合同验收回款、备件采购、工资、租赁及服务费按月发生；交易日期、金额与事项不同，属正常经营周期而非机械复制。"
+    },
+    {
+      "sample_id": "syn_b1_p0_233",
+      "family_id": "F-ROUND1-syn_b1_p0_233",
+      "evidence": {
+        "policy": {
+          "whole_curve_monthly_correlation": 0.9,
+          "whole_curve_min_component_months": 7,
+          "whole_curve_min_component_share": 0.3,
+          "whole_curve_min_component_pair_density": 0.25
+        },
+        "eligible_month_count": 23,
+        "similar_pair_count": 8,
+        "evidence": [
+          {
+            "months": [
+              "120",
+              "150",
+              "330",
+              "450",
+              "480",
+              "510",
+              "540"
+            ],
+            "month_count": 7,
+            "eligible_month_count": 23,
+            "eligible_month_share": 0.30434782608695654,
+            "similar_pair_count": 8,
+            "pair_density": 0.38095238095238093,
+            "minimum_correlation": 0.9017109601742993
+          }
+        ],
+        "passed": false
+      },
+      "disposition": "保留：销售回款、采购付款、工资、水电及税费形成月度经营周期；交易时间、金额和事项并非静态重复序列。"
+    }
+  ],
+  "post_review_counts": {
+    "usable_records": 780,
+    "known_families": 742,
+    "records_by_role": {
+      "区间校准": 113,
+      "学习": 525,
+      "开发测试": 142
+    },
+    "families_by_role": {
+      "区间校准": 113,
+      "学习": 517,
+      "开发测试": 112
+    }
+  }
+}
