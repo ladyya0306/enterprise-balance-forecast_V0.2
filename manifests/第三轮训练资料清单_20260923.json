@@ -1,0 +1,17 @@
+{
+  "生成程序": "tools/v3_prepare_training_materials.py",
+  "生成版本": "v3_training_materials_20260923_1",
+  "原始样本分组清单_sha256": "ea40aa5dcd02f0196156d141d8757ea6e7e930a4d162fef3a1cee5f36cd79d86",
+  "原始用途清单_sha256": "15be03e9c7ab34a1b329e7bf4246fadb52f2c9f337811cdfb485a4c874d2b7b3",
+  "输出文件": [
+    {"路径": "data/training_materials/v1/每天余额收入支出/学习.csv", "行数": 385044, "字节": 37444207, "sha256": "e19024532bd3b00e8d3eaca85b2dd563160d0055f6224dfafb67212a0239595a"},
+    {"路径": "data/training_materials/v1/每天余额收入支出/区间校准.csv", "行数": 82490, "字节": 7993327, "sha256": "b16505f623e9c5071328ea1c5de26d3b77716099a96068ef5706795e2303e9b3"},
+    {"路径": "data/training_materials/v1/每天余额收入支出/开发测试.csv", "行数": 103762, "字节": 11744697, "sha256": "9ecadf7be1fe11706a8248228cb9b402959f01b9a9ccb26f410f982aab7e0adf"},
+    {"路径": "data/training_materials/v1/每天余额收入支出及用途/学习.csv", "行数": 385044, "字节": 59964195, "sha256": "2e0f5c0d4983059a40b27f3193bb0af5208bbc777ebc15883587ee08fed501ad"},
+    {"路径": "data/training_materials/v1/每天余额收入支出及用途/区间校准.csv", "行数": 82490, "字节": 12858812, "sha256": "ec486de745f7082f778bfe564a70d8ac257e8b7758c21f2129394f52e6ef7cb1"},
+    {"路径": "data/training_materials/v1/每天余额收入支出及用途/开发测试.csv", "行数": 103762, "字节": 17909427, "sha256": "deb59aad7adfa6e5e8e530137fcd5f6a36703b07c5706d4696bd6edc8f3ac9b8"},
+    {"路径": "data/training_materials/v1/逐笔金额余额用途/学习.csv", "行数": 298441, "字节": 63749799, "sha256": "1403320d74f8b41e93328f61237edf8104d95e28f1e8bdf6a62c9ad2afa9f093"},
+    {"路径": "data/training_materials/v1/逐笔金额余额用途/区间校准.csv", "行数": 71260, "字节": 15315543, "sha256": "4047086160c354458218b3f015238d3eb06e82c68c381a6e66bbc50c02cd8bbb"},
+    {"路径": "data/training_materials/v1/逐笔金额余额用途/开发测试.csv", "行数": 108262, "字节": 25530514, "sha256": "324040d0f2e48672def0510bebd5478f2dd907af28fe10cd0ceeb35e3d595c1d"}
+  ]
+}

@@ -6,3 +6,6 @@ __pycache__/
 !runs/logs/*.md
 # 本地完整用途表超过GitHub单文件上限；同内容以两个已跟踪分片交付。
 data/manifests/历史用途输入.csv
+# 三种训练资料由原始样本和用途清单可复建；完整CSV较大，不提交远程仓库。
+data/training_materials/*
+!data/training_materials/README.md
