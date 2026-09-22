@@ -1,0 +1,424 @@
+{
+  "schema_version": "syn_b1_formal_profile_output_1_0",
+  "sample_id": "syn_b1_p0_009",
+  "run_id": "p0_formal_24m_v1",
+  "input_profile": {
+    "schema_version": "syn_b1_formal_profile_2_0",
+    "sample_id": "syn_b1_p0_009",
+    "run_id": "p0_formal_24m_v1",
+    "start_date": "2025-01-01",
+    "end_date": "2026-12-31",
+    "random_seed": 720009,
+    "calendar": {
+      "prediction_cutoff": "2027-03-31",
+      "version": "r6_cn_public_calendar_adapter_1_0"
+    },
+    "account": {
+      "role": "primary",
+      "routing_preset": "primary_all_v1"
+    },
+    "initial_capital": {
+      "capital_item_id": "initial_capital_001",
+      "plan_version": "v1",
+      "mode": "manual",
+      "amount_cny": "302024.30"
+    },
+    "additional_capital_plans": [],
+    "loan_contracts": [
+      {
+        "loan_contract_id": "loan_009",
+        "contract_version": "v1",
+        "funding_kind": "bank_loan",
+        "draw_date": "2025-02-03",
+        "principal_cny": "187560.00",
+        "annual_interest_rate_percent": "4.00",
+        "repayment_method": "monthly_interest_bullet_principal",
+        "maturity_date": "2027-01-29"
+      }
+    ],
+    "operating": {
+      "regime_plan": {
+        "shape": "stable",
+        "declared_through_month": "2027-03",
+        "base_latent_monthly_sales_cny": "208400.00",
+        "segments": [
+          {
+            "segment_id": "stable_phase",
+            "start_month": "2025-01",
+            "monthly_linear_change_percent": "0",
+            "gross_margin_percent": "16.58"
+          }
+        ]
+      },
+      "sales_seasonality": {
+        "enabled": true,
+        "month_weights_percent": {
+          "1": "100",
+          "2": "98",
+          "3": "96",
+          "4": "94",
+          "5": "96",
+          "6": "98",
+          "7": "100",
+          "8": "102",
+          "9": "104",
+          "10": "106",
+          "11": "104",
+          "12": "102"
+        }
+      },
+      "collection_policy": {
+        "base_schedule": [
+          {
+            "delay_days": 30,
+            "share_percent": "100"
+          }
+        ],
+        "seasonal_timing": {
+          "enabled": false,
+          "delay_adjustment_days_by_sales_month": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0
+          }
+        }
+      },
+      "procurement_inertia": {
+        "opening_expectation": {
+          "mode": "ratio_to_first_month_cogs",
+          "opening_expected_cogs_ratio_percent": "91.50"
+        },
+        "adjustment_speed_percent": "85.00"
+      },
+      "production_cycle_days": 30,
+      "inventory_target_days": 48,
+      "supplier_payment_schedule": [
+        {
+          "delay_days": 45,
+          "share_percent": "100"
+        }
+      ],
+      "monthly_payroll_cny": "20840.00",
+      "monthly_rent_and_utilities_cny": "7085.60",
+      "monthly_other_operating_expense_cny": "0.00",
+      "payroll_payment_schedule": [
+        {
+          "delay_days": 0,
+          "share_percent": "100"
+        }
+      ],
+      "rent_and_utilities_payment_schedule": [
+        {
+          "delay_days": 0,
+          "share_percent": "100"
+        }
+      ],
+      "other_operating_expense_payment_schedule": [
+        {
+          "delay_days": 0,
+          "share_percent": "100"
+        }
+      ],
+      "fixed_assets": []
+    },
+    "tax": {
+      "income_tax_rate_percent": "20",
+      "vat_burden_rate_percent": "1",
+      "surcharge_rate_percent": "12",
+      "rules": {
+        "corporate_income_tax": {
+          "enabled": true,
+          "frequency": "quarterly",
+          "schedule_mode": "recurring_day",
+          "payer_account_role": "primary",
+          "non_bank_day_policy": "next_bank_workday",
+          "recurring_debit_day": 28
+        },
+        "simulated_vat": {
+          "enabled": true,
+          "frequency": "quarterly",
+          "schedule_mode": "recurring_day",
+          "payer_account_role": "primary",
+          "non_bank_day_policy": "next_bank_workday",
+          "recurring_debit_day": 28
+        },
+        "surcharge": {
+          "enabled": true,
+          "frequency": "quarterly",
+          "schedule_mode": "recurring_day",
+          "payer_account_role": "primary",
+          "non_bank_day_policy": "next_bank_workday",
+          "recurring_debit_day": 28
+        }
+      }
+    },
+    "transactions": {
+      "preset": "standard_transactions_v1",
+      "default_policy": {
+        "transaction_count": 1,
+        "month_concentration": "middle",
+        "amount_variation_percent": "0"
+      },
+      "category_overrides": {
+        "sales_collection": {
+          "transaction_count": 1,
+          "month_concentration": "early",
+          "amount_variation_percent": "0"
+        },
+        "supplier_payment": {
+          "transaction_count": 1,
+          "month_concentration": "late",
+          "amount_variation_percent": "0"
+        },
+        "payroll": {
+          "transaction_count": 1,
+          "month_concentration": "middle",
+          "amount_variation_percent": "0"
+        },
+        "rent_and_utilities": {
+          "transaction_count": 1,
+          "month_concentration": "middle",
+          "amount_variation_percent": "0"
+        }
+      }
+    },
+    "resolved_presets": {
+      "routing_preset": "primary_all_v1",
+      "transaction_preset": "standard_transactions_v1",
+      "calendar_version": "r6_cn_public_calendar_adapter_1_0"
+    }
+  },
+  "resolved_runtime_settings": {
+    "collection_schedule": [
+      {
+        "delay_days": 30,
+        "share_bp": 10000
+      }
+    ],
+    "supplier_payment_schedule": [
+      {
+        "delay_days": 45,
+        "share_bp": 10000
+      }
+    ],
+    "payroll_payment_schedule": [
+      {
+        "delay_days": 0,
+        "share_bp": 10000
+      }
+    ],
+    "rent_and_utilities_payment_schedule": [
+      {
+        "delay_days": 0,
+        "share_bp": 10000
+      }
+    ],
+    "other_operating_expense_payment_schedule": [
+      {
+        "delay_days": 0,
+        "share_bp": 10000
+      }
+    ],
+    "tax_payment_schedule": [
+      {
+        "delay_days": 0,
+        "share_bp": 10000
+      }
+    ],
+    "sales_month_weights_bp": null,
+    "inventory_target_days": 48,
+    "monthly_other_operating_expense_fen": 0,
+    "fixed_asset_events": [],
+    "asset_depreciation_policies": [],
+    "income_tax_rate_bp": 2000,
+    "account_role": "primary",
+    "routing_rules": {
+      "sales_collection": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "supplier_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "payroll": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "rent_and_utilities": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "bank_loan_drawdown": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "bank_loan_repayment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "bank_interest_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "shareholder_funding": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "fixed_asset_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "corporate_income_tax_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "simulated_vat_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "surcharge_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "other_declared_event": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      }
+    },
+    "tax_rules": {
+      "corporate_income_tax": {
+        "enabled": true,
+        "frequency": "quarterly",
+        "schedule_mode": "recurring_day",
+        "payer_account_role": "primary",
+        "non_bank_day_policy": "next_bank_workday",
+        "recurring_debit_day": 28,
+        "explicit_period_dates": null,
+        "effective_vat_burden_rate_bp": null,
+        "surcharge_rate_on_simulated_vat_bp": null
+      },
+      "simulated_vat": {
+        "enabled": true,
+        "frequency": "quarterly",
+        "schedule_mode": "recurring_day",
+        "payer_account_role": "primary",
+        "non_bank_day_policy": "next_bank_workday",
+        "recurring_debit_day": 28,
+        "explicit_period_dates": null,
+        "effective_vat_burden_rate_bp": 100,
+        "surcharge_rate_on_simulated_vat_bp": null
+      },
+      "surcharge": {
+        "enabled": true,
+        "frequency": "quarterly",
+        "schedule_mode": "recurring_day",
+        "payer_account_role": "primary",
+        "non_bank_day_policy": "next_bank_workday",
+        "recurring_debit_day": 28,
+        "explicit_period_dates": null,
+        "effective_vat_burden_rate_bp": null,
+        "surcharge_rate_on_simulated_vat_bp": 1200
+      }
+    },
+    "bank_calendar": {
+      "prediction_cutoff": "2027-03-31",
+      "version": "r6_cn_public_calendar_adapter_1_0"
+    },
+    "additional_capital_plans": [],
+    "category_policies": {
+      "sales_collection": {
+        "transaction_count": 1,
+        "month_concentration": "early",
+        "amount_variation_bp": 0
+      },
+      "supplier_payment": {
+        "transaction_count": 1,
+        "month_concentration": "late",
+        "amount_variation_bp": 0
+      },
+      "payroll": {
+        "transaction_count": 1,
+        "month_concentration": "middle",
+        "amount_variation_bp": 0
+      },
+      "rent_and_utilities": {
+        "transaction_count": 1,
+        "month_concentration": "middle",
+        "amount_variation_bp": 0
+      }
+    },
+    "regime_plan": {
+      "shape": "stable",
+      "declared_through_month": "2027-03",
+      "base_latent_monthly_sales_fen": 20840000,
+      "segments": [
+        {
+          "segment_id": "stable_phase",
+          "start_month": "2025-01",
+          "monthly_linear_change_bp": 0,
+          "gross_margin_bp": 1658
+        }
+      ],
+      "sales_month_weights_bp": {
+        "1": 10000,
+        "2": 9800,
+        "3": 9600,
+        "4": 9400,
+        "5": 9600,
+        "6": 9800,
+        "7": 10000,
+        "8": 10200,
+        "9": 10400,
+        "10": 10600,
+        "11": 10400,
+        "12": 10200
+      },
+      "collection_delay_adjustment_days_by_sales_month": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0
+      },
+      "opening_expected_cogs_ratio_bp": 9150,
+      "procurement_adjustment_speed_bp": 8500
+    }
+  },
+  "initial_capital_resolution": {
+    "input": {
+      "capital_item_id": "initial_capital_001",
+      "plan_version": "v1",
+      "mode": "manual",
+      "amount_fen": 30202430,
+      "minimum_amount_fen": null,
+      "maximum_amount_fen": null,
+      "distribution": null,
+      "profile_version": null
+    },
+    "plan": {
+      "capital_item_id": "initial_capital_001",
+      "plan_version": "v1",
+      "due_date": "2025-01-01",
+      "amount_fen": 30202430
+    },
+    "root_seed": 720009,
+    "derived_seed": null
+  }
+}

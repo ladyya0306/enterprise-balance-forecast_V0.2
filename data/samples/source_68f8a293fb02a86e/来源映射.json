@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\24目标自主受控扩展_20260913_v2r7\\候选流水\\v2_t13_contract_r02\\autonomous_target_expansion_v2",
+  "sample_ids": [
+    "v2_t13_contract_r02"
+  ],
+  "daily_sha256": "68f8a293fb02a86ed645aa948790efd37061098f05470b0bfcbfd5e23ec1baca",
+  "missing_expected_files": []
+}

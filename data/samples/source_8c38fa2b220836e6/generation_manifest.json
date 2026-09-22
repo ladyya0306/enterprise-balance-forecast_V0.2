@@ -1,0 +1,29 @@
+{
+  "schema_version": "syn_b1_generation_manifest_1_0",
+  "sample_id": "business_102_d2_m_tight_t03",
+  "run_id": "terra_controlled_micro_adjustment_three_v1",
+  "continuation_of_run_id": null,
+  "execution_status": "complete",
+  "generator_version": "syn_b1_monthly_business_nodes_20260909_v1",
+  "ledger_version": "syn_b1_i4b_ledger_review_1_0",
+  "calendar_version": "cn_public_2022_2026_cycles_1_0",
+  "random_seed": 2026091211,
+  "period": {
+    "start_date": "2024-01-01",
+    "planned_end_date": "2025-12-31",
+    "written_through_date": "2025-12-31"
+  },
+  "files": {
+    "_restricted/final_cash_reconciliation.json": "48f65449a34fc252eb2ec9f8328f0429a42b330ad1b5e71b9f59e3079614f525",
+    "_restricted/funding_tail.json": "b8753d11f713bdd43a712353b5e261772981a21909161e5ffdb07dc9707f9967",
+    "_restricted/scenario_truth.json": "c5eddbe161785fc5456d4c89f4525ad83e5d6ed820c3fd4f2461b32486c98399",
+    "_restricted/statement_stages.json": "a1dad66404692e0d1247a0d916e8a18a3eaa63e8d5c11b86d37da33be968e4c6",
+    "_restricted/tax_ledger.json": "a0078013580842aa2c4041a79c19bded9b38d92acaecc3320f78774244d3af4c",
+    "_restricted/three_statements.json": "3faa97a913295c7ade08fac4cd198853fe07a1402caf60c63495497a0bf35d1c",
+    "account_daily_total.csv": "8c38fa2b220836e60d2cad82627a09235a19f59aba7037134d06edcb6f322952",
+    "cash_flow_review_notes.csv": "0032a720b4b3770a5d8c6dcbd333991cfc06ab0046843013c7f84bf36546daea",
+    "quality_report.json": "8476a40697b706ed8520a200bab12a378aab4cd7a01ee2351c79ef1cfd0972fc",
+    "scenario_profile.json": "51d42abb5232c7033a9488528f020f771230115f9c8ab9d28b88efb83fceda32",
+    "transactions_total.csv": "dcf9cd3ff8a28afc644279c4430461db5b2f3214c7c337fb80e38374a427c8c0"
+  }
+}

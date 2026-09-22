@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\Terra紧张目标迭代_20260912_v1\\A2_Iter02\\预演批次\\正式批次\\正式流水\\train\\business_102_a2_m_tight_T04\\terra_tight_a2_m_tight_iter02",
+  "sample_ids": [
+    "business_102_a2_m_tight_T04"
+  ],
+  "daily_sha256": "82f6b0ad2276620a386ed22bdf109c71f21bb94e293ac44bfe78c55db285f315",
+  "missing_expected_files": []
+}

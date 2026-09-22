@@ -1,0 +1,29 @@
+{
+  "schema_version": "syn_b1_generation_manifest_1_0",
+  "sample_id": "syn_b1_p0_227",
+  "run_id": "p0_formal_high_revenue_24m_v1",
+  "continuation_of_run_id": null,
+  "execution_status": "complete",
+  "generator_version": "syn_b1_pretrain_i1_regime_transition_2_0_candidate",
+  "ledger_version": "syn_b1_i4b_ledger_review_1_0",
+  "calendar_version": "r6_cn_public_calendar_adapter_1_0",
+  "random_seed": 730227,
+  "period": {
+    "start_date": "2025-01-01",
+    "planned_end_date": "2026-12-31",
+    "written_through_date": "2026-12-31"
+  },
+  "files": {
+    "_restricted/final_cash_reconciliation.json": "727780abafb3ecd47282d11df610dbc79e96feeba3f331313b8ca7ad506eab72",
+    "_restricted/funding_tail.json": "f6a83dcd0d8d1c90fbc22de9b4366f29226741d59eff9e644d5563f7bf4bc683",
+    "_restricted/scenario_truth.json": "37b2d280a3114e5502728e3dc34201069e9818934bd1d3cc3ab6aa4b67a21bdb",
+    "_restricted/statement_stages.json": "87c039683fa8f6ad15028ac2765c8294777608c1b83341949eece8a4c4c20b71",
+    "_restricted/tax_ledger.json": "ccf02b0b98ed5c25c7f75cdba9603d27c74d9e2f80dfa066f61ca1103defb851",
+    "_restricted/three_statements.json": "154b14f22db205fba1b4f32fc30851b10ffabc2a334855d241c0add47ebdfded",
+    "account_daily_total.csv": "d39ab203ce2b40c7175850de144ea878ca538900ca701b67ff804c99b37b812e",
+    "cash_flow_review_notes.csv": "e9789a54966034013eb28579861938f8468966b936cbf6f1fb3d305620dbc4c7",
+    "quality_report.json": "fc20e7006caf162fd2a51994f2c84214f85d06ee175d90d3beb26daca4e19869",
+    "scenario_profile.json": "55c5bcd42e777c719ca5e280298f75b0e012d8f8abb7b1dce332df81bd1a41fc",
+    "transactions_total.csv": "59a2f51973e22e9125d76a5e4f8e01a3ff1628c7b96a54c9e3a881369681646a"
+  }
+}

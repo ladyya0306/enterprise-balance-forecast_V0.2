@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\空白格第七批8户_20260911_v1\\正式批次\\正式流水\\train\\business_102_c1_s_tight_t01\\empty_cells_batch7_v1",
+  "sample_ids": [
+    "business_102_c1_s_tight_t01"
+  ],
+  "daily_sha256": "7d5357a55c7d2c19eb74e088ee3a1e07f343b84f46c96c6aceeb1d06efc56e94",
+  "missing_expected_files": []
+}

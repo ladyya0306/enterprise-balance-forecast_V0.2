@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\分范围扩量正式批次_20260911_v1\\批次05_16户预算准备_v1\\正式批次\\正式流水\\train\\business_102_d3_l_abundant_t03\\expansion_batch05_16_v1",
+  "sample_ids": [
+    "business_102_d3_l_abundant_t03"
+  ],
+  "daily_sha256": "9f0121ded9089c6af9d7d9011c777413e4aecf38f7786b96bc24fd1d956310ea",
+  "missing_expected_files": []
+}

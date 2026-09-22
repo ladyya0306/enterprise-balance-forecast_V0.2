@@ -1,0 +1,28 @@
+{
+  "schema_version": "syn_b1_quality_report_1_0",
+  "execution_status": "complete",
+  "training_eligible": false,
+  "training_eligibility_reason_cn": "模型训练仍属F7F明确延期范围；本报告不授予训练资格。",
+  "future_training_data_quality_ready": true,
+  "human_review_notes": {
+    "file": "cash_flow_review_notes.csv",
+    "purpose_cn": "仅供人工理解合成现金流来源和用途。",
+    "model_input_allowed": false,
+    "database_import_allowed": false
+  },
+  "checks": {
+    "candidate_amount_reconciled": true,
+    "transaction_count": 2696,
+    "daily_transaction_count": 2696,
+    "debit_total_cny": "19967295.69",
+    "daily_outflow_total_cny": "19967295.69",
+    "credit_total_cny": "23105372.79",
+    "daily_inflow_total_cny": "23105372.79",
+    "closing_balance_cny": "3138077.10",
+    "daily_closing_balance_cny": "3138077.10",
+    "natural_day_count": 730,
+    "funding_tail_settled_through_planned_end": true,
+    "final_cash_reconciled": true
+  },
+  "failure_diagnostic_available": false
+}

@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\正式流水\\训练\\business_102_a1_m_abundant_t02\\a1_instrument_enclosure_stable_v1",
+  "sample_ids": [
+    "business_102_a1_m_abundant_t02"
+  ],
+  "daily_sha256": "4fc2fd15d3a4924be7e705dd911afe48fea65de454378caab947257e5fe46aa5",
+  "missing_expected_files": []
+}

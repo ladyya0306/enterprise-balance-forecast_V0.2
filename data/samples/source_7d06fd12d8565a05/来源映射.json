@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_generated\\syn_b1_v2\\syn_b1_p0_224\\p0_formal_high_revenue_24m_v1",
+  "sample_ids": [
+    "syn_b1_p0_224"
+  ],
+  "daily_sha256": "7d06fd12d8565a05498861a0014a0021311e59e3e88c654c6ce06b642771ddd2",
+  "missing_expected_files": []
+}

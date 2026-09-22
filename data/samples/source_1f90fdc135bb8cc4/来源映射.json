@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\合同流水整改_20260913_v1\\正式流水\\train\\contract_diversity_t05_0002\\contract_repair_v1",
+  "sample_ids": [
+    "contract_diversity_t05_0002"
+  ],
+  "daily_sha256": "1f90fdc135bb8cc446e1f265289c75746025744a92fa1cba1f7119c171877ce0",
+  "missing_expected_files": []
+}

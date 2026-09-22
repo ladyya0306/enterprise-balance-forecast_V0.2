@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\2040全配置预算合同遍历_20260913_v1\\订单量第二轮中央实测\\批次004\\matrix_t10_f03_c01_calendar01_revision01_revision01\\mechanism_route_matrix_2040_v1_calendar01_revision01_revision01",
+  "sample_ids": [
+    "matrix_t10_f03_c01_calendar01_revision01_revision01"
+  ],
+  "daily_sha256": "d76ae807db90003ffaf0e3fa879374a760ce82ebcc6fddedfe930aa6cf6f7c27",
+  "missing_expected_files": []
+}

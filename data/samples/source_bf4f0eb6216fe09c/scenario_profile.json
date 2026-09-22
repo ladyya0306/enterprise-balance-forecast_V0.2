@@ -1,0 +1,958 @@
+{
+  "schema_version": "syn_b1_formal_profile_output_1_0",
+  "sample_id": "business_102_a1_m_abundant_t01",
+  "run_id": "a1_auto_connector_stable_v1",
+  "input_profile": {
+    "schema_version": "syn_b1_formal_profile_2_0",
+    "sample_id": "business_102_a1_m_abundant_t01",
+    "run_id": "a1_auto_connector_stable_v1",
+    "start_date": "2024-01-01",
+    "end_date": "2025-12-31",
+    "random_seed": 2026095101,
+    "calendar": {
+      "prediction_cutoff": "2026-09-08",
+      "version": "cn_public_2024_2026_orders_1_0"
+    },
+    "account": {
+      "role": "primary",
+      "routing_preset": "primary_all_v1"
+    },
+    "initial_capital": {
+      "capital_item_id": "initial_capital_001",
+      "plan_version": "v1",
+      "mode": "manual",
+      "amount_cny": "2800000.00"
+    },
+    "additional_capital_plans": [],
+    "loan_contracts": [],
+    "operating": {
+      "procurement_inertia": {
+        "opening_expectation": {
+          "mode": "ratio_to_first_month_cogs",
+          "opening_expected_cogs_ratio_percent": "100"
+        },
+        "adjustment_speed_percent": "25"
+      },
+      "production_cycle_days": 30,
+      "inventory_target_days": null,
+      "supplier_payment_schedule": [
+        {
+          "delay_days": 0,
+          "share_percent": "50"
+        },
+        {
+          "delay_days": 30,
+          "share_percent": "50"
+        }
+      ],
+      "payroll_payment_schedule": [
+        {
+          "delay_days": 0,
+          "share_percent": "100"
+        }
+      ],
+      "rent_and_utilities_payment_schedule": [
+        {
+          "delay_days": 0,
+          "share_percent": "100"
+        }
+      ],
+      "other_operating_expense_payment_schedule": [
+        {
+          "delay_days": 0,
+          "share_percent": "100"
+        }
+      ],
+      "collection_schedule": [
+        {
+          "delay_days": 0,
+          "share_percent": "40"
+        },
+        {
+          "delay_days": 30,
+          "share_percent": "60"
+        }
+      ],
+      "fixed_assets": [
+        {
+          "event_id": "A1T01_EQ01",
+          "asset_type": "equipment",
+          "purchase_month": "2024-01",
+          "purchase_amount_cny": "850000.00",
+          "payment_schedule": [
+            {
+              "delay_days": 0,
+              "share_percent": "70"
+            },
+            {
+              "delay_days": 30,
+              "share_percent": "30"
+            }
+          ],
+          "ready_for_use_date": "2024-02-01",
+          "useful_life_months": 60,
+          "residual_value_percent": "5"
+        }
+      ],
+      "business_nodes": {
+        "version": "monthly_business_nodes_v1",
+        "nodes": [
+          {
+            "month": "2024-01",
+            "stage_id": "SETUP",
+            "business_reason": "厂房适配、模具验收、首批工程塑料备料，设备尚未投用",
+            "sales_units": 0,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "260000.00",
+            "payroll_cny": "45000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "120000.00"
+          },
+          {
+            "month": "2024-02",
+            "stage_id": "RAMP",
+            "business_reason": "首家客户小批量验证后开始交付",
+            "sales_units": 4200,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "260000.00",
+            "payroll_cny": "90000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "26000.00"
+          },
+          {
+            "month": "2024-03",
+            "stage_id": "RAMP",
+            "business_reason": "第二家客户加入月度提货，良率稳定",
+            "sales_units": 5600,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "280000.00",
+            "payroll_cny": "105000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "20000.00"
+          },
+          {
+            "month": "2024-04",
+            "stage_id": "STABLE",
+            "business_reason": "两家年度定点客户按滚动计划稳定提货",
+            "sales_units": 6500,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "280000.00",
+            "payroll_cny": "105000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "18000.00"
+          },
+          {
+            "month": "2024-05",
+            "stage_id": "STABLE",
+            "business_reason": "两家年度定点客户按滚动计划稳定提货",
+            "sales_units": 6600,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "280000.00",
+            "payroll_cny": "105000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "18000.00"
+          },
+          {
+            "month": "2024-06",
+            "stage_id": "STABLE",
+            "business_reason": "两家年度定点客户按滚动计划稳定提货",
+            "sales_units": 6700,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "280000.00",
+            "payroll_cny": "105000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "18000.00"
+          },
+          {
+            "month": "2024-07",
+            "stage_id": "STABLE",
+            "business_reason": "暑期整车排产略降但框架合同不变",
+            "sales_units": 6400,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "280000.00",
+            "payroll_cny": "105000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "18000.00"
+          },
+          {
+            "month": "2024-08",
+            "stage_id": "STABLE",
+            "business_reason": "暑期整车排产略降但框架合同不变",
+            "sales_units": 6300,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "280000.00",
+            "payroll_cny": "105000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "18000.00"
+          },
+          {
+            "month": "2024-09",
+            "stage_id": "STABLE",
+            "business_reason": "四季度备货恢复正常提货",
+            "sales_units": 6700,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "280000.00",
+            "payroll_cny": "105000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "18000.00"
+          },
+          {
+            "month": "2024-10",
+            "stage_id": "STABLE",
+            "business_reason": "四季度备货恢复正常提货",
+            "sales_units": 6800,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "280000.00",
+            "payroll_cny": "105000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "18000.00"
+          },
+          {
+            "month": "2024-11",
+            "stage_id": "STABLE",
+            "business_reason": "四季度备货恢复正常提货",
+            "sales_units": 6700,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "280000.00",
+            "payroll_cny": "105000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "18000.00"
+          },
+          {
+            "month": "2024-12",
+            "stage_id": "STABLE",
+            "business_reason": "年末客户控制库存，交付小幅回落",
+            "sales_units": 6400,
+            "unit_price_cny": "122.00",
+            "unit_variable_cost_cny": "91.00",
+            "target_inventory_cny": "280000.00",
+            "payroll_cny": "105000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "18000.00"
+          },
+          {
+            "month": "2025-01",
+            "stage_id": "MATURE",
+            "business_reason": "续签年度定点合同，正常月度供货",
+            "sales_units": 6500,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          },
+          {
+            "month": "2025-02",
+            "stage_id": "MATURE",
+            "business_reason": "春节工作日减少，客户滚动提货下调",
+            "sales_units": 6100,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          },
+          {
+            "month": "2025-03",
+            "stage_id": "MATURE",
+            "business_reason": "节后恢复年度合同常态交付",
+            "sales_units": 6600,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          },
+          {
+            "month": "2025-04",
+            "stage_id": "MATURE",
+            "business_reason": "年度合同常态交付",
+            "sales_units": 6700,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          },
+          {
+            "month": "2025-05",
+            "stage_id": "MATURE",
+            "business_reason": "年度合同常态交付",
+            "sales_units": 6600,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          },
+          {
+            "month": "2025-06",
+            "stage_id": "MATURE",
+            "business_reason": "年度合同常态交付",
+            "sales_units": 6500,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          },
+          {
+            "month": "2025-07",
+            "stage_id": "MATURE",
+            "business_reason": "暑期客户检修带来可解释的小幅回落",
+            "sales_units": 6200,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          },
+          {
+            "month": "2025-08",
+            "stage_id": "MATURE",
+            "business_reason": "暑期客户检修带来可解释的小幅回落",
+            "sales_units": 6300,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          },
+          {
+            "month": "2025-09",
+            "stage_id": "MATURE",
+            "business_reason": "客户恢复常态滚动提货",
+            "sales_units": 6600,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          },
+          {
+            "month": "2025-10",
+            "stage_id": "MATURE",
+            "business_reason": "客户恢复常态滚动提货",
+            "sales_units": 6700,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          },
+          {
+            "month": "2025-11",
+            "stage_id": "MATURE",
+            "business_reason": "客户恢复常态滚动提货",
+            "sales_units": 6600,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          },
+          {
+            "month": "2025-12",
+            "stage_id": "MATURE",
+            "business_reason": "年末客户控制库存，合同仍持续",
+            "sales_units": 6400,
+            "unit_price_cny": "124.00",
+            "unit_variable_cost_cny": "92.00",
+            "target_inventory_cny": "290000.00",
+            "payroll_cny": "110000.00",
+            "rent_cny": "30000.00",
+            "other_expense_cny": "19000.00"
+          }
+        ],
+        "asset_capacities": [
+          {
+            "event_id": "A1T01_EQ01",
+            "monthly_units": 9000
+          }
+        ]
+      }
+    },
+    "tax": {
+      "income_tax_rate_percent": "20",
+      "vat_burden_rate_percent": "1",
+      "surcharge_rate_percent": "12",
+      "rules": {
+        "corporate_income_tax": {
+          "enabled": true,
+          "frequency": "monthly",
+          "schedule_mode": "recurring_day",
+          "payer_account_role": "primary",
+          "non_bank_day_policy": "next_bank_workday",
+          "recurring_debit_day": 28
+        },
+        "simulated_vat": {
+          "enabled": true,
+          "frequency": "monthly",
+          "schedule_mode": "recurring_day",
+          "payer_account_role": "primary",
+          "non_bank_day_policy": "next_bank_workday",
+          "recurring_debit_day": 28
+        },
+        "surcharge": {
+          "enabled": true,
+          "frequency": "monthly",
+          "schedule_mode": "recurring_day",
+          "payer_account_role": "primary",
+          "non_bank_day_policy": "next_bank_workday",
+          "recurring_debit_day": 28
+        }
+      }
+    },
+    "transactions": {
+      "preset": "standard_transactions_v1",
+      "default_policy": {
+        "transaction_count": 1,
+        "month_concentration": "late",
+        "amount_variation_percent": "0"
+      },
+      "category_overrides": {
+        "sales_collection": {
+          "transaction_count": 6,
+          "month_concentration": "uniform",
+          "amount_variation_percent": "25"
+        },
+        "supplier_payment": {
+          "transaction_count": 5,
+          "month_concentration": "uniform",
+          "amount_variation_percent": "25"
+        }
+      }
+    },
+    "resolved_presets": {
+      "routing_preset": "primary_all_v1",
+      "transaction_preset": "standard_transactions_v1",
+      "calendar_version": "cn_public_2024_2026_orders_1_0"
+    }
+  },
+  "resolved_runtime_settings": {
+    "collection_schedule": [
+      {
+        "delay_days": 0,
+        "share_bp": 4000
+      },
+      {
+        "delay_days": 30,
+        "share_bp": 6000
+      }
+    ],
+    "supplier_payment_schedule": [
+      {
+        "delay_days": 0,
+        "share_bp": 5000
+      },
+      {
+        "delay_days": 30,
+        "share_bp": 5000
+      }
+    ],
+    "payroll_payment_schedule": [
+      {
+        "delay_days": 0,
+        "share_bp": 10000
+      }
+    ],
+    "rent_and_utilities_payment_schedule": [
+      {
+        "delay_days": 0,
+        "share_bp": 10000
+      }
+    ],
+    "other_operating_expense_payment_schedule": [
+      {
+        "delay_days": 0,
+        "share_bp": 10000
+      }
+    ],
+    "tax_payment_schedule": [
+      {
+        "delay_days": 0,
+        "share_bp": 10000
+      }
+    ],
+    "sales_month_weights_bp": null,
+    "inventory_target_days": null,
+    "monthly_other_operating_expense_fen": 12000000,
+    "fixed_asset_events": [
+      {
+        "event_id": "A1T01_EQ01",
+        "asset_type": "equipment",
+        "purchase_month": "2024-01",
+        "purchase_amount_fen": 85000000,
+        "payment_schedule": [
+          {
+            "delay_days": 0,
+            "share_bp": 7000
+          },
+          {
+            "delay_days": 30,
+            "share_bp": 3000
+          }
+        ],
+        "ready_for_use_date": "2024-02-01"
+      }
+    ],
+    "asset_depreciation_policies": [
+      {
+        "event_id": "A1T01_EQ01",
+        "useful_life_months": 60,
+        "residual_value_rate_bp": 500
+      }
+    ],
+    "income_tax_rate_bp": 2000,
+    "account_role": "primary",
+    "routing_rules": {
+      "sales_collection": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "supplier_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "payroll": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "rent_and_utilities": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "bank_loan_drawdown": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "bank_loan_repayment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "bank_interest_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "shareholder_funding": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "fixed_asset_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "corporate_income_tax_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "simulated_vat_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "surcharge_payment": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      },
+      "other_declared_event": {
+        "enabled": true,
+        "routed_share_bp": 10000
+      }
+    },
+    "tax_rules": {
+      "corporate_income_tax": {
+        "enabled": true,
+        "frequency": "monthly",
+        "schedule_mode": "recurring_day",
+        "payer_account_role": "primary",
+        "non_bank_day_policy": "next_bank_workday",
+        "recurring_debit_day": 28,
+        "explicit_period_dates": null,
+        "effective_vat_burden_rate_bp": null,
+        "surcharge_rate_on_simulated_vat_bp": null
+      },
+      "simulated_vat": {
+        "enabled": true,
+        "frequency": "monthly",
+        "schedule_mode": "recurring_day",
+        "payer_account_role": "primary",
+        "non_bank_day_policy": "next_bank_workday",
+        "recurring_debit_day": 28,
+        "explicit_period_dates": null,
+        "effective_vat_burden_rate_bp": 100,
+        "surcharge_rate_on_simulated_vat_bp": null
+      },
+      "surcharge": {
+        "enabled": true,
+        "frequency": "monthly",
+        "schedule_mode": "recurring_day",
+        "payer_account_role": "primary",
+        "non_bank_day_policy": "next_bank_workday",
+        "recurring_debit_day": 28,
+        "explicit_period_dates": null,
+        "effective_vat_burden_rate_bp": null,
+        "surcharge_rate_on_simulated_vat_bp": 1200
+      }
+    },
+    "bank_calendar": {
+      "prediction_cutoff": "2026-09-08",
+      "version": "cn_public_2024_2026_orders_1_0"
+    },
+    "additional_capital_plans": [],
+    "category_policies": {
+      "sales_collection": {
+        "transaction_count": 6,
+        "month_concentration": "uniform",
+        "amount_variation_bp": 2500
+      },
+      "supplier_payment": {
+        "transaction_count": 5,
+        "month_concentration": "uniform",
+        "amount_variation_bp": 2500
+      }
+    },
+    "regime_plan": null,
+    "supplementary_orders": [],
+    "cycle_orders_only": false,
+    "business_node_plan": {
+      "nodes": [
+        {
+          "month": "2024-01",
+          "stage_id": "SETUP",
+          "business_reason": "厂房适配、模具验收、首批工程塑料备料，设备尚未投用",
+          "sales_units": 0,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 26000000,
+          "payroll_fen": 4500000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 12000000
+        },
+        {
+          "month": "2024-02",
+          "stage_id": "RAMP",
+          "business_reason": "首家客户小批量验证后开始交付",
+          "sales_units": 4200,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 26000000,
+          "payroll_fen": 9000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 2600000
+        },
+        {
+          "month": "2024-03",
+          "stage_id": "RAMP",
+          "business_reason": "第二家客户加入月度提货，良率稳定",
+          "sales_units": 5600,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 28000000,
+          "payroll_fen": 10500000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 2000000
+        },
+        {
+          "month": "2024-04",
+          "stage_id": "STABLE",
+          "business_reason": "两家年度定点客户按滚动计划稳定提货",
+          "sales_units": 6500,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 28000000,
+          "payroll_fen": 10500000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1800000
+        },
+        {
+          "month": "2024-05",
+          "stage_id": "STABLE",
+          "business_reason": "两家年度定点客户按滚动计划稳定提货",
+          "sales_units": 6600,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 28000000,
+          "payroll_fen": 10500000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1800000
+        },
+        {
+          "month": "2024-06",
+          "stage_id": "STABLE",
+          "business_reason": "两家年度定点客户按滚动计划稳定提货",
+          "sales_units": 6700,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 28000000,
+          "payroll_fen": 10500000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1800000
+        },
+        {
+          "month": "2024-07",
+          "stage_id": "STABLE",
+          "business_reason": "暑期整车排产略降但框架合同不变",
+          "sales_units": 6400,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 28000000,
+          "payroll_fen": 10500000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1800000
+        },
+        {
+          "month": "2024-08",
+          "stage_id": "STABLE",
+          "business_reason": "暑期整车排产略降但框架合同不变",
+          "sales_units": 6300,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 28000000,
+          "payroll_fen": 10500000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1800000
+        },
+        {
+          "month": "2024-09",
+          "stage_id": "STABLE",
+          "business_reason": "四季度备货恢复正常提货",
+          "sales_units": 6700,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 28000000,
+          "payroll_fen": 10500000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1800000
+        },
+        {
+          "month": "2024-10",
+          "stage_id": "STABLE",
+          "business_reason": "四季度备货恢复正常提货",
+          "sales_units": 6800,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 28000000,
+          "payroll_fen": 10500000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1800000
+        },
+        {
+          "month": "2024-11",
+          "stage_id": "STABLE",
+          "business_reason": "四季度备货恢复正常提货",
+          "sales_units": 6700,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 28000000,
+          "payroll_fen": 10500000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1800000
+        },
+        {
+          "month": "2024-12",
+          "stage_id": "STABLE",
+          "business_reason": "年末客户控制库存，交付小幅回落",
+          "sales_units": 6400,
+          "unit_price_fen": 12200,
+          "unit_variable_cost_fen": 9100,
+          "target_inventory_fen": 28000000,
+          "payroll_fen": 10500000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1800000
+        },
+        {
+          "month": "2025-01",
+          "stage_id": "MATURE",
+          "business_reason": "续签年度定点合同，正常月度供货",
+          "sales_units": 6500,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        },
+        {
+          "month": "2025-02",
+          "stage_id": "MATURE",
+          "business_reason": "春节工作日减少，客户滚动提货下调",
+          "sales_units": 6100,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        },
+        {
+          "month": "2025-03",
+          "stage_id": "MATURE",
+          "business_reason": "节后恢复年度合同常态交付",
+          "sales_units": 6600,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        },
+        {
+          "month": "2025-04",
+          "stage_id": "MATURE",
+          "business_reason": "年度合同常态交付",
+          "sales_units": 6700,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        },
+        {
+          "month": "2025-05",
+          "stage_id": "MATURE",
+          "business_reason": "年度合同常态交付",
+          "sales_units": 6600,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        },
+        {
+          "month": "2025-06",
+          "stage_id": "MATURE",
+          "business_reason": "年度合同常态交付",
+          "sales_units": 6500,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        },
+        {
+          "month": "2025-07",
+          "stage_id": "MATURE",
+          "business_reason": "暑期客户检修带来可解释的小幅回落",
+          "sales_units": 6200,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        },
+        {
+          "month": "2025-08",
+          "stage_id": "MATURE",
+          "business_reason": "暑期客户检修带来可解释的小幅回落",
+          "sales_units": 6300,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        },
+        {
+          "month": "2025-09",
+          "stage_id": "MATURE",
+          "business_reason": "客户恢复常态滚动提货",
+          "sales_units": 6600,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        },
+        {
+          "month": "2025-10",
+          "stage_id": "MATURE",
+          "business_reason": "客户恢复常态滚动提货",
+          "sales_units": 6700,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        },
+        {
+          "month": "2025-11",
+          "stage_id": "MATURE",
+          "business_reason": "客户恢复常态滚动提货",
+          "sales_units": 6600,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        },
+        {
+          "month": "2025-12",
+          "stage_id": "MATURE",
+          "business_reason": "年末客户控制库存，合同仍持续",
+          "sales_units": 6400,
+          "unit_price_fen": 12400,
+          "unit_variable_cost_fen": 9200,
+          "target_inventory_fen": 29000000,
+          "payroll_fen": 11000000,
+          "rent_fen": 3000000,
+          "other_expense_fen": 1900000
+        }
+      ],
+      "asset_capacities": [
+        [
+          "A1T01_EQ01",
+          9000
+        ]
+      ]
+    }
+  },
+  "initial_capital_resolution": {
+    "input": {
+      "capital_item_id": "initial_capital_001",
+      "plan_version": "v1",
+      "mode": "manual",
+      "amount_fen": 280000000,
+      "minimum_amount_fen": null,
+      "maximum_amount_fen": null,
+      "distribution": null,
+      "profile_version": null
+    },
+    "plan": {
+      "capital_item_id": "initial_capital_001",
+      "plan_version": "v1",
+      "due_date": "2024-01-01",
+      "amount_fen": 280000000
+    },
+    "root_seed": 2026095101,
+    "derived_seed": null
+  }
+}

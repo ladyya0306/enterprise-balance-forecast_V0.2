@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\三机制六户_20260911_v1\\正式批次\\正式流水\\train\\business_102_b1_m_tight_t03\\tight_mechanisms_six_v4",
+  "sample_ids": [
+    "business_102_b1_m_tight_t03"
+  ],
+  "daily_sha256": "1262e6fe4a7c7f1b45e9b617982ba8edf4bd8f8070783ef0c5abe740d850640b",
+  "missing_expected_files": []
+}

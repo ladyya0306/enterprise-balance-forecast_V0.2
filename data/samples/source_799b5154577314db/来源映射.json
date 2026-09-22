@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\紧张预算正式交付_20260911_v1\\正式批次\\正式流水\\train\\business_102_e4_m_tight_t02\\pressure_budget_revision_v1",
+  "sample_ids": [
+    "business_102_e4_m_tight_t02"
+  ],
+  "daily_sha256": "799b5154577314db76dcbc681f9a17911b6cc475545498e5e85a65d501aaf1d8",
+  "missing_expected_files": []
+}

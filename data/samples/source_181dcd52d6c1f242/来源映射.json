@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\Terra受控变量微调_20260912_v1\\预演批次_v2\\正式批次\\正式流水\\train\\business_102_a2_m_tight_t03\\terra_controlled_micro_adjustment_three_v1",
+  "sample_ids": [
+    "business_102_a2_m_tight_t03"
+  ],
+  "daily_sha256": "181dcd52d6c1f242708e0e9d834f1d511ce3f19d5c4a2f3c9e6f29470a1e2007",
+  "missing_expected_files": []
+}

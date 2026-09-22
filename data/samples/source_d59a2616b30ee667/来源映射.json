@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\首批成熟充裕预算草案_20260912_v5\\正式批次\\正式流水\\train\\business_102_a1_m_abundant_t06\\first_abundant_budget_batch12_20260912_v2",
+  "sample_ids": [
+    "business_102_a1_m_abundant_t06"
+  ],
+  "daily_sha256": "d59a2616b30ee6677d054e84efde7b4622d7c2066d97094a4d0143873fc40abf",
+  "missing_expected_files": []
+}

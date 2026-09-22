@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\Terra三户原种子纠正_20260912_v2\\正式批次\\正式流水\\train\\business_102_e2_m_abundant_t03\\original_seed_correction_three_v2",
+  "sample_ids": [
+    "business_102_e2_m_abundant_t03"
+  ],
+  "daily_sha256": "b5be0c52b619f0f6f197254e299f8aa6f53606b1c1fe88cf309fe2d0bdd96e51",
+  "missing_expected_files": []
+}

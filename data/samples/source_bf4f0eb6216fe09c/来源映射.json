@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\正式流水\\训练\\business_102_a1_m_abundant_t01\\a1_auto_connector_stable_v1",
+  "sample_ids": [
+    "business_102_a1_m_abundant_t01"
+  ],
+  "daily_sha256": "bf4f0eb6216fe09c86b8d124e504dd2269d20a17f615f5e499449c5b00c6ebe9",
+  "missing_expected_files": []
+}

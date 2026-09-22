@@ -1,0 +1,8 @@
+{
+  "source_directory": "D:\\MiniProj\\深度学习制作企业产品预测系统\\data\\synthetic_production\\coverage102_v1\\剩余57格连续执行_20260911_v1\\批次10e_E4_8户_v5c\\正式批次\\正式流水\\train\\business_102_e4_s_abundant_t01\\remaining57_10e_e4_v5",
+  "sample_ids": [
+    "business_102_e4_s_abundant_t01"
+  ],
+  "daily_sha256": "602b2a31dcdcdefd9ea5c9e24cba4db2feccc9d9a14024bcb3c6425a28a41d40",
+  "missing_expected_files": []
+}
