@@ -49,6 +49,7 @@ class Question:
     family_id: str
     shape: str
     origin: str
+    answer_end: str
     basic: list[dict[str, str]]
     usage: list[dict[str, str]]
     transactions: list[dict[str, str]]
@@ -116,7 +117,7 @@ def build_questions(role: str, fraction: float, limit: int | None) -> list[Quest
         # 这里检查的是输入边界：逐笔资料绝不含预测日后的行。
         if any(row["booking_date"] > cutoff for row in visible_transactions):
             raise ValueError(f"{sample_id}逐笔输入混入预测日后的交易")
-        questions.append(Question(sample_id, families[sample_id], shapes.get(sample_id, "未分类"), cutoff, history, usage_history, visible_transactions, np.asarray([float(row["ending_balance_cny"]) for row in answers])))
+        questions.append(Question(sample_id, families[sample_id], shapes.get(sample_id, "未分类"), cutoff, answers[-1]["calendar_date"], history, usage_history, visible_transactions, np.asarray([float(row["ending_balance_cny"]) for row in answers])))
         if limit is not None and len(questions) >= limit:
             break
     if not questions:
@@ -407,8 +408,8 @@ def main() -> None:
     development = build_questions("开发测试", 0.70, limits)
     materials = ("每天余额收入支出", "每天余额收入支出及用途", "逐笔金额余额用途")
     methods = ("余额保持法", "近期趋势延续法", "岭回归", "XGBoost", "ExtraTrees", "直方图梯度提升树", "LSTM", "GRU")
-    if {item.sample_id for item in learning} != {item.sample_id for item in early} or any(date.fromisoformat(next(item.origin for item in early if item.sample_id == question.sample_id)) <= date.fromisoformat(question.origin) for question in learning):
-        raise ValueError("学习资料的日期检查题必须与学习题属于同一企业且预测日更晚")
+    if {item.sample_id for item in learning} != {item.sample_id for item in early} or any(date.fromisoformat(next(item.origin for item in early if item.sample_id == question.sample_id)) <= date.fromisoformat(question.answer_end) for question in learning):
+        raise ValueError("学习资料的日期检查题必须与学习题属于同一企业，且预测日要晚于学习题30个答案银行日的最后一天")
     all_rows: list[dict[str, object]] = []; details: list[dict[str, object]] = []
     for material in materials:
         for method in methods:
