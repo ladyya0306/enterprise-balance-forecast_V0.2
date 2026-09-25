@@ -33,7 +33,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
 
-VERSION = "v3_three_materials_eight_methods_20260923_1"
+VERSION = "v3_three_materials_eight_methods_20260926_1"
 ROOT = Path(__file__).resolve().parents[1]
 MATERIALS = ROOT / "data" / "training_materials" / "v1"
 HORIZON_NAMES = ("下一银行营业日的日末余额", "以后10个银行营业日的日均余额", "以后30个银行营业日的日均余额")
@@ -96,6 +96,34 @@ def choose_cutoff(rows: list[dict[str, str]], fraction: float) -> str | None:
     return banks[index]["calendar_date"]
 
 
+def bank_day_rows_with_all_prior_flows(rows: list[dict[str, str]], cutoff: str) -> list[dict[str, str]]:
+    """取最近 28 个银行日，并把两个银行日之间的自然日收支放入后一个银行日。
+
+    例如周六、周日发生的账归入下周一这一行。最早一个选中银行日以前的
+    自然日不带入；预测日以后也不带入。因此 28 行仍表示同一段已发生日期。
+    """
+    visible = [row for row in rows if row["calendar_date"] <= cutoff]
+    bank_positions = [index for index, row in enumerate(visible) if row["is_bank_workday"] == "True"]
+    selected = bank_positions[-LOOKBACK:]
+    if len(selected) != LOOKBACK:
+        raise ValueError("不足28个银行营业日")
+    result: list[dict[str, str]] = []
+    previous_anchor: int | None = None
+    for anchor in selected:
+        # 最早一行从自身开始；后续每一行接收上一银行日之后至本日的全部自然日流水。
+        first = anchor if previous_anchor is None else previous_anchor + 1
+        segment = visible[first:anchor + 1]
+        merged = dict(visible[anchor])
+        for column in merged:
+            if column == "ending_balance_cny":
+                continue
+            if column.endswith("_cny") or column.endswith("_transaction_count") or column == "transaction_count":
+                merged[column] = str(sum(float(row[column]) for row in segment))
+        result.append(merged)
+        previous_anchor = anchor
+    return result
+
+
 def build_questions(role: str, fraction: float, limit: int | None) -> list[Question]:
     basic = by_sample(MATERIALS / "每天余额收入支出" / f"{role}.csv")
     usage = by_sample(MATERIALS / "每天余额收入支出及用途" / f"{role}.csv")
@@ -107,8 +135,8 @@ def build_questions(role: str, fraction: float, limit: int | None) -> list[Quest
         cutoff = choose_cutoff(basic[sample_id], fraction)
         if cutoff is None or sample_id not in usage:
             continue
-        history = [row for row in basic[sample_id] if row["calendar_date"] <= cutoff and row["is_bank_workday"] == "True"][-LOOKBACK:]
-        usage_history = [row for row in usage[sample_id] if row["calendar_date"] <= cutoff and row["is_bank_workday"] == "True"][-LOOKBACK:]
+        history = bank_day_rows_with_all_prior_flows(basic[sample_id], cutoff)
+        usage_history = bank_day_rows_with_all_prior_flows(usage[sample_id], cutoff)
         answers = [row for row in basic[sample_id] if row["calendar_date"] > cutoff and row["is_bank_workday"] == "True"][:30]
         if len(history) != LOOKBACK or len(usage_history) != LOOKBACK or len(answers) != 30:
             continue
@@ -401,7 +429,7 @@ def main() -> None:
     if args.epochs is not None: epochs = args.epochs
     output = (args.output or ROOT / "runs" / f"第三轮_{suffix}_20260923").resolve()
     output.mkdir(parents=True, exist_ok=True)
-    # 学习资料用较早预测日学习，较晚预测日只检查每轮是否继续改善的入口已预留；本次统一训练接口不使用开发测试标签。
+    # 每户只固定一个较早预测日用于学习；同户较晚预测日只检查每轮是否继续改善。
     learning = build_questions("学习", 0.45, limits)
     early = build_questions("学习", 0.70, limits)
     calibration = build_questions("区间校准", 0.60, limits)
@@ -417,7 +445,7 @@ def main() -> None:
             all_rows.extend(rows); details.append(detail)
     write_csv(output / "开发测试逐题预测与评分.csv", all_rows)
     write_csv(output / "开发测试成绩汇总.csv", summarize(all_rows))
-    (output / "运行记录.json").write_text(json.dumps({"version": VERSION, "purpose": "小规模可运行核对" if args.mode == "smoke" else "开发比较", "mode": args.mode, "actual_learning_enterprises": len(learning), "actual_date_check_enterprises": len(early), "actual_calibration_enterprises": len(calibration), "actual_development_enterprises": len(development), "maximum_epochs": epochs, "fixed_sequence_seeds": list(SEEDS), "target_rule": "三种资料共用同一份每日余额表的随后30个银行营业日日末余额；因此同一企业和预测日期的三项正确余额严格相同，包含无交易日延续的余额。", "date_check_rule": "LSTM和GRU在学习企业中选取比学习题更晚的预测日，只查看日期检查误差来保留较好的轮次；不读取开发测试或区间确定企业的答案决定轮次。", "history_rule": "每题只读预测日及以前、28个银行营业日覆盖的日期；逐笔资料按日期顺序读入金额、交易后余额、用途独立标记和日期间隔，不读取生成器写入的小时、分钟、秒。树方法只读预测日以前逐笔资料的固定数字汇总。", "calendar_rule": "只读准备资料中已保存的银行日标记；本运行不依据预测日后的交易改变日历", "category_rule": "用途代码拆成九个各自独立的0或1标记；代码的字母和数字大小不参与金额或先后判断。", "range_rule": "每种方法、每种资料、三项预测分别只用区间确定组的绝对余额误差确定目标约80%的上下范围；开发测试组只接受已确定的范围。范围宽度和漏出范围扣分会与命中率一起保存。", "transaction_length_audit": transaction_length_audit((learning, calibration, development)), "not_done": ["未运行525份学习、113份区间确定、142份开发测试的正式全量比较" if args.mode == "smoke" else "尚未生成或评分全新最终大考企业", "未执行可选的中文词组和英文词组文字比较", "第一轮已训练LSTM历史参照尚未接入本入口"], "runs": details}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (output / "运行记录.json").write_text(json.dumps({"version": VERSION, "purpose": "小规模可运行核对" if args.mode == "smoke" else "开发比较", "mode": args.mode, "actual_learning_enterprises": len(learning), "actual_date_check_enterprises": len(early), "actual_calibration_enterprises": len(calibration), "actual_development_enterprises": len(development), "learning_question_rule": "525份学习企业各固定使用1个较早预测日，因此本次学习为525道题；没有临时增加同一企业的多个高度重叠预测日。", "maximum_epochs": epochs, "fixed_sequence_seeds": list(SEEDS), "target_rule": "三种资料共用同一份每日余额表的随后30个银行营业日日末余额；因此同一企业和预测日期的三项正确余额严格相同，包含无交易日延续的余额。", "date_check_rule": "LSTM和GRU在学习企业中选取比学习题更晚的预测日，只查看日期检查误差来保留较好的轮次；不读取开发测试或区间确定企业的答案决定轮次。", "history_rule": "每题从所选最早银行日到预测日当天取资料。按日资料把两个银行日之间、截至后一个银行日当天的自然日流水汇入后一个银行日；最早银行日以前和预测日以后的流水不读入。逐笔资料按日期顺序读入同一日期范围内金额、交易后余额、用途独立标记和日期间隔，不读取生成器写入的小时、分钟、秒。树方法只读预测日以前逐笔资料的固定数字汇总。", "calendar_rule": "只读准备资料中已保存的银行日标记；本运行不依据预测日后的交易改变日历", "category_rule": "用途代码拆成九个各自独立的0或1标记；代码的字母和数字大小不参与金额或先后判断。", "range_rule": "每种方法、每种资料、三项预测分别只用区间确定组的绝对余额误差确定目标约80%的上下范围；开发测试组只接受已确定的范围。范围宽度和漏出范围扣分会与命中率一起保存。", "transaction_length_audit": transaction_length_audit((learning, calibration, development)), "not_done": ["未运行525份学习、113份区间确定、142份开发测试的正式全量比较" if args.mode == "smoke" else "尚未生成或评分全新最终大考企业", "未执行可选的中文词组和英文词组文字比较", "第一轮已训练LSTM历史参照尚未接入本入口"], "runs": details}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"output": str(output), "mode": args.mode, "rows": len(all_rows), "runs": len(details)}, ensure_ascii=False))
 
 
