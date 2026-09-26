@@ -1,0 +1,274 @@
+{
+  "purpose": "第四轮两项初始因果比较。本阶段未构造、未读取113户或142户题目。",
+  "learning_count": 525,
+  "early_count": 525,
+  "seeds": [
+    2026092301,
+    2026092302,
+    2026092303
+  ],
+  "runs": {
+    "A_LSTM": {
+      "270次候选前30次对旧曲线最大绝对差": 0.0,
+      "原版本_30次已保存权重": {
+        "three_seed_mean": 0.4391642212867737,
+        "three_seed_median": 0.4166206419467926,
+        "three_seed_ensemble_internal_error": 0.4154654404982851,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.4151497781276703,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.4166206419467926,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.48572224378585815,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          }
+        ]
+      },
+      "试验版本_270次上限": {
+        "three_seed_mean": 0.39907221992810565,
+        "three_seed_median": 0.3987444341182709,
+        "three_seed_ensemble_internal_error": 0.39467742138131995,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.3852483630180359,
+            "best_epoch_by_old_threshold": 159,
+            "absolute_lowest_date_check_error": 0.3852483630180359,
+            "absolute_lowest_epoch": 159,
+            "actual_epochs": 164
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.3987444341182709,
+            "best_epoch_by_old_threshold": 97,
+            "absolute_lowest_date_check_error": 0.39867258071899414,
+            "absolute_lowest_epoch": 98,
+            "actual_epochs": 102
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.41322386264801025,
+            "best_epoch_by_old_threshold": 57,
+            "absolute_lowest_date_check_error": 0.41322386264801025,
+            "absolute_lowest_epoch": 57,
+            "actual_epochs": 62
+          }
+        ]
+      },
+      "270到540候选资格": {
+        "逐seed符合": [
+          false,
+          false,
+          false
+        ],
+        "至少两seed符合": false,
+        "本初始阶段尚未执行540": true
+      },
+      "选用版本": "试验版本_270次上限"
+    },
+    "A_GRU": {
+      "270次候选前30次对旧曲线最大绝对差": 0.0,
+      "原版本_30次已保存权重": {
+        "three_seed_mean": 0.4159378508726756,
+        "three_seed_median": 0.4160632789134979,
+        "three_seed_ensemble_internal_error": 0.41227391923500184,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.43070492148399353,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.4010453522205353,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.4160632789134979,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          }
+        ]
+      },
+      "试验版本_270次上限": {
+        "three_seed_mean": 0.3875221014022827,
+        "three_seed_median": 0.3858022391796112,
+        "three_seed_ensemble_internal_error": 0.3858926970023414,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.3912246823310852,
+            "best_epoch_by_old_threshold": 194,
+            "absolute_lowest_date_check_error": 0.3911694288253784,
+            "absolute_lowest_epoch": 195,
+            "actual_epochs": 199
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.3858022391796112,
+            "best_epoch_by_old_threshold": 107,
+            "absolute_lowest_date_check_error": 0.3857269585132599,
+            "absolute_lowest_epoch": 110,
+            "actual_epochs": 112
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.38553938269615173,
+            "best_epoch_by_old_threshold": 143,
+            "absolute_lowest_date_check_error": 0.3854897618293762,
+            "absolute_lowest_epoch": 146,
+            "actual_epochs": 148
+          }
+        ]
+      },
+      "270到540候选资格": {
+        "逐seed符合": [
+          false,
+          false,
+          false
+        ],
+        "至少两seed符合": false,
+        "本初始阶段尚未执行540": true
+      },
+      "选用版本": "试验版本_270次上限"
+    },
+    "B_LSTM": {
+      "配对初始化预测最大绝对差": 0.0,
+      "12字段控制对旧曲线最大绝对差": 0.0,
+      "12字段配对控制": {
+        "three_seed_mean": 0.45245909690856934,
+        "three_seed_median": 0.4530297517776489,
+        "three_seed_ensemble_internal_error": 0.43981348708155166,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.43093276023864746,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.4734147787094116,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.4530297517776489,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          }
+        ]
+      },
+      "13字段末笔距预测日": {
+        "three_seed_mean": 0.45144370198249817,
+        "three_seed_median": 0.45241546630859375,
+        "three_seed_ensemble_internal_error": 0.43902436100752584,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.4296567440032959,
+            "best_epoch_by_old_threshold": 30,
+            "absolute_lowest_date_check_error": 0.4296567440032959,
+            "absolute_lowest_epoch": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.47225889563560486,
+            "best_epoch_by_old_threshold": 30,
+            "absolute_lowest_date_check_error": 0.47225889563560486,
+            "absolute_lowest_epoch": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.45241546630859375,
+            "best_epoch_by_old_threshold": 30,
+            "absolute_lowest_date_check_error": 0.45241546630859375,
+            "absolute_lowest_epoch": 30,
+            "actual_epochs": 30
+          }
+        ]
+      },
+      "选用版本": "13字段末笔距预测日"
+    },
+    "B_GRU": {
+      "配对初始化预测最大绝对差": 0.0,
+      "12字段控制对旧曲线最大绝对差": 0.0,
+      "12字段配对控制": {
+        "three_seed_mean": 0.4293703536192576,
+        "three_seed_median": 0.42887890338897705,
+        "three_seed_ensemble_internal_error": 0.42426412769120897,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.42887890338897705,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.42730531096458435,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.4319268465042114,
+            "best_epoch_by_old_threshold": 30,
+            "actual_epochs": 30
+          }
+        ]
+      },
+      "13字段末笔距预测日": {
+        "three_seed_mean": 0.42914538582166034,
+        "three_seed_median": 0.4280302822589874,
+        "three_seed_ensemble_internal_error": 0.4238884132047791,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.4280302822589874,
+            "best_epoch_by_old_threshold": 30,
+            "absolute_lowest_date_check_error": 0.4280302822589874,
+            "absolute_lowest_epoch": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.4275285601615906,
+            "best_epoch_by_old_threshold": 30,
+            "absolute_lowest_date_check_error": 0.4275285601615906,
+            "absolute_lowest_epoch": 30,
+            "actual_epochs": 30
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.4318773150444031,
+            "best_epoch_by_old_threshold": 30,
+            "absolute_lowest_date_check_error": 0.4318773150444031,
+            "absolute_lowest_epoch": 30,
+            "actual_epochs": 30
+          }
+        ]
+      },
+      "选用版本": "13字段末笔距预测日"
+    }
+  },
+  "运行秒数": 40.02178259997163,
+  "三起点中位数内部误差重算说明": "2026-09-26：修正了预测值未按目标均值和离散程度标准化的记录错误；未重训、未改变任何候选选择。"
+}

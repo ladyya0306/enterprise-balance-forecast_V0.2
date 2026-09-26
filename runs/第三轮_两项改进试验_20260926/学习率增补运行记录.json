@@ -1,0 +1,128 @@
+{
+  "LSTM": {
+    "全部候选": [
+      {
+        "learning_rate": 0.001,
+        "three_seed_mean": 0.39907221992810565,
+        "source": "初始A_270次"
+      },
+      {
+        "learning_rate": 0.0005,
+        "three_seed_mean": 0.39736119906107586,
+        "three_seed_ensemble_internal_error": 0.38849895000852674,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.38662147521972656,
+            "best_epoch_by_old_threshold": 270,
+            "actual_epochs": 270
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.3925100266933441,
+            "best_epoch_by_old_threshold": 212,
+            "actual_epochs": 217
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.41295209527015686,
+            "best_epoch_by_old_threshold": 103,
+            "actual_epochs": 108
+          }
+        ],
+        "source": "A_学习率_0.0005"
+      },
+      {
+        "learning_rate": 0.002,
+        "three_seed_mean": 0.4149069090684255,
+        "three_seed_ensemble_internal_error": 0.41266916247726954,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.41450434923171997,
+            "best_epoch_by_old_threshold": 17,
+            "actual_epochs": 22
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.4162231981754303,
+            "best_epoch_by_old_threshold": 17,
+            "actual_epochs": 22
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.4139931797981262,
+            "best_epoch_by_old_threshold": 31,
+            "actual_epochs": 36
+          }
+        ],
+        "source": "A_学习率_0.002"
+      }
+    ],
+    "选用学习率": 0.0005,
+    "主选择依据": "三个随机起点旧阈值保存的较晚日期检查误差平均值最小"
+  },
+  "GRU": {
+    "全部候选": [
+      {
+        "learning_rate": 0.001,
+        "three_seed_mean": 0.3875221014022827,
+        "source": "初始A_270次"
+      },
+      {
+        "learning_rate": 0.0005,
+        "three_seed_mean": 0.3887677788734436,
+        "three_seed_ensemble_internal_error": 0.38744385682032123,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.39591580629348755,
+            "best_epoch_by_old_threshold": 269,
+            "actual_epochs": 270
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.3857434391975403,
+            "best_epoch_by_old_threshold": 197,
+            "actual_epochs": 202
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.384644091129303,
+            "best_epoch_by_old_threshold": 264,
+            "actual_epochs": 269
+          }
+        ],
+        "source": "A_学习率_0.0005"
+      },
+      {
+        "learning_rate": 0.002,
+        "three_seed_mean": 0.39761001865069073,
+        "three_seed_ensemble_internal_error": 0.389261795626217,
+        "per_seed": [
+          {
+            "seed": 2026092301,
+            "best_date_check_error_by_old_threshold": 0.3907710313796997,
+            "best_epoch_by_old_threshold": 107,
+            "actual_epochs": 112
+          },
+          {
+            "seed": 2026092302,
+            "best_date_check_error_by_old_threshold": 0.38528746366500854,
+            "best_epoch_by_old_threshold": 62,
+            "actual_epochs": 67
+          },
+          {
+            "seed": 2026092303,
+            "best_date_check_error_by_old_threshold": 0.4167715609073639,
+            "best_epoch_by_old_threshold": 12,
+            "actual_epochs": 17
+          }
+        ],
+        "source": "A_学习率_0.002"
+      }
+    ],
+    "选用学习率": 0.001,
+    "主选择依据": "三个随机起点旧阈值保存的较晚日期检查误差平均值最小"
+  }
+}
